@@ -146,11 +146,11 @@ public class Map : Node2D
 		// TODO vet this
 		for (int i = candidates.Count - 1; i > 0; i--) {
 			int j = rand.Next(i + 1);
-            (candidates[j], candidates[i]) = (candidates[i], candidates[j]);
-        }
+			(candidates[j], candidates[i]) = (candidates[i], candidates[j]);
+		}
 
-        // Try until we find one that works
-        foreach (var candidate in candidates) {
+		// Try until we find one that works
+		foreach (var candidate in candidates) {
 			//GD.Print("Checking candidate", (HexPoint)candidate);
 			// Check if it's surrounded by plains
 			var applicable = new List<HexPoint>() {
@@ -172,11 +172,11 @@ public class Map : Node2D
 				// Shuffle first for fun (fisher yates again)
 				for (int i = applicable.Count - 1; i > 0; i--) {
 					int j = rand.Next(i + 1);
-                    (applicable[j], applicable[i]) = (applicable[i], applicable[j]);
-                }
+					(applicable[j], applicable[i]) = (applicable[i], applicable[j]);
+				}
 
-                // Take the first n
-                applicable = applicable.Take(size).ToList();
+				// Take the first n
+				applicable = applicable.Take(size).ToList();
 				foreach (var coord in applicable) {
 					Tiles[coord].Type = type;
 				}

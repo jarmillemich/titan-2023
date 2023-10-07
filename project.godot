@@ -11,9 +11,15 @@ config_version=4
 [application]
 
 config/name="Titan2023"
+run/main_scene="res://Map/Map.tscn"
 config/icon="res://icon.png"
 
 [autoload]
+
+CargoQueue="*res://Game/CargoQueue.cs"
+Resources="*res://Game/Resources.cs"
+GameState="*res://Game/GameState.cs"
+BuildingData="*res://Game/BuildingData.cs"
 
 [gui]
 

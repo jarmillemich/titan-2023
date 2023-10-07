@@ -8,8 +8,11 @@ public class UI_Event_Handler : Node
 		//2:
 		//3:
 		//...
+	private Godot.Collections.Dictionary<string, int> pendingBuilding => GetNode<BuildingData>("/root/BuildingData").pendingBuilding;
+	private Godot.Collections.Dictionary<string, BuildingSpecs> buildings => GetNode<BuildingData>("/root/BuildingData").buildings;
+  
 
-	private void ScheduleBuilding(int BuildingType, int BuildingLevel)
+	private void ScheduleBuilding(string building)
 	{
 		
 		//Schedule building logic...
@@ -21,11 +24,14 @@ public class UI_Event_Handler : Node
 		GD.Print("Button Pressed!");
 	}
 
-	private void PreviewBuilding(int BuildingType, int BuildingLevel)
+	private void PreviewBuilding(string building)
 {
 	VBoxContainer preview = GetNode<VBoxContainer>("%BuildingPreview");
 	preview.Visible = true;
 	preview.GetNode<RichTextLabel>("%Description").Text = "Building Type: " + BuildingType + " Building Level: " + BuildingLevel;
+	preview.GetNode<TextureRect>("")
+
+	buildings
 }
 
 
@@ -34,4 +40,142 @@ private void ClosePreview()
 	GetNode<VBoxContainer>("%BuildingPreview").Visible = false;
 }
 
+}
+
+
+private void PreviewBuilding(String extra_arg_0)
+{
+	// Replace with function body.
+}
+
+
+private void ScheduleBuilding(String extra_arg_0)
+{
+	// Replace with function body.
+}
+
+
+private void PreviewBuilding(String extra_arg_0)
+{
+	// Replace with function body.
+}
+
+
+private void ScheduleBuilding(String extra_arg_0)
+{
+	// Replace with function body.
+}
+
+
+private void PreviewBuilding(String extra_arg_0)
+{
+	// Replace with function body.
+}
+
+
+private void ScheduleBuilding(String extra_arg_0)
+{
+	// Replace with function body.
+}
+
+
+private void PreviewBuilding(String extra_arg_0)
+{
+	// Replace with function body.
+}
+
+
+private void ScheduleBuilding(String extra_arg_0)
+{
+	// Replace with function body.
+}
+
+
+private void PreviewBuilding(String extra_arg_0)
+{
+	// Replace with function body.
+}
+
+
+private void ScheduleBuilding(String extra_arg_0)
+{
+	// Replace with function body.
+}
+
+
+private void PreviewBuilding(String extra_arg_0)
+{
+	// Replace with function body.
+}
+
+
+private void ScheduleBuilding(String extra_arg_0)
+{
+	// Replace with function body.
+}
+
+
+private void PreviewBuilding(String extra_arg_0)
+{
+	// Replace with function body.
+}
+
+
+private void ScheduleBuilding(String extra_arg_0)
+{
+	// Replace with function body.
+}
+
+
+private void PreviewBuilding(String extra_arg_0)
+{
+	// Replace with function body.
+}
+
+
+private void ScheduleBuilding(String extra_arg_0)
+{
+	// Replace with function body.
+}
+
+
+private void PreviewBuilding(String extra_arg_0)
+{
+	// Replace with function body.
+}
+
+
+private void ScheduleBuilding(String extra_arg_0)
+{
+	// Replace with function body.
+}
+
+
+private void PreviewBuilding(String extra_arg_0)
+{
+	// Replace with function body.
+}
+
+
+private void ScheduleBuilding(String extra_arg_0)
+{
+	// Replace with function body.
+}
+
+
+private void PreviewBuilding(String extra_arg_0)
+{
+	// Replace with function body.
+}
+
+
+private void ScheduleBuilding(String extra_arg_0)
+{
+	// Replace with function body.
+}
+
+
+private void PreviewBuilding(String extra_arg_0)
+{
+	// Replace with function body.
 }

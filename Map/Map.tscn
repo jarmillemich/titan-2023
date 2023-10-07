@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Map/Map.cs" type="Script" id=1]
 [ext_resource path="res://Map/PanCamera.cs" type="Script" id=2]
+[ext_resource path="res://Control.tscn" type="PackedScene" id=3]
 
 [node name="Map" type="Node2D"]
 script = ExtResource( 1 )
@@ -15,3 +16,7 @@ position = Vector2( 512, 300 )
 position = Vector2( 512, 300 )
 current = true
 script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource( 3 )]
