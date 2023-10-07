@@ -45,7 +45,7 @@ public class BuildingData : Node
                     Godot.Collections.Array s = keyValues["buildingReq"] as Godot.Collections.Array;
                     for (int i = 0; i < s.Count; i++)
                     {
-                        Godot.Collections.Dictionary brd = (Godot.Collections.Dictionary)s[i];// t.Result as Godot.Collections.Array;
+                        Godot.Collections.Dictionary brd = (Godot.Collections.Dictionary)s[i];
                         BuildingRequirements br = new BuildingRequirements(
                             _type: brd.GetString("type"),
                             _tileType: brd.GetString("tileType"),
@@ -53,9 +53,30 @@ public class BuildingData : Node
                             _negate: brd.GetBool("negate")
                         );
                         buildingRequirements.Add(br);
+                        brd.Dispose();
                     }
+                    s.Dispose();
                     specs.buildingRequirements = buildingRequirements;
 
+                    //Design
+                    BuildingDesign design = new BuildingDesign(_spritePath: keyValues.GetString("spritePath"),
+                                                                _spriteScaling: keyValues.GetString("spriteScaling"));
+                    //BuildingProsume
+                    List<BuildingProsume> buildingProsumes = new List<BuildingProsume>();
+                    s = keyValues["buildingReq"] as Godot.Collections.Array;
+                    for (int i = 0; i < s.Count; i++)
+                    {
+                        Godot.Collections.Dictionary brd = (Godot.Collections.Dictionary)s[i];
+                        BuildingProsume buildingProsume = new BuildingProsume(_type: brd.GetString("type"),
+                             _function: brd.GetString("function"),
+                             _amount: brd.GetInt("amount"));
+                        buildingProsumes.Add(buildingProsume);
+                        brd.Dispose();
+
+                    }
+                    s.Dispose();
+                    specs.buildingProsume = buildingProsumes;
+                    keyValues.Dispose();
                 }
             }
         }
