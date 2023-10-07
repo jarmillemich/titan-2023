@@ -9,6 +9,9 @@ public static string GetString(this Dictionary dict, string fieldName) {
     public static int GetInt(this Dictionary dict, string fieldName) {
         return  dict.Contains(fieldName) ? int.Parse(dict[fieldName].ToString()) : -1;
     }
+    public static float GetFloat(this Dictionary dict, string fieldName) {
+        return  dict.Contains(fieldName) ? float.Parse(dict[fieldName].ToString()) : -1;
+    }
     public static bool GetBool(this Dictionary dict, string fieldName) {
         return dict.Contains(fieldName) ? bool.Parse(dict[fieldName].ToString()) : false;
     }

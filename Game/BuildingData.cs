@@ -9,13 +9,25 @@ public class BuildingData : Node
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        loadBuildingSpecs();
+        LoadBuildingSpecs();
+        LoadBuiltPendinglist();
     }
     public Godot.Collections.Dictionary<string, BuildingSpecs> buildings = new Godot.Collections.Dictionary<string, BuildingSpecs>();
+
+    public Godot.Collections.Dictionary<string, int> builtBuilding = new Godot.Collections.Dictionary<string, int>();
+    public Godot.Collections.Dictionary<string, int> pendingBuilding = new Godot.Collections.Dictionary<string, int>();
+
     
-    public Godot.Collections.Dictionary<string,int> builtBuilding = new Godot.Collections.Dictionary<string, int>();
-    public Godot.Collections.Dictionary<string,int> pendingBuilding = new Godot.Collections.Dictionary<string, int>();
-    public void loadBuildingSpecs()
+    #region  LoadDictionaries
+    public void LoadBuiltPendinglist()
+    {
+        foreach (var key in buildings.Keys)
+        {
+            builtBuilding.Add(key, 0);
+            pendingBuilding.Add(key, 0);
+        }
+    }
+    public void LoadBuildingSpecs()
     {
         string path = "Entities.json";
         var file = new File();
@@ -49,7 +61,7 @@ public class BuildingData : Node
                         Godot.Collections.Dictionary brd = (Godot.Collections.Dictionary)s[i];
                         BuildingRequirements br = new BuildingRequirements(
                             _type: brd.GetString("type"),
-                            _tileType: brd.GetString("tileType"),
+                            _targetType: brd.GetString("tileType"),
                             _distance: brd.GetInt("distance"),
                             _negate: brd.GetBool("negate")
                         );
@@ -60,8 +72,8 @@ public class BuildingData : Node
                     specs.buildingRequirements = buildingRequirements;
 
                     //Design
-                    BuildingDesign design = new BuildingDesign(_spritePath: keyValues.GetString("spritePath"),
-                                                                _spriteScaling: keyValues.GetString("spriteScaling"));
+                    specs.buildingDesign = new BuildingDesign(_spritePath: keyValues.GetString("spritePath"),
+                                                                _spriteScaling: keyValues.GetFloat("spriteScaling"));
                     //BuildingProsume
                     List<BuildingProsume> buildingProsumes = new List<BuildingProsume>();
                     s = keyValues["buildingReq"] as Godot.Collections.Array;
@@ -92,14 +104,10 @@ public class BuildingData : Node
         }
 
     }
-    private List<BuildingRequirements> LoadBuildingRequirements(string buildings)
-    {
-        List<BuildingRequirements> buildingRequirements = new List<BuildingRequirements>();
+    #endregion
 
-
-        return buildingRequirements;
-    }
 }
+#region Classes
 public class BuildingSpecs : Node
 {
     public BuildingSpecs(int? _level,
@@ -142,35 +150,35 @@ public class BuildingSpecs : Node
 public class BuildingDesign : Node
 {
     public BuildingDesign(string _spritePath,
-                            string _spriteScaling)
+                            float _spriteScaling)
     {
         spritePath = _spritePath;
         spriteScaling = _spriteScaling;
     }
     public string spritePath { get; set; }
-    public string spriteScaling { get; set; }
+    public float spriteScaling { get; set; }
 }
 public class BuildingRequirements : Node
 {
     public BuildingRequirements(string _type,
-                            string _tileType,
+                            string _targetType,
                             int _distance,
                             bool _negate)
     {
         type = _type;
-        tileType = _tileType;
+        targetType = _targetType;
         distance = _distance;
         negate = _negate;
     }
     public override string ToString()
     {
         return "Type: " + type.ToString() +
-                "; tileType: " + tileType.ToString() +
+                "; tileType: " + targetType.ToString() +
                 "; distance: " + distance.ToString() +
                 "; negate: " + negate.ToString();
     }
     public string type { get; set; }
-    public string tileType { get; set; }
+    public string targetType { get; set; }
     public int distance { get; set; }
     public bool negate { get; set; }
 }
@@ -189,4 +197,4 @@ public class BuildingProsume : Node
     public string function { get; set; }
     public int amount { get; set; }
 }
-
+#endregion
