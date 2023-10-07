@@ -85,7 +85,8 @@ private const float sideLength = 50f;
 					HexPoint at = zero + HexPoint.Directions[i] * radius + HexPoint.Directions[(i + 2) % 6] * sideIndex;
 					var tile = AddTile(at);
 
-					//tile.Color = Color.FromHsv((float)rand.NextDouble(), 0.5f, 0.5f);
+					// XXX
+					tile.Type = (TileType)rand.Next(0, 5);
 				}
 			}
 		}
