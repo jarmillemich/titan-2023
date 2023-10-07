@@ -57,6 +57,8 @@ public class Map : Node2D
 	private Camera2D Camera => GetNode<Camera2D>("Camera2D");
 
 	private GameState gameState => GetNode<GameState>("/root/GameState");
+	private Godot.Collections.Dictionary<string, BuildingSpecs> buildingData => GetNode<BuildingData>("/root/BuildingData").buildings;
+	private Resources resources => GetNode<Resources>("/root/Resources");
 
 	private const float sideLength = 50f;
 
@@ -64,7 +66,6 @@ public class Map : Node2D
 
 	private void GenerateMap() {
 		// Don't generate if we're not ready
-		// if (!IsNodeReady() || Root == null) {
 		if (!_isReady || Root == null) {
 			GD.Print("Map but not ready");
 			return;
@@ -108,6 +109,20 @@ public class Map : Node2D
 		for (int i = 0; i < 4; i++) GenerateCluster(TileType.Lake, 4, rand);
 		for (int i = 0; i < 3; i++) GenerateCluster(TileType.Crater, 4, rand);
 		for (int i = 0; i < 2; i++) GenerateCluster(TileType.Cryovolcano, 2, rand);
+	}
+
+	private static IEnumerable<HexPoint> TilesWithin(HexPoint center, int distance) {
+		// Generate tiles
+		yield return center;
+
+		for (int radius = 0; radius <= distance; radius++) {
+			for (int i = 0; i < 6; i++) {
+				for (int sideIndex = 0; sideIndex < radius; sideIndex++) {
+					HexPoint at = center + HexPoint.Directions[i] * radius + HexPoint.Directions[(i + 2) % 6] * sideIndex;
+					yield return at;
+				}
+			}
+		}
 	}
 
 	private Tile AddTile(HexPoint at) {
@@ -194,6 +209,42 @@ public class Map : Node2D
 			if (!Tiles.ContainsKey(center + dir)) continue;
 
 			Tiles[center + dir].Foggy = false;
+		}
+	}
+
+	public List<string> GetBuildingsAvailableForTile(HexPoint tile) {
+		// TODO get what we have queued up
+		var available = buildingData.Keys;
+
+		return buildingData.Keys.Where(k => CanBuild(tile, buildingData[k])).ToList();
+	}
+
+	private bool CanBuild(HexPoint tile, BuildingSpecs spec) {
+		return spec.buildingRequirements.All(req => IsRequirementSatisfied(tile, req));
+	}
+
+	private bool IsRequirementSatisfied(HexPoint tile, BuildingRequirements req) {
+		switch (req.type) {
+			case "tileWithin":
+				// Must have the specified tile within the specified distance (or not)
+				foreach (var coord in TilesWithin(tile, req.distance)) {
+					if (Tiles.ContainsKey(coord) && Tiles[coord].Type.ToString() == req.targetType) {
+						return !req.negate;
+					}
+				}
+				return req.negate;
+			case "buildingDistance":
+				// Must have the specified building within the specified distance (or not)
+				foreach (var coord in TilesWithin(tile, req.distance)) {
+					if (Tiles.ContainsKey(coord) && Tiles[coord].Building != null && Tiles[coord].Building.Type == req.targetType) {
+						return !req.negate;
+					}
+				}
+				return req.negate;
+			case "notBuildable":
+				return false;
+			default:
+				throw new Exception($"Unknown requirement type {req.type}");
 		}
 	}
 }

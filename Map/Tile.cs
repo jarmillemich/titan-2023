@@ -45,22 +45,24 @@ public class Tile : Node2D
 	private Sprite fog => GetNode<Sprite>("Fog");
 	private TextureButton scoutButton => GetNode<TextureButton>("ScoutButton");
 
+	public Building Building => GetNode<Building>("Building");
+
 	private void UpdateSprite() {
 		switch (Type) {
             case TileType.Plains:
-                background.Texture = ResourceLoader.Load("res://Graphics/Tiles/ice_plains.png") as Texture;
+                background.Texture = ResourceLoader.Load("res://Graphics/Tiles/ice_plains - low.png") as Texture;
                 break;
             case TileType.Mountain:
-                background.Texture = ResourceLoader.Load("res://Graphics/Tiles/mountains.png") as Texture;
+                background.Texture = ResourceLoader.Load("res://Graphics/Tiles/mountains - low.png") as Texture;
                 break;
             case TileType.Lake:
-                background.Texture = ResourceLoader.Load("res://Graphics/Tiles/methane lakes 2.png") as Texture;
+                background.Texture = ResourceLoader.Load("res://Graphics/Tiles/methane lakes 2 - low.png") as Texture;
                 break;
             case TileType.Crater:
-                background.Texture = ResourceLoader.Load("res://Graphics/Tiles/craters.png") as Texture;
+                background.Texture = ResourceLoader.Load("res://Graphics/Tiles/craters - low.png") as Texture;
                 break;
             case TileType.Cryovolcano:
-                background.Texture = ResourceLoader.Load("res://Graphics/Tiles/cryovolcano.png") as Texture;
+                background.Texture = ResourceLoader.Load("res://Graphics/Tiles/cryovolcano - low.png") as Texture;
                 break;
         }
 
