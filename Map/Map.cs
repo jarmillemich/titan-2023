@@ -37,14 +37,14 @@ public class Map : Node2D
 	public override void _Ready()
 	{
 		_isReady = true;
-		BuildingData d  = new BuildingData();
-		d.loadBuildingSpecs();
 		GenerateMap();
 
 		GD.Print("Map ready");
 
 		gameState.Connect(nameof(GameState.OnPhaseChanged), this, nameof(OnPhaseChanged));
 		gameState.Phase = Phase.Income;
+
+		var thing = GetNode<BuildingData>("/root/BuildingData");
 	}
 
 	private void OnPhaseChanged() {

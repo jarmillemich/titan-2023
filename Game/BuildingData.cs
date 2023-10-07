@@ -2,20 +2,19 @@ using Godot;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+
 public class BuildingData : Node
 {
-    // Declare member variables here. Examples:
-    // private int a = 2;
-    // private string b = "text";
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        loadBuildingSpecs();
     }
     public Godot.Collections.Dictionary<string, BuildingSpecs> buildings = new Godot.Collections.Dictionary<string, BuildingSpecs>();
+    
     public void loadBuildingSpecs()
     {
-        buildings = new Godot.Collections.Dictionary<string, BuildingSpecs>();
         string path = "Entities.json";
         var file = new File();
 
@@ -76,9 +75,14 @@ public class BuildingData : Node
                     }
                     s.Dispose();
                     specs.buildingProsume = buildingProsumes;
-                    keyValues.Dispose();
+                    //keyValues.Dispose();
+
+                    // Save it out for others
+                    buildings.Add(key.ToString(), specs);
                 }
+
             }
+
         }
         else
         {
@@ -94,7 +98,7 @@ public class BuildingData : Node
         return buildingRequirements;
     }
 }
-public class BuildingSpecs
+public class BuildingSpecs : Node
 {
     public BuildingSpecs(int? _level,
                             string _type,
@@ -133,7 +137,7 @@ public class BuildingSpecs
     public List<BuildingRequirements> buildingRequirements { get; set; }
     public List<BuildingProsume> buildingProsume { get; set; }
 }
-public class BuildingDesign
+public class BuildingDesign : Node
 {
     public BuildingDesign(string _spritePath,
                             string _spriteScaling)
@@ -144,7 +148,7 @@ public class BuildingDesign
     public string spritePath { get; set; }
     public string spriteScaling { get; set; }
 }
-public class BuildingRequirements
+public class BuildingRequirements : Node
 {
     public BuildingRequirements(string _type,
                             string _tileType,
@@ -168,7 +172,7 @@ public class BuildingRequirements
     public int distance { get; set; }
     public bool negate { get; set; }
 }
-public class BuildingProsume
+public class BuildingProsume : Node
 {
     public BuildingProsume(string _type,
                             string _function,
