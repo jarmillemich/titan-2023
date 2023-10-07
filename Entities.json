@@ -2,6 +2,7 @@
   "robot-hub": {
     "level": 1,
     "type": "robot-hub",
+    "description":"",
     "placementType": "hub",
     "spritePath": "res://Graphics/Buildings/robot hub - low.png",
     "spriteScaling": 1,
