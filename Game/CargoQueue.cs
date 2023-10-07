@@ -3,8 +3,8 @@ using System;
 
 public class CargoQueue : Node
 {
-    const int NumSlots = 10;
-    
+    public const int NumSlots = 10;
+
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()

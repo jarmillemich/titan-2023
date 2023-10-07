@@ -15,7 +15,8 @@ run/main_scene="res://Map/Map.tscn"
 
 [autoload]
 
-Resources="*res://Game/Resources.tscn"
+CargoQueue="*res://Game/CargoQueue.cs"
+Resources="*res://Game/Resources.cs"
 
 [gui]
 

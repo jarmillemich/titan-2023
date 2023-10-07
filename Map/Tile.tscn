@@ -15,3 +15,5 @@ uv = PoolVector2Array( 333.898, 728.281, 629.931, 557.361, 629.931, 215.521, 333
 points = PoolVector2Array( 0, 50, 43.3, 25, 43.3, -25, 0, -50, -43.3, -25, -43.3, 25, 0, 50, 43.3, 25 )
 width = 4.0
 default_color = Color( 0, 0, 0, 1 )
+
+[node name="Fog" type="Sprite" parent="."]
