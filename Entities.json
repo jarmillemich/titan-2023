@@ -1,0 +1,257 @@
+{
+  "robot-hub": {
+    "level": 1,
+    "type": "robot-hub",
+    "placementType": "hub",
+    "sprite": "res://",
+    "scalingSprite": "1,1",
+    "cargoSpace": 2,
+    "cargoHex":"#000000",
+    "max-Limit":5,
+    "buildingReq": [
+      {
+        "type": "tileWithin",
+        "tileType": "tile-plains",
+        "distance": 0
+      },
+      {
+        "type": "buildingDistance",
+        "buildingType": "building-human-hub",
+        "distance": 3
+      },
+      {
+        "type": "buildingDistance",
+        "buildingType": "building-robot-hub",
+        "distance": 1,
+        "negate": true
+      }
+    ],
+    "buildingProsume": {
+    }
+  },
+  "human-hub": {
+    "level": 1,
+    "type": "human-hub",
+    "placementType": "hub",
+    "sprite": "res://",
+    "scalingSprite": "1,1",
+    "cargoSpace": 2,"cargoHex":"#000000",
+    "max-Limit":5,
+    "buildingReq": [
+      {
+        "type": "tileWithin",
+        "tileType": "tile-plains",
+        "distance": 0
+      },
+      {
+        "type": "buildingDistance",
+        "buildingType": "building-human-hub",
+        "distance": 1
+      },
+      {
+        "type": "buildingDistance",
+        "buildingType": "building-robot-hub",
+        "distance": 3,
+        "negate": true
+      }
+    ],
+    "buildingProsume": {
+    }
+  },
+  "labLv1": {
+    "level": 1,
+    "type": "Lab",
+    "placementType": "spoke",
+    "sprite": "res://",
+    "scalingSprite": "1,1",
+    "cargoSpace": 1,"cargoHex":"#000000",
+    "max-Limit":99,
+    "buildingReq": [
+      {
+        "type": "tileWithin",
+        "tileType": "tile-plains",
+        "distance": 0
+      },
+      {
+        "type": "buildingDistance",
+        "buildingType": "building-human-hub",
+        "distance": 1
+      },
+      {
+        "type": "buildingDistance",
+        "buildingType": "building-robot-hub",
+        "distance": 3,
+        "negate": true
+      }
+    ],
+    "buildingProsume": {
+      "resources": [
+        {
+          "type": "samples",
+          "function": "capacity",
+          "amount": 1
+        }
+      ]
+    }
+  },
+  "labLv2": {
+    "level": 2,
+    "type": "Lab",
+    "placementType": "spoke",
+    "sprite": "res://",
+    "scalingSprite": "1,1",
+    "cargoSpace": 1,"cargoHex":"#000000",
+    "max-Limit":99,
+    "upgradeOf": "labLv1",
+    "buildingReq": [
+      {
+        "type": "notBuildable"
+      }
+    ],
+    "buildingProsume": {
+      "resources": [
+        {
+          "type": "samples",
+          "function": "capacity",
+          "amount": 2
+        }
+      ]
+    }
+  },
+  "labLv3": {
+    "level": 3,
+    "type": "Lab",
+    "placementType": "spoke",
+    "sprite": "res://",
+    "scalingSprite": "1,1",
+    "cargoSpace": 1,"cargoHex":"#000000",
+    "max-Limit":99,
+    "upgradeOf": "labLv2",
+    "buildingReq": [
+      {
+        "type": "notBuildable"
+      }
+    ],
+    "buildingProsume": {
+      "resources": [
+        {
+          "type": "samples",
+          "function": "capacity",
+          "amount": 3
+        }
+      ]
+    }
+  },
+  "farmLv1": {
+    "level": 1,
+    "type": "farm",
+    "placementType": "spoke",
+    "sprite": "res://",
+    "scalingSprite": "1,1",
+    "cargoSpace": 1,"cargoHex":"#000000",
+    "max-Limit":99,
+    "buildingReq": [
+      {
+        "type": "tileWithin",
+        "tileType": "tile-plains",
+        "distance": 0
+      },
+      {
+        "type": "buildingDistance",
+        "buildingType": "building-human-hub",
+        "distance": 1
+      },
+      {
+        "type": "buildingDistance",
+        "buildingType": "building-robot-hub",
+        "distance": 3,
+        "negate": true
+      }
+    ],
+    "buildingProsume": {
+      "resources": [
+        {
+          "type": "food",
+          "function": "produce",
+          "amount": 1
+        }
+      ]
+    }
+  },
+  "farmLv2": {
+    "level": 2,
+    "type": "farm",
+    "placementType": "spoke",
+    "sprite": "res://",
+    "scalingSprite": "1,1",
+    "cargoSpace": 1,"cargoHex":"#000000",
+    "max-Limit":99,
+    "buildingReq": [
+      {
+        "type": "notBuildable"
+      }
+    ],
+    "upgradeOf": "farmLv1",
+    "buildingProsume": [
+      {
+        "type": "food",
+        "function": "produce",
+        "amount": 2
+      },
+      {
+        "type": "water",
+        "function": "consume",
+        "amount": 2
+      },
+      {
+        "type": "food",
+        "function": "capacity",
+        "amount": 2
+      },
+      {
+        "type": "food",
+        "function": "useCapacity",
+        "amount": 2
+      }
+    ]
+  },
+  "farmLv3": {
+    "level": 3,
+    "type": "farm",
+    "placementType": "spoke",
+    "sprite": "res://",
+    "scalingSprite": "1,1",
+    "cargoSpace": 1,"cargoHex":"#000000",
+    "max-Limit":99,
+    "buildingReq": [
+      {
+        "type": "notBuildable"
+      }
+    ],
+    "upgradeOf": "farmLv3",
+    "buildingProduce": {
+      "resources": [
+        {
+          "type": "food",
+          "function": "produce",
+          "amount": 2
+        },
+        {
+          "type": "water",
+          "function": "consume",
+          "amount": 2
+        },
+        {
+          "type": "food",
+          "function": "capacity",
+          "amount": 2
+        },
+        {
+          "type": "food",
+          "function": "useCapacity",
+          "amount": 2
+        }
+      ]
+    }
+  }
+}
