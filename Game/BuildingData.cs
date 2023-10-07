@@ -61,7 +61,7 @@ public class BuildingData : Node
 						Godot.Collections.Dictionary brd = (Godot.Collections.Dictionary)s[i];
 						BuildingRequirements br = new BuildingRequirements(
 							_type: brd.GetString("type"),
-							_tileType: brd.GetString("tileType"),
+							_targetType: brd.GetString("tileType"),
 							_distance: brd.GetInt("distance"),
 							_negate: brd.GetBool("negate")
 						);
@@ -161,24 +161,24 @@ public class BuildingDesign : Node
 public class BuildingRequirements : Node
 {
 	public BuildingRequirements(string _type,
-							string _tileType,
+							string _targetType,
 							int _distance,
 							bool _negate)
 	{
 		type = _type;
-		tileType = _tileType;
+		targetType = _targetType;
 		distance = _distance;
 		negate = _negate;
 	}
 	public override string ToString()
 	{
 		return "Type: " + type.ToString() +
-				"; tileType: " + tileType.ToString() +
+				"; tileType: " + targetType.ToString() +
 				"; distance: " + distance.ToString() +
 				"; negate: " + negate.ToString();
 	}
 	public string type { get; set; }
-	public string tileType { get; set; }
+	public string targetType { get; set; }
 	public int distance { get; set; }
 	public bool negate { get; set; }
 }
