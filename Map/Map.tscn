@@ -6,6 +6,7 @@
 
 [node name="Map" type="Node2D"]
 script = ExtResource( 1 )
+MapRadius = 3
 
 [node name="Icon" type="Sprite" parent="."]
 position = Vector2( 110, 164 )
@@ -13,5 +14,7 @@ texture = ExtResource( 2 )
 script = ExtResource( 3 )
 
 [node name="MapRoot" type="Node2D" parent="."]
+position = Vector2( 512, 300 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 512, 300 )

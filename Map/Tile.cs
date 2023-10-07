@@ -23,10 +23,26 @@ public class Tile : Node2D
 
 	private TileType _type = TileType.Plains;
 
-	private Polygon2D Sprite => GetNode<Polygon2D>("Polygon2D");
+	private Polygon2D background => GetNode<Polygon2D>("Polygon2D");
 
 	private void UpdateSprite() {
-		// TODO
+		switch (Type) {
+            case TileType.Plains:
+                background.Texture = ResourceLoader.Load("res://Graphics/Tiles/ice_plains.png") as Texture;
+                break;
+            case TileType.Mountain:
+                background.Texture = ResourceLoader.Load("res://Graphics/Tiles/ice_plains.png") as Texture;
+                break;
+            case TileType.Lake:
+                background.Texture = ResourceLoader.Load("res://Graphics/Tiles/methane lakes.png") as Texture;
+                break;
+            case TileType.Crater:
+                background.Texture = ResourceLoader.Load("res://Graphics/Tiles/craters.png") as Texture;
+                break;
+            case TileType.Cryovolcano:
+                background.Texture = ResourceLoader.Load("res://Graphics/Tiles/ice_plains.png") as Texture;
+                break;
+        }
 	}
 
 	// Called when the node enters the scene tree for the first time.
