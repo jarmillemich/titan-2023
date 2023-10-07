@@ -17,6 +17,7 @@ run/main_scene="res://Map/Map.tscn"
 
 CargoQueue="*res://Game/CargoQueue.cs"
 Resources="*res://Game/Resources.cs"
+GameState="*res://Game/GameState.cs"
 
 [gui]
 
@@ -32,4 +33,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 environment/default_environment="res://default_env.tres"

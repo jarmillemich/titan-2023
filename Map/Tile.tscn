@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Map/Tile.cs" type="Script" id=1]
-[ext_resource path="res://Graphics/Tiles/craters.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Tiles/ice_plains.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Tiles/fow.png" type="Texture" id=3]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="Gradient" id=2]
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+width = 80
 
 [node name="Tile" type="Node2D"]
 script = ExtResource( 1 )
@@ -11,9 +20,23 @@ texture = ExtResource( 2 )
 polygon = PoolVector2Array( 0, 50, 43.3, 25, 43.3, -25, 0, -50, -43.3, -25, -43.3, 25 )
 uv = PoolVector2Array( 333.898, 728.281, 629.931, 557.361, 629.931, 215.521, 333.898, 44.601, 37.8651, 215.521, 37.8651, 557.361 )
 
+[node name="Fog" type="Sprite" parent="."]
+scale = Vector2( 0.140678, 0.140977 )
+texture = ExtResource( 3 )
+
+[node name="ScoutButton" type="TextureButton" parent="."]
+margin_left = -40.0
+margin_top = -40.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 80 )
+theme = SubResource( 1 )
+texture_hover = SubResource( 3 )
+expand = true
+
 [node name="Line2D" type="Line2D" parent="."]
 points = PoolVector2Array( 0, 50, 43.3, 25, 43.3, -25, 0, -50, -43.3, -25, -43.3, 25, 0, 50, 43.3, 25 )
 width = 4.0
 default_color = Color( 0, 0, 0, 1 )
 
-[node name="Fog" type="Sprite" parent="."]
+[connection signal="pressed" from="ScoutButton" to="." method="_on_ScoutButton_pressed"]

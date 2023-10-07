@@ -6,7 +6,7 @@ using System.Linq;
 [Tool]
 public class Map : Node2D
 {
-[Export(PropertyHint.Range, "0,16,")]
+	[Export(PropertyHint.Range, "0,16,")]
 	private byte MapRadius {
 		get => _mapRadius;
 		set {
@@ -39,14 +39,23 @@ public class Map : Node2D
 		GenerateMap();
 
 		GD.Print("Map ready");
+
+		gameState.Connect(nameof(GameState.OnPhaseChanged), this, nameof(OnPhaseChanged));
+		gameState.Phase = Phase.Income;
 	}
 
-	private static readonly PackedScene Tile = ResourceLoader.Load("res://Map/Tile.tscn") as PackedScene ?? throw new ArgumentNullException("No Tile Scene");
+	private void OnPhaseChanged() {
+		GD.Print("New phase!");
+	}
+
+	private static readonly PackedScene ConTile = ResourceLoader.Load("res://Map/Tile.tscn") as PackedScene ?? throw new ArgumentNullException("No Tile Scene");
 
 	private Node2D Root => GetNode<Node2D>("MapRoot");
 	private Camera2D Camera => GetNode<Camera2D>("Camera2D");
 
-private const float sideLength = 50f;
+	private GameState gameState => GetNode<GameState>("/root/GameState");
+
+	private const float sideLength = 50f;
 
 	private Godot.Collections.Dictionary<long, Tile> Tiles = new Godot.Collections.Dictionary<long, Tile>();
 
@@ -99,7 +108,7 @@ private const float sideLength = 50f;
 	}
 
 	private Tile AddTile(HexPoint at) {
-		var tile = Tile.Instance<Tile>();
+		var tile = ConTile.Instance<Tile>();
 					
 		tile.Position = at.ToVector2(sideLength);
 
@@ -116,7 +125,14 @@ private const float sideLength = 50f;
 
 		// GD.Print("Adding tile at", at, Tiles.ContainsKey(at));
 
+		tile.Connect(nameof(Tile.OnScout), this, nameof(onScout), new Godot.Collections.Array(at));
+
 		return tile;
+	}
+
+	private void onScout(HexPoint tile) {
+		GD.Print("Scouting", tile);
+		Reveal(tile);
 	}
 
 	private void GenerateCluster(TileType type, int size, Random rand) {
@@ -165,7 +181,13 @@ private const float sideLength = 50f;
 				return;
 			}
 		}
-	
+	}
 
+	public void Reveal(HexPoint center) {
+		Tiles[center].Foggy = false;
+
+		foreach (var dir in HexPoint.Directions) {
+			Tiles[center + dir].Foggy = false;
+		}
 	}
 }
