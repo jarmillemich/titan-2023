@@ -72,8 +72,8 @@ public class BuildingData : Node
 					specs.buildingRequirements = buildingRequirements;
 
 					//Design
-					BuildingDesign design = new BuildingDesign(_spritePath: keyValues.GetString("spritePath"),
-																_spriteScaling: keyValues.GetString("spriteScaling"));
+					specs.buildingDesign = new BuildingDesign(_spritePath: keyValues.GetString("spritePath"),
+																_spriteScaling: keyValues.GetFloat("spriteScaling"));
 					//BuildingProsume
 					List<BuildingProsume> buildingProsumes = new List<BuildingProsume>();
 					s = keyValues["buildingReq"] as Godot.Collections.Array;
@@ -150,13 +150,13 @@ public class BuildingSpecs : Node
 public class BuildingDesign : Node
 {
 	public BuildingDesign(string _spritePath,
-							string _spriteScaling)
+							float _spriteScaling)
 	{
 		spritePath = _spritePath;
 		spriteScaling = _spriteScaling;
 	}
 	public string spritePath { get; set; }
-	public string spriteScaling { get; set; }
+	public float spriteScaling { get; set; }
 }
 public class BuildingRequirements : Node
 {

@@ -33,6 +33,8 @@ public class Building : Node2D
 
 		var spec = buildingData[_type];
 
+		GD.Print("what", spec.buildingDesign);
+
 		var texture = (Texture)GD.Load(spec.buildingDesign.spritePath);
 		float factor = texture.GetSize().Length();
 		var sprite = (Sprite)GetNode("Sprite");
