@@ -28,10 +28,10 @@ public class UI_Event_Handler : Node
 {
 	VBoxContainer preview = GetNode<VBoxContainer>("%BuildingPreview");
 	preview.Visible = true;
-	preview.GetNode<RichTextLabel>("%Description").Text = "Building Type: " + BuildingType + " Building Level: " + BuildingLevel;
-	preview.GetNode<TextureRect>("")
+//	preview.GetNode<RichTextLabel>("%Description").Text = "Building Type: " + BuildingType + " Building Level: " + BuildingLevel;
+//	preview.GetNode<TextureRect>("")
 
-	buildings
+//	buildings
 }
 
 
@@ -40,142 +40,4 @@ private void ClosePreview()
 	GetNode<VBoxContainer>("%BuildingPreview").Visible = false;
 }
 
-}
-
-
-private void PreviewBuilding(String extra_arg_0)
-{
-	// Replace with function body.
-}
-
-
-private void ScheduleBuilding(String extra_arg_0)
-{
-	// Replace with function body.
-}
-
-
-private void PreviewBuilding(String extra_arg_0)
-{
-	// Replace with function body.
-}
-
-
-private void ScheduleBuilding(String extra_arg_0)
-{
-	// Replace with function body.
-}
-
-
-private void PreviewBuilding(String extra_arg_0)
-{
-	// Replace with function body.
-}
-
-
-private void ScheduleBuilding(String extra_arg_0)
-{
-	// Replace with function body.
-}
-
-
-private void PreviewBuilding(String extra_arg_0)
-{
-	// Replace with function body.
-}
-
-
-private void ScheduleBuilding(String extra_arg_0)
-{
-	// Replace with function body.
-}
-
-
-private void PreviewBuilding(String extra_arg_0)
-{
-	// Replace with function body.
-}
-
-
-private void ScheduleBuilding(String extra_arg_0)
-{
-	// Replace with function body.
-}
-
-
-private void PreviewBuilding(String extra_arg_0)
-{
-	// Replace with function body.
-}
-
-
-private void ScheduleBuilding(String extra_arg_0)
-{
-	// Replace with function body.
-}
-
-
-private void PreviewBuilding(String extra_arg_0)
-{
-	// Replace with function body.
-}
-
-
-private void ScheduleBuilding(String extra_arg_0)
-{
-	// Replace with function body.
-}
-
-
-private void PreviewBuilding(String extra_arg_0)
-{
-	// Replace with function body.
-}
-
-
-private void ScheduleBuilding(String extra_arg_0)
-{
-	// Replace with function body.
-}
-
-
-private void PreviewBuilding(String extra_arg_0)
-{
-	// Replace with function body.
-}
-
-
-private void ScheduleBuilding(String extra_arg_0)
-{
-	// Replace with function body.
-}
-
-
-private void PreviewBuilding(String extra_arg_0)
-{
-	// Replace with function body.
-}
-
-
-private void ScheduleBuilding(String extra_arg_0)
-{
-	// Replace with function body.
-}
-
-
-private void PreviewBuilding(String extra_arg_0)
-{
-	// Replace with function body.
-}
-
-
-private void ScheduleBuilding(String extra_arg_0)
-{
-	// Replace with function body.
-}
-
-
-private void PreviewBuilding(String extra_arg_0)
-{
-	// Replace with function body.
 }
