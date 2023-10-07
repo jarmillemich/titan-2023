@@ -173,7 +173,7 @@
     "buildingProsume": {
       "resources": [
         {
-          "type": "food",
+          "type": "Food",
           "function": "produce",
           "amount": 1
         }
@@ -197,7 +197,7 @@
     "upgradeOf": "farmLv1",
     "buildingProsume": [
       {
-        "type": "food",
+        "type": "Food",
         "function": "produce",
         "amount": 2
       },
@@ -207,12 +207,12 @@
         "amount": 2
       },
       {
-        "type": "food",
+        "type": "Food",
         "function": "provideStorage",
         "amount": 2
       },
       {
-        "type": "food",
+        "type": "Food",
         "function": "useCapacity",
         "amount": 2
       }
@@ -236,7 +236,7 @@
     "buildingProduce": {
       "resources": [
         {
-          "type": "food",
+          "type": "Food",
           "function": "produce",
           "amount": 2
         },
@@ -246,12 +246,12 @@
           "amount": 2
         },
         {
-          "type": "food",
+          "type": "Food",
           "function": "capacity",
           "amount": 2
         },
         {
-          "type": "food",
+          "type": "Food",
           "function": "useCapacity",
           "amount": 2
         }
