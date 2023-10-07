@@ -191,8 +191,6 @@ public class Map : Node2D
 			int j = rand.Next(i + 1);
 			(candidates[j], candidates[i]) = (candidates[i], candidates[j]);
 		}
-			(candidates[j], candidates[i]) = (candidates[i], candidates[j]);
-		}
 
 		// Try until we find one that works
 		foreach (var candidate in candidates)
@@ -261,14 +259,6 @@ public class Map : Node2D
 		// TODO Call the UI
 		
 	}
-
-	private void OnStartBuild(HexPoint tile) {
-		var available = GetBuildingsAvailableForTile(tile);
-		
-		// TODO Call the UI
-		
-	}
-
 	private bool CanBuild(HexPoint tile, BuildingSpecs spec)
 	{
 		return spec.buildingRequirements.All(req => IsRequirementSatisfied(tile, req));
