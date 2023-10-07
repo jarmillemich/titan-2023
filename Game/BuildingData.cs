@@ -61,7 +61,7 @@ public class BuildingData : Node
                         Godot.Collections.Dictionary brd = (Godot.Collections.Dictionary)s[i];
                         BuildingRequirements br = new BuildingRequirements(
                             _type: brd.GetString("type"),
-                            _tileType: brd.GetString("tileType"),
+                            _targetType: brd.GetString("tileType"),
                             _distance: brd.GetInt("distance"),
                             _negate: brd.GetBool("negate")
                         );
@@ -72,8 +72,8 @@ public class BuildingData : Node
                     specs.buildingRequirements = buildingRequirements;
 
                     //Design
-                    BuildingDesign design = new BuildingDesign(_spritePath: keyValues.GetString("spritePath"),
-                                                                _spriteScaling: keyValues.GetString("spriteScaling"));
+                    specs.buildingDesign = new BuildingDesign(_spritePath: keyValues.GetString("spritePath"),
+                                                                _spriteScaling: keyValues.GetFloat("spriteScaling"));
                     //BuildingProsume
                     List<BuildingProsume> buildingProsumes = new List<BuildingProsume>();
                     s = keyValues["buildingReq"] as Godot.Collections.Array;
@@ -150,35 +150,35 @@ public class BuildingSpecs : Node
 public class BuildingDesign : Node
 {
     public BuildingDesign(string _spritePath,
-                            string _spriteScaling)
+                            float _spriteScaling)
     {
         spritePath = _spritePath;
         spriteScaling = _spriteScaling;
     }
     public string spritePath { get; set; }
-    public string spriteScaling { get; set; }
+    public float spriteScaling { get; set; }
 }
 public class BuildingRequirements : Node
 {
     public BuildingRequirements(string _type,
-                            string _tileType,
+                            string _targetType,
                             int _distance,
                             bool _negate)
     {
         type = _type;
-        tileType = _tileType;
+        targetType = _targetType;
         distance = _distance;
         negate = _negate;
     }
     public override string ToString()
     {
         return "Type: " + type.ToString() +
-                "; tileType: " + tileType.ToString() +
+                "; tileType: " + targetType.ToString() +
                 "; distance: " + distance.ToString() +
                 "; negate: " + negate.ToString();
     }
     public string type { get; set; }
-    public string tileType { get; set; }
+    public string targetType { get; set; }
     public int distance { get; set; }
     public bool negate { get; set; }
 }

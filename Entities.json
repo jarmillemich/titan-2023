@@ -3,25 +3,25 @@
     "level": 1,
     "type": "robot-hub",
     "placementType": "hub",
-    "sprite": "res://",
-    "scalingSprite": "1,1",
+    "spritePath": "res://Graphics/Buildings/robot hub - low.png",
+    "scalingSprite": 1,
     "cargoSpace": 2,
     "cargoHex": "#000000",
     "maxLimit": 5,
     "buildingReq": [
       {
         "type": "tileWithin",
-        "tileType": "tile-plains",
+        "targetType": "tile-plains",
         "distance": 0
       },
       {
         "type": "buildingDistance",
-        "buildingType": "building-human-hub",
+        "targetType": "building-human-hub",
         "distance": 3
       },
       {
         "type": "buildingDistance",
-        "buildingType": "building-robot-hub",
+        "targetType": "building-robot-hub",
         "distance": 1,
         "negate": true
       }
@@ -31,25 +31,25 @@
     "level": 1,
     "type": "human-hub",
     "placementType": "hub",
-    "sprite": "res://",
-    "scalingSprite": "1,1",
+    "spritePath": "res://Graphics/Buildings/Human Hub - low.png",
+    "scalingSprite": 1,
     "cargoSpace": 2,
     "cargoHex": "#000000",
     "maxLimit": 5,
     "buildingReq": [
       {
         "type": "tileWithin",
-        "tileType": "tile-plains",
+        "targetType": "tile-plains",
         "distance": 0
       },
       {
         "type": "buildingDistance",
-        "buildingType": "building-human-hub",
+        "targetType": "building-human-hub",
         "distance": 1
       },
       {
         "type": "buildingDistance",
-        "buildingType": "building-robot-hub",
+        "targetType": "building-robot-hub",
         "distance": 3,
         "negate": true
       }
@@ -60,25 +60,25 @@
     "level": 1,
     "type": "Lab",
     "placementType": "spoke",
-    "sprite": "res://",
-    "scalingSprite": "1,1",
+    "spritePath": "res://Graphics/Buildings/Lab T1 - low.png",
+    "scalingSprite": 1,
     "cargoSpace": 1,
     "cargoHex": "#000000",
     "maxLimit": 99,
     "buildingReq": [
       {
         "type": "tileWithin",
-        "tileType": "tile-plains",
+        "targetType": "tile-plains",
         "distance": 0
       },
       {
         "type": "buildingDistance",
-        "buildingType": "building-human-hub",
+        "targetType": "building-human-hub",
         "distance": 1
       },
       {
         "type": "buildingDistance",
-        "buildingType": "building-robot-hub",
+        "targetType": "building-robot-hub",
         "distance": 3,
         "negate": true
       }
@@ -97,8 +97,8 @@
     "level": 2,
     "type": "Lab",
     "placementType": "spoke",
-    "sprite": "res://",
-    "scalingSprite": "1,1",
+    "spritePath": "res://Graphics/Buildings/Lab T2 - low.png",
+    "scalingSprite": 1,
     "cargoSpace": 1,
     "cargoHex": "#000000",
     "maxLimit": 99,
@@ -122,8 +122,8 @@
     "level": 3,
     "type": "Lab",
     "placementType": "spoke",
-    "sprite": "res://",
-    "scalingSprite": "1,1",
+    "spritePath": "res://Graphics/Buildings/Lab T3 - low.png",
+    "scalingSprite": 1,
     "cargoSpace": 1,
     "cargoHex": "#000000",
     "maxLimit": 99,
@@ -147,25 +147,25 @@
     "level": 1,
     "type": "farm",
     "placementType": "spoke",
-    "sprite": "res://",
-    "scalingSprite": "1,1",
+    "spritePath": "res://Graphics/Buildings/farm T1 - low.png",
+    "scalingSprite": 1,
     "cargoSpace": 1,
     "cargoHex": "#000000",
     "maxLimit": 99,
     "buildingReq": [
       {
         "type": "tileWithin",
-        "tileType": "tile-plains",
+        "targetType": "tile-plains",
         "distance": 0
       },
       {
         "type": "buildingDistance",
-        "buildingType": "building-human-hub",
+        "targetType": "building-human-hub",
         "distance": 1
       },
       {
         "type": "buildingDistance",
-        "buildingType": "building-robot-hub",
+        "targetType": "building-robot-hub",
         "distance": 3,
         "negate": true
       }
@@ -184,8 +184,8 @@
     "level": 2,
     "type": "farm",
     "placementType": "spoke",
-    "sprite": "res://",
-    "scalingSprite": "1,1",
+    "spritePath": "res://Graphics/Buildings/farm T2 - low.png",
+    "scalingSprite": 1,
     "cargoSpace": 1,
     "cargoHex": "#000000",
     "maxLimit": 99,
@@ -222,8 +222,8 @@
     "level": 3,
     "type": "farm",
     "placementType": "spoke",
-    "sprite": "res://",
-    "scalingSprite": "1,1",
+    "spritePath": "res://Graphics/Buildings/farm T3 - low.png",
+    "scalingSprite": 1,
     "cargoSpace": 1,
     "cargoHex": "#000000",
     "maxLimit": 99,
