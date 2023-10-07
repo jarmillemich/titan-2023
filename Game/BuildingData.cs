@@ -13,6 +13,8 @@ public class BuildingData : Node
     }
     public Godot.Collections.Dictionary<string, BuildingSpecs> buildings = new Godot.Collections.Dictionary<string, BuildingSpecs>();
     
+    public Godot.Collections.Dictionary<string,int> builtBuilding = new Godot.Collections.Dictionary<string, int>();
+    public Godot.Collections.Dictionary<string,int> pendingBuilding = new Godot.Collections.Dictionary<string, int>();
     public void loadBuildingSpecs()
     {
         string path = "Entities.json";
