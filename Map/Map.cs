@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 [Tool]
@@ -84,12 +85,17 @@ private const float sideLength = 50f;
 				for (int sideIndex = 0; sideIndex < radius; sideIndex++) {
 					HexPoint at = zero + HexPoint.Directions[i] * radius + HexPoint.Directions[(i + 2) % 6] * sideIndex;
 					var tile = AddTile(at);
-
-					// XXX
-					tile.Type = (TileType)rand.Next(0, 5);
+					tile.Type = TileType.Plains;
+					tile.Foggy = true;
 				}
 			}
 		}
+
+		// Generate tiles
+		for (int i = 0; i < 4; i++) GenerateCluster(TileType.Mountain, 4, rand);
+		for (int i = 0; i < 4; i++) GenerateCluster(TileType.Lake, 4, rand);
+		for (int i = 0; i < 3; i++) GenerateCluster(TileType.Crater, 4, rand);
+		for (int i = 0; i < 2; i++) GenerateCluster(TileType.Cryovolcano, 2, rand);
 	}
 
 	private Tile AddTile(HexPoint at) {
@@ -111,5 +117,55 @@ private const float sideLength = 50f;
 		// GD.Print("Adding tile at", at, Tiles.ContainsKey(at));
 
 		return tile;
+	}
+
+	private void GenerateCluster(TileType type, int size, Random rand) {
+		// Pick a random plains tile
+		var candidates = Tiles.Keys.Where(t => Tiles[t].Type == TileType.Plains).ToList();
+
+		// Shuffle a bit (fisher yates)
+		// TODO vet this
+		for (int i = candidates.Count - 1; i > 0; i--) {
+			int j = rand.Next(i + 1);
+            (candidates[j], candidates[i]) = (candidates[i], candidates[j]);
+        }
+
+        // Try until we find one that works
+        foreach (var candidate in candidates) {
+			//GD.Print("Checking candidate", (HexPoint)candidate);
+			// Check if it's surrounded by plains
+			var applicable = new List<HexPoint>() {
+				(HexPoint)candidate
+			};
+			for (int neighborIdx = 0; neighborIdx < 6; neighborIdx++) {
+				var neighbor = (HexPoint)candidate + HexPoint.Directions[neighborIdx];
+				if (!Tiles.ContainsKey(neighbor) || Tiles[neighbor].Type != TileType.Plains) continue;
+
+				applicable.Add(neighbor);
+			}
+
+			//GD.Print("  Got ", applicable.Count);
+
+			if (applicable.Count >= size) {
+				//GD.Print("  That was it");
+
+				// Put it here
+				// Shuffle first for fun (fisher yates again)
+				for (int i = applicable.Count - 1; i > 0; i--) {
+					int j = rand.Next(i + 1);
+                    (applicable[j], applicable[i]) = (applicable[i], applicable[j]);
+                }
+
+                // Take the first n
+                applicable = applicable.Take(size).ToList();
+				foreach (var coord in applicable) {
+					Tiles[coord].Type = type;
+				}
+
+				return;
+			}
+		}
+	
+
 	}
 }

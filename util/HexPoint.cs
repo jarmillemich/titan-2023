@@ -115,4 +115,14 @@ public class HexPoint : Godot.Object, IEquatable<HexPoint> {
         return ret;
     }
 
+    /// <summary>
+    /// Convert from a long back to a HexPoint
+    /// </summary>
+    public static explicit operator HexPoint(long point) {
+        var q = (int)(point >> 32);
+        var r = (int)(point & 0xFFFFFFFF);
+        var s = -q - r;
+        return new HexPoint(q, r, s);
+    }
+
 }

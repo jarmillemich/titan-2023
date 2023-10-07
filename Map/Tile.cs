@@ -21,9 +21,21 @@ public class Tile : Node2D
 		}
 	}
 
+	[Export]
+	public bool Foggy {
+		get => _foggy;
+		set {
+			_foggy = value;
+			if (_isReady) UpdateSprite();
+		}
+	}
+
+	private bool _foggy = true;
+
 	private TileType _type = TileType.Plains;
 
 	private Polygon2D background => GetNode<Polygon2D>("Polygon2D");
+	private Sprite fog => GetNode<Sprite>("Fog");
 
 	private void UpdateSprite() {
 		switch (Type) {
@@ -31,7 +43,7 @@ public class Tile : Node2D
                 background.Texture = ResourceLoader.Load("res://Graphics/Tiles/ice_plains.png") as Texture;
                 break;
             case TileType.Mountain:
-                background.Texture = ResourceLoader.Load("res://Graphics/Tiles/ice_plains.png") as Texture;
+                background.Texture = ResourceLoader.Load("res://Graphics/Tiles/mountains.png") as Texture;
                 break;
             case TileType.Lake:
                 background.Texture = ResourceLoader.Load("res://Graphics/Tiles/methane lakes.png") as Texture;
@@ -40,9 +52,11 @@ public class Tile : Node2D
                 background.Texture = ResourceLoader.Load("res://Graphics/Tiles/craters.png") as Texture;
                 break;
             case TileType.Cryovolcano:
-                background.Texture = ResourceLoader.Load("res://Graphics/Tiles/ice_plains.png") as Texture;
+                background.Texture = ResourceLoader.Load("res://Graphics/Tiles/cryovolcano.png") as Texture;
                 break;
         }
+
+		fog.Visible = _foggy;
 	}
 
 	// Called when the node enters the scene tree for the first time.
