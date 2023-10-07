@@ -32,10 +32,13 @@ public class Map : Node2D
 
 	private bool _isReady = false;
 
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		_isReady = true;
+		BuildingData d  = new BuildingData();
+		d.loadBuildingSpecs();
 		GenerateMap();
 
 		GD.Print("Map ready");

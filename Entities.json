@@ -6,8 +6,8 @@
     "sprite": "res://",
     "scalingSprite": "1,1",
     "cargoSpace": 2,
-    "cargoHex":"#000000",
-    "maxLimit":5,
+    "cargoHex": "#000000",
+    "maxLimit": 5,
     "buildingReq": [
       {
         "type": "tileWithin",
@@ -25,9 +25,7 @@
         "distance": 1,
         "negate": true
       }
-    ],
-    "buildingProsume": {
-    }
+    ]
   },
   "human-hub": {
     "level": 1,
@@ -35,8 +33,9 @@
     "placementType": "hub",
     "sprite": "res://",
     "scalingSprite": "1,1",
-    "cargoSpace": 2,"cargoHex":"#000000",
-    "maxLimit":5,
+    "cargoSpace": 2,
+    "cargoHex": "#000000",
+    "maxLimit": 5,
     "buildingReq": [
       {
         "type": "tileWithin",
@@ -55,8 +54,7 @@
         "negate": true
       }
     ],
-    "buildingProsume": {
-    }
+    "buildingProsume": {}
   },
   "labLv1": {
     "level": 1,
@@ -64,8 +62,9 @@
     "placementType": "spoke",
     "sprite": "res://",
     "scalingSprite": "1,1",
-    "cargoSpace": 1,"cargoHex":"#000000",
-    "maxLimit":99,
+    "cargoSpace": 1,
+    "cargoHex": "#000000",
+    "maxLimit": 99,
     "buildingReq": [
       {
         "type": "tileWithin",
@@ -100,8 +99,9 @@
     "placementType": "spoke",
     "sprite": "res://",
     "scalingSprite": "1,1",
-    "cargoSpace": 1,"cargoHex":"#000000",
-    "maxLimit":99,
+    "cargoSpace": 1,
+    "cargoHex": "#000000",
+    "maxLimit": 99,
     "upgradeOf": "labLv1",
     "buildingReq": [
       {
@@ -124,8 +124,9 @@
     "placementType": "spoke",
     "sprite": "res://",
     "scalingSprite": "1,1",
-    "cargoSpace": 1,"cargoHex":"#000000",
-    "maxLimit":99,
+    "cargoSpace": 1,
+    "cargoHex": "#000000",
+    "maxLimit": 99,
     "upgradeOf": "labLv2",
     "buildingReq": [
       {
@@ -148,8 +149,9 @@
     "placementType": "spoke",
     "sprite": "res://",
     "scalingSprite": "1,1",
-    "cargoSpace": 1,"cargoHex":"#000000",
-    "maxLimit":99,
+    "cargoSpace": 1,
+    "cargoHex": "#000000",
+    "maxLimit": 99,
     "buildingReq": [
       {
         "type": "tileWithin",
@@ -184,8 +186,9 @@
     "placementType": "spoke",
     "sprite": "res://",
     "scalingSprite": "1,1",
-    "cargoSpace": 1,"cargoHex":"#000000",
-    "maxLimit":99,
+    "cargoSpace": 1,
+    "cargoHex": "#000000",
+    "maxLimit": 99,
     "buildingReq": [
       {
         "type": "notBuildable"
@@ -221,8 +224,9 @@
     "placementType": "spoke",
     "sprite": "res://",
     "scalingSprite": "1,1",
-    "cargoSpace": 1,"cargoHex":"#000000",
-    "maxLimit":99,
+    "cargoSpace": 1,
+    "cargoHex": "#000000",
+    "maxLimit": 99,
     "buildingReq": [
       {
         "type": "notBuildable"
