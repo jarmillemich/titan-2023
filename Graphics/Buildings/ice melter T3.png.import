@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/ice melter T3.png-67c8025a0bfc75c31ec28370c7fb2c41.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
+source_file="res://Graphics/Buildings/ice melter T3.png"
+dest_files=[ "res://.import/ice melter T3.png-67c8025a0bfc75c31ec28370c7fb2c41.stex" ]
 
 [params]
 
