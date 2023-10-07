@@ -137,13 +137,11 @@ public class Map : Node2D
 
 		Root.AddChild(tile);
 
-		// GD.Print("Adding tile at", at, Tiles.ContainsKey(at));
 		if (Tiles.ContainsKey(at)) throw new InvalidOperationException($"Tile already exists at {at}");
 		Tiles.Add(at, tile);
 
-		// GD.Print("Adding tile at", at, Tiles.ContainsKey(at));
-
 		tile.Connect(nameof(Tile.OnScout), this, nameof(onScout), new Godot.Collections.Array(at));
+		tile.Connect(nameof(Tile.OnBuild), this, nameof(OnStartBuild), new Godot.Collections.Array(at));
 
 		return tile;
 	}
@@ -164,9 +162,8 @@ public class Map : Node2D
 			(candidates[j], candidates[i]) = (candidates[i], candidates[j]);
 		}
 
-		// Try until we find one that works
-		foreach (var candidate in candidates) {
-			//GD.Print("Checking candidate", (HexPoint)candidate);
+        // Try until we find one that works
+        foreach (var candidate in candidates) {
 			// Check if it's surrounded by plains
 			var applicable = new List<HexPoint>() {
 				(HexPoint)candidate
@@ -178,10 +175,8 @@ public class Map : Node2D
 				applicable.Add(neighbor);
 			}
 
-			//GD.Print("  Got ", applicable.Count);
 
 			if (applicable.Count >= size) {
-				//GD.Print("  That was it");
 
 				// Put it here
 				// Shuffle first for fun (fisher yates again)
@@ -217,6 +212,13 @@ public class Map : Node2D
 		var available = buildingData.Keys;
 
 		return buildingData.Keys.Where(k => CanBuild(tile, buildingData[k])).ToList();
+	}
+
+	private void OnStartBuild(HexPoint tile) {
+		var available = GetBuildingsAvailableForTile(tile);
+		
+		// TODO Call the UI
+		
 	}
 
 	private bool CanBuild(HexPoint tile, BuildingSpecs spec) {
