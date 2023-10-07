@@ -54,7 +54,7 @@ public class Tile : Node2D
                 background.Texture = ResourceLoader.Load("res://Graphics/Tiles/mountains.png") as Texture;
                 break;
             case TileType.Lake:
-                background.Texture = ResourceLoader.Load("res://Graphics/Tiles/methane lakes.png") as Texture;
+                background.Texture = ResourceLoader.Load("res://Graphics/Tiles/methane lakes 2.png") as Texture;
                 break;
             case TileType.Crater:
                 background.Texture = ResourceLoader.Load("res://Graphics/Tiles/craters.png") as Texture;

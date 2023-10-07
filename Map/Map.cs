@@ -187,6 +187,9 @@ public class Map : Node2D
 		Tiles[center].Foggy = false;
 
 		foreach (var dir in HexPoint.Directions) {
+			// Off the map or similar
+			if (!Tiles.ContainsKey(center + dir)) continue;
+
 			Tiles[center + dir].Foggy = false;
 		}
 	}
