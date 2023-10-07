@@ -3,49 +3,41 @@ using System;
 
 public partial class PanCamera : Camera2D
 {
-	private Vector2 LastMousePosition;
-	private bool Dragging = false;
-
-	const float MinZoom = 0.5f;
-	const float MaxZoom = 5f;
-	const float ZoomFactor = 1.25f;
+	private Vector2 Velocity = Vector2.Zero;
 
 	public override void _UnhandledInput(InputEvent evt)
 	{
-		if (evt is InputEventMouseButton mouseEvent) {
-			// Left hold to drag
-			if (mouseEvent.ButtonIndex == (int)ButtonList.Left) {
-				if (mouseEvent.IsPressed()) {
-					LastMousePosition = mouseEvent.Position;
-					Dragging = true;
-				} else {
-					Dragging = false;
-				}
-			}
+        if (evt is InputEventKey key) {
+            int speed = 250;
 
-			// Scroll to zoom
-			// if (mouseEvent.IsPressed()) {
-			// 	if (mouseEvent.ButtonIndex == (int)ButtonList.WheelDown) {
-			// 		Zoom *= ZoomFactor;
+            // Use WASD to move around
+            if (key.IsPressed() && !key.IsEcho()) {
+                if (key.Scancode == (int)KeyList.W) {
+                    Velocity += new Vector2(0, -speed);
+                } else if (key.Scancode == (int)KeyList.A) {
+                    Velocity += new Vector2(-speed, 0);
+                } else if (key.Scancode == (int)KeyList.S) {
+                    Velocity += new Vector2(0, speed);
+                } else if (key.Scancode == (int)KeyList.D) {
+                    Velocity += new Vector2(speed, 0);
+                }
+            } else if (!key.IsPressed()) {
+                if (key.Scancode == (int)KeyList.W) {
+                    Velocity -= new Vector2(0, -speed);
+                } else if (key.Scancode == (int)KeyList.A) {
+                    Velocity -= new Vector2(-speed, 0);
+                } else if (key.Scancode == (int)KeyList.S) {
+                    Velocity -= new Vector2(0, speed);
+                } else if (key.Scancode == (int)KeyList.D) {
+                    Velocity -= new Vector2(speed, 0);
+                }
+            }
+        }
 
-			// 		if (Zoom.x > MaxZoom) {
-			// 			Zoom = new Vector2(MaxZoom, MaxZoom);
-			// 		} 
-			// 	} else if (mouseEvent.ButtonIndex == (int)ButtonList.WheelUp) {
-			// 		Zoom /= ZoomFactor;
-
-			// 		if (Zoom.x < MinZoom) {
-			// 			Zoom = new Vector2(MinZoom, MinZoom);
-			// 		}
-			// 	}
-			// }
-
-			// TODO zoom to cursor, maybe
-
-			
-		} else if (Dragging && evt is InputEventMouseMotion motionEvent) {
-			Position += (LastMousePosition - motionEvent.Position) * Zoom;
-			LastMousePosition = motionEvent.Position;
-		}
 	}
+
+    public override void _Process(float delta)
+    {
+        Position += Velocity * delta;
+    }
 }
