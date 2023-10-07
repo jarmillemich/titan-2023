@@ -12,7 +12,10 @@ config_version=4
 
 config/name="Titan2023"
 run/main_scene="res://Map/Map.tscn"
-config/icon="res://icon.png"
+
+[autoload]
+
+Resources="*res://Game/Resources.tscn"
 
 [gui]
 
