@@ -30,12 +30,20 @@ public class Tile : Node2D
 		}
 	}
 
+	[Signal]
+	public delegate void OnScout();
+
+	public void _on_ScoutButton_pressed() {
+		EmitSignal(nameof(OnScout));
+	}
+
 	private bool _foggy = true;
 
 	private TileType _type = TileType.Plains;
 
 	private Polygon2D background => GetNode<Polygon2D>("Polygon2D");
 	private Sprite fog => GetNode<Sprite>("Fog");
+	private TextureButton scoutButton => GetNode<TextureButton>("ScoutButton");
 
 	private void UpdateSprite() {
 		switch (Type) {
@@ -46,7 +54,7 @@ public class Tile : Node2D
                 background.Texture = ResourceLoader.Load("res://Graphics/Tiles/mountains.png") as Texture;
                 break;
             case TileType.Lake:
-                background.Texture = ResourceLoader.Load("res://Graphics/Tiles/methane lakes.png") as Texture;
+                background.Texture = ResourceLoader.Load("res://Graphics/Tiles/methane lakes 2.png") as Texture;
                 break;
             case TileType.Crater:
                 background.Texture = ResourceLoader.Load("res://Graphics/Tiles/craters.png") as Texture;
@@ -56,7 +64,8 @@ public class Tile : Node2D
                 break;
         }
 
-		fog.Visible = _foggy;
+		scoutButton.Visible = fog.Visible = _foggy;
+		
 	}
 
 	// Called when the node enters the scene tree for the first time.
