@@ -30,11 +30,27 @@ public class Tile : Node2D
 		}
 	}
 
+	public bool HasRover { get; set; }
+
 	[Signal]
 	public delegate void OnScout();
+	
+	[Signal]
+	public delegate void OnBuild();
+
+	[Signal]
+	public delegate void OnSelectRover();
 
 	public void _on_ScoutButton_pressed() {
 		EmitSignal(nameof(OnScout));
+	}
+
+	public void _on_BuildButton_pressed() {
+		EmitSignal(nameof(OnBuild));
+	}
+
+	public void _on_RoverButton_pressed() {
+		EmitSignal(nameof(OnSelectRover));
 	}
 
 	private bool _foggy = true;
@@ -44,6 +60,7 @@ public class Tile : Node2D
 	private Polygon2D background => GetNode<Polygon2D>("Polygon2D");
 	private Sprite fog => GetNode<Sprite>("Fog");
 	private TextureButton scoutButton => GetNode<TextureButton>("ScoutButton");
+	private TextureButton buildButton => GetNode<TextureButton>("BuildButton");
 
 	public Building Building => GetNode<Building>("Building");
 
@@ -75,7 +92,16 @@ public class Tile : Node2D
 	{
 		_isReady = true;
 		UpdateSprite();
+		
+		gameState?.Connect(nameof(GameState.OnPhaseChanged), this, nameof(OnPhaseChanged));
 	}
 
 	private bool _isReady = false;
+
+	private GameState gameState => GetNode<GameState>("/root/GameState");
+
+	private void OnPhaseChanged() {
+		scoutButton.Disabled = gameState.Phase != Phase.Scouting;
+		buildButton.Disabled = gameState.Phase != Phase.InTurn;
+	}
 }

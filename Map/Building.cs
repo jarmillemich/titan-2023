@@ -21,13 +21,15 @@ public class Building : Node2D
 
 	private string _type = "None";
 
-	private Godot.Collections.Dictionary<string, BuildingSpecs> buildingData => GetNode<BuildingData>("/root/BuildingData").buildings;
+	private Godot.Collections.Dictionary<string, BuildingSpecs> buildingData => GetNode<BuildingData>("/root/BuildingData")?.buildings;
 
 	public void UpdateSprite()
 	{
-		if (!buildingData.ContainsKey(_type)) return;
+		if (buildingData == null) return;
 
-		GD.Print("Loading building proto for ", _type);
+		if (!buildingData.ContainsKey(_type)) return;
+		
+		
 
 		var spec = buildingData[_type];
 
@@ -36,7 +38,6 @@ public class Building : Node2D
 		var sprite = (Sprite)GetNode("Sprite");
 		sprite.Texture = texture;
 		//sprite.Scale = 120 * Vector2.One / factor;
-		GD.Print(texture.GetSize(), sprite.Scale);
 
 		//Build the scaling of the sprite. 
 	}
