@@ -40,39 +40,106 @@ anchor_bottom = 1.0
 script = ExtResource( 7 )
 
 [node name="InfoBox" type="HBoxContainer" parent="."]
-visible = false
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -423.0
+margin_left = -874.0
 margin_top = -130.0
-margin_right = -29.0
+margin_right = -74.0
 margin_bottom = 240.0
 grow_horizontal = 0
 grow_vertical = 0
 
 [node name="ColorRect" type="ColorRect" parent="InfoBox"]
-margin_right = 370.0
+margin_right = 790.0
 margin_bottom = 370.0
-rect_min_size = Vector2( 370, 370 )
+rect_min_size = Vector2( 790, 370 )
 color = Color( 0.54902, 0.54902, 0.121569, 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="InfoBox/ColorRect"]
 margin_right = 360.0
 margin_bottom = 340.0
-rect_min_size = Vector2( 330, 0 )
+rect_min_size = Vector2( 790, 0 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="InfoBox/ColorRect/MarginContainer"]
-margin_right = 360.0
+margin_right = 790.0
 margin_bottom = 340.0
 rect_min_size = Vector2( 340, 0 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "This is a test"
+text = "Lore - Intro
+The year is 3016 and in 7 years the first manned space shuttle will arrive to settle on one of Saturn’s moons, Titan. Titan has interesting environmental conditions that make it a great place of research and opens itself for the possibility of habitation. Like Earth, Titan has bustling liquid activity with lakes, seas, and rivers. Though, very much unlike Earth, Titan’s liquid is that of methane and ethane. Provided by the harsh surface temperatures of -290 F (-179 C) which allows such an environment to thrive. Titan’s surface consists of frozen water much like rock, although early investigation by NASA’s Cassini mission suggested evidence of liquid water underneath the surface. Our goal is to sustain life on the planet by harnessing and overcoming these harsh conditions. 
+
+https://science.nasa.gov/mission/cassini/science/titan/ – Information of the Cassini mission
+https://science.nasa.gov/saturn/moons/titan/facts/ – Titan facts I used for a basis of information 
+
+Drill to underground oceans
+Find how deep
+Some technology
+How to get to it
+
+A station to drill into the deep ice using both a heating probe and a combination of drills. Mechanical drill for the stronger surface layers and an electrothermal drill for frozen bits. Once in the frozen layer a heating probe could be dropped to melt a portion of the ice in which a pump could be used to extract samples and pump to a heater which will be used to redisperse hot water to the heating probe reservoir. The hot water being pumped back is both used to prevent the refreezing of the water as well as promoting melting within the operation. A TON of power is needed for the operation as well as the severe depths that drilling requires, the entirety would need to take place within a centralized facility. 
+
+
+See Mars Mission Page 29+ https://www.nasa.gov/wp-content/uploads/2015/06/mars_ice_drilling_assessment_v6_for_public_release.pdf 
+
+
+
+Human Research
+Impacts of low gravity
+Lack of sun
+Time stuff
+Solar radiation
+Atmosphere
+Mental things (Mars missions)
+Physical and mental changes
+Gravity
+
+It will take approximately 7 years to travel to Titan and since this will be a manned mission, the effects of long term space travel should be understood. An often used representation of human spaceflight hazards is the acronym RIDGE, Space Radiation, Isolation and Confinement, Distance from Earth, Gravity fields, and Hostile/Closed Environments. These factors outline both the psychological and physiological stressors astronauts must overcome. 
+
+https://www.nasa.gov/humans-in-space/the-human-body-in-space/ – Source for spaceflight effects on humans
+
+Industrial Mining and shipping of asteroids
+Feasibility
+How to use liquid methane lakes
+Ways to land on asteroids and types of materials on them and how they relate to what is used on Titan
+
+Taking heavy inspiration from OSIRIS-REx Thermal Emission Spectrometer (OTES), advanced spectrometer technology has enabled the scanning of distant asteroids around Saturn to determine mineral composition. With this knowledge expeditions can be made to the asteroids to harvest resources to both promote growth of Titan City’s production and economy.
+
+https://www.nasa.gov/missions/new-nasa-mission-to-help-us-learn-how-to-mine-asteroids/ – Used for idea of scanning asteroids to understand composition
+
+Farm Buildings
+Best thing to grow and how would it be possible
+
+Research from NASAs CUBES division led to advances in extraterrestrial farming where genetically modified plants were designed to require less sunlight, water, nutrients, and oxygen. The space crew was initially sent with the required resources to grow rice, potatoes, and soybeans aboard the space shuttle to supplement the freeze dried diet with more fresh ingredients. Though, since sunlight is nonexistent on Titan, hydroponics will be the desired farming technique; favoring a nutrient-water base rather than rich soil. Ideal hydroponics crops include tomatoes, lettuce, and strawberries to keep a well balanced diet.
+
+
+https://caas.usu.edu/cultivate/spring19/farming-mars – Vertical farming source as well as crops that are vital
+https://www.nasa.gov/missions/station/so-you-want-to-be-a-space-farmer/ – Farming on spaceflights
+
+Power Generation
+Wind power
+
+In order to power Titan City a sustainable power source must be supplied. Extreme winds were observed by the Huygen probe in the upper atmosphere of Titan up to 120 meters per second. The severity of the winds can be used with advanced high altitude wind turbines in order to generate enough power for Titan City. 
+
+https://www.esa.int/Science_Exploration/Space_Science/Cassini-Huygens/First_measurement_of_Titan_s_winds_from_Huygens – Huygens probe summary
+
+
+
+Human habitation
+Required for land dwellings
+Basic human needs
+
+Habitations with a thick insulation of aerogel to protect from extreme cold temperatures. Another proposal similar to the Mars Ice Homes includes pumping water from the oceans of Titan to generate a thick layer of ice that will protect against some of the harsher environment of Titan’s surface. One home on Mars takes around 400 days to create. Carbon dioxide is used as an insulator between ice and home on Mars since it is easily accessible. Carbon dioxide, though also accessible on Titan, could be better substituted by ethane present in the lakes to produce ethylene, another strong thermal insulating gas. Another solution proposed is vacuum insulation. 
+
+
+https://spinoff.nasa.gov/Spinoff2010/cg_2.html – Aerogel source
+https://www.nasa.gov/?migration=converted-node-395107#:~:text=The%20Ice%20Home%20concept%20balances,through%20ice%20and%20surrounding%20materials. – Mars Ice Homes
+"
 
 [node name="GridContainer" type="GridContainer" parent="InfoBox"]
-margin_left = 374.0
-margin_right = 394.0
+margin_left = 794.0
+margin_right = 814.0
 margin_bottom = 370.0
 
 [node name="CloseButton" type="Button" parent="InfoBox/GridContainer"]
