@@ -60,7 +60,7 @@ public class UI_Event_Handler : Node
 		Schedule.Add(new List<string>());
 		for(int i = 0; i < 8; i ++){
 			//update each day to be 3077 + (daysPassed * i * 7);
-			int newyear = 3070 + (daysPassed * (i + 1) * 7);
+			int newyear = 3016 + (daysPassed * (i + 1) * 7);
 			GetNode<Button>("/root/Map/CanvasLayer/Control/CargoUI/CargoContainer/HBoxContainer3/Button" + i).Text = "Y" + newyear;
 		}
 		//move each day forward by one
