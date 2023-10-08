@@ -1,25 +1,34 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://closeSchedulerUIButton.cs" type="Script" id=1]
-[ext_resource path="res://UI_Event_Handler.cs" type="Script" id=2]
-[ext_resource path="res://CloseInventoryUIButton.cs" type="Script" id=3]
+[ext_resource path="res://UI/closeSchedulerUIButton.cs" type="Script" id=1]
+[ext_resource path="res://UI/CloseInventoryUIButton.cs" type="Script" id=2]
+[ext_resource path="res://UI/UI_Event_Handler.cs" type="Script" id=3]
+[ext_resource path="res://Graphics/Buildings/power T1 - low.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Buildings/ice melter T2 - low.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Buildings/farm T3 - low.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/Buildings/farm T2 - low.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Buildings/ice melter T1 - low.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Buildings/power T2 - low.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/Buildings/Lab T2 - low.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/Buildings/Lab T3 - low.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/Buildings/ice melter T3 - low.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/Buildings/power T3 - low.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/Buildings/Lab T1 - low.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/Buildings/farm T1 - low.png" type="Texture" id=15]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 35.0
-margin_top = 26.0
-margin_right = 35.0
-margin_bottom = 26.0
 
 [node name="CargoUI" type="HBoxContainer" parent="."]
-margin_left = -32.0
-margin_top = -23.0
-margin_right = 577.0
-margin_bottom = 245.0
+margin_left = 6.0
+margin_top = 6.0
+margin_right = 615.0
+margin_bottom = 274.0
 
 [node name="CargoContainer" type="VBoxContainer" parent="CargoUI"]
 unique_name_in_owner = true
+visible = false
 margin_right = 438.0
 margin_bottom = 268.0
 
@@ -662,189 +671,134 @@ margin_bottom = 212.0
 
 [node name="BuildingMenu" type="VBoxContainer" parent="CargoUI"]
 unique_name_in_owner = true
-margin_left = 442.0
-margin_right = 585.0
-margin_bottom = 268.0
+visible = false
+margin_right = 428.0
+margin_bottom = 564.0
+rect_scale = Vector2( 0.25, 0.25 )
 
-[node name="<BuildingType>" type="HBoxContainer" parent="CargoUI/BuildingMenu"]
-margin_right = 143.0
-margin_bottom = 20.0
+[node name="farm" type="HBoxContainer" parent="CargoUI/BuildingMenu"]
+margin_right = 428.0
+margin_bottom = 134.0
 
-[node name="<BuildingType1>" type="Button" parent="CargoUI/BuildingMenu/<BuildingType>"]
-margin_right = 45.0
-margin_bottom = 20.0
-text = "<B1>"
+[node name="farmLv1" type="Button" parent="CargoUI/BuildingMenu/farm"]
+margin_right = 140.0
+margin_bottom = 134.0
+icon = ExtResource( 15 )
 
-[node name="<BuildingType2>" type="Button" parent="CargoUI/BuildingMenu/<BuildingType>"]
-margin_left = 49.0
-margin_right = 94.0
-margin_bottom = 20.0
-text = "<B2>"
+[node name="farmLv2" type="Button" parent="CargoUI/BuildingMenu/farm"]
+margin_left = 144.0
+margin_right = 284.0
+margin_bottom = 134.0
+icon = ExtResource( 7 )
 
-[node name="<BuildingType3>" type="Button" parent="CargoUI/BuildingMenu/<BuildingType>"]
-margin_left = 98.0
-margin_right = 143.0
-margin_bottom = 20.0
-text = "<B2>"
+[node name="farmLv3" type="Button" parent="CargoUI/BuildingMenu/farm"]
+margin_left = 288.0
+margin_right = 428.0
+margin_bottom = 134.0
+icon = ExtResource( 6 )
 
-[node name="<BuildingType>2" type="HBoxContainer" parent="CargoUI/BuildingMenu"]
-margin_top = 24.0
-margin_right = 143.0
-margin_bottom = 44.0
+[node name="lab" type="HBoxContainer" parent="CargoUI/BuildingMenu"]
+margin_top = 138.0
+margin_right = 428.0
+margin_bottom = 272.0
 
-[node name="<BuildingType1>" type="Button" parent="CargoUI/BuildingMenu/<BuildingType>2"]
-margin_right = 45.0
-margin_bottom = 20.0
-text = "<B1>"
+[node name="labLv1" type="Button" parent="CargoUI/BuildingMenu/lab"]
+margin_right = 140.0
+margin_bottom = 134.0
+icon = ExtResource( 14 )
 
-[node name="<BuildingType2>" type="Button" parent="CargoUI/BuildingMenu/<BuildingType>2"]
-margin_left = 49.0
-margin_right = 94.0
-margin_bottom = 20.0
-text = "<B2>"
+[node name="labLv2" type="Button" parent="CargoUI/BuildingMenu/lab"]
+margin_left = 144.0
+margin_right = 284.0
+margin_bottom = 134.0
+icon = ExtResource( 10 )
 
-[node name="<BuildingType3>" type="Button" parent="CargoUI/BuildingMenu/<BuildingType>2"]
-margin_left = 98.0
-margin_right = 143.0
-margin_bottom = 20.0
-text = "<B2>"
+[node name="labLv3" type="Button" parent="CargoUI/BuildingMenu/lab"]
+margin_left = 288.0
+margin_right = 428.0
+margin_bottom = 134.0
+icon = ExtResource( 11 )
 
-[node name="<BuildingType>3" type="HBoxContainer" parent="CargoUI/BuildingMenu"]
-margin_top = 48.0
-margin_right = 143.0
-margin_bottom = 68.0
+[node name="iceMelter" type="HBoxContainer" parent="CargoUI/BuildingMenu"]
+margin_top = 276.0
+margin_right = 428.0
+margin_bottom = 426.0
 
-[node name="<BuildingType1>" type="Button" parent="CargoUI/BuildingMenu/<BuildingType>3"]
-margin_right = 45.0
-margin_bottom = 20.0
-text = "<B1>"
+[node name="iceMelterLv1" type="Button" parent="CargoUI/BuildingMenu/iceMelter"]
+margin_right = 140.0
+margin_bottom = 150.0
+icon = ExtResource( 8 )
 
-[node name="<BuildingType2>" type="Button" parent="CargoUI/BuildingMenu/<BuildingType>3"]
-margin_left = 49.0
-margin_right = 94.0
-margin_bottom = 20.0
-text = "<B2>"
+[node name="iceMelterLv2" type="Button" parent="CargoUI/BuildingMenu/iceMelter"]
+margin_left = 144.0
+margin_right = 284.0
+margin_bottom = 150.0
+icon = ExtResource( 5 )
 
-[node name="<BuildingType3>" type="Button" parent="CargoUI/BuildingMenu/<BuildingType>3"]
-margin_left = 98.0
-margin_right = 143.0
-margin_bottom = 20.0
-text = "<B2>"
+[node name="iceMelterLv3" type="Button" parent="CargoUI/BuildingMenu/iceMelter"]
+margin_left = 288.0
+margin_right = 428.0
+margin_bottom = 150.0
+icon = ExtResource( 12 )
 
-[node name="<BuildingType>4" type="HBoxContainer" parent="CargoUI/BuildingMenu"]
-margin_top = 72.0
-margin_right = 143.0
-margin_bottom = 92.0
+[node name="power" type="HBoxContainer" parent="CargoUI/BuildingMenu"]
+margin_top = 430.0
+margin_right = 428.0
+margin_bottom = 564.0
 
-[node name="<BuildingType1>" type="Button" parent="CargoUI/BuildingMenu/<BuildingType>4"]
-margin_right = 45.0
-margin_bottom = 20.0
-text = "<B1>"
+[node name="powerLv1" type="Button" parent="CargoUI/BuildingMenu/power"]
+margin_right = 140.0
+margin_bottom = 134.0
+icon = ExtResource( 4 )
 
-[node name="<BuildingType2>" type="Button" parent="CargoUI/BuildingMenu/<BuildingType>4"]
-margin_left = 49.0
-margin_right = 94.0
-margin_bottom = 20.0
-text = "<B2>"
+[node name="powerLv2" type="Button" parent="CargoUI/BuildingMenu/power"]
+margin_left = 144.0
+margin_right = 284.0
+margin_bottom = 134.0
+icon = ExtResource( 9 )
 
-[node name="<BuildingType3>" type="Button" parent="CargoUI/BuildingMenu/<BuildingType>4"]
-margin_left = 98.0
-margin_right = 143.0
-margin_bottom = 20.0
-text = "<B2>"
-
-[node name="<BuildingType>5" type="HBoxContainer" parent="CargoUI/BuildingMenu"]
-margin_top = 96.0
-margin_right = 143.0
-margin_bottom = 116.0
-
-[node name="<BuildingType1>" type="Button" parent="CargoUI/BuildingMenu/<BuildingType>5"]
-margin_right = 45.0
-margin_bottom = 20.0
-text = "<B1>"
-
-[node name="<BuildingType2>" type="Button" parent="CargoUI/BuildingMenu/<BuildingType>5"]
-margin_left = 49.0
-margin_right = 94.0
-margin_bottom = 20.0
-text = "<B2>"
-
-[node name="<BuildingType3>" type="Button" parent="CargoUI/BuildingMenu/<BuildingType>5"]
-margin_left = 98.0
-margin_right = 143.0
-margin_bottom = 20.0
-text = "<B2>"
-
-[node name="<BuildingType>6" type="HBoxContainer" parent="CargoUI/BuildingMenu"]
-margin_top = 120.0
-margin_right = 143.0
-margin_bottom = 140.0
-
-[node name="<BuildingType1>" type="Button" parent="CargoUI/BuildingMenu/<BuildingType>6"]
-margin_right = 45.0
-margin_bottom = 20.0
-text = "<B1>"
-
-[node name="<BuildingType2>" type="Button" parent="CargoUI/BuildingMenu/<BuildingType>6"]
-margin_left = 49.0
-margin_right = 94.0
-margin_bottom = 20.0
-text = "<B2>"
-
-[node name="<BuildingType3>" type="Button" parent="CargoUI/BuildingMenu/<BuildingType>6"]
-margin_left = 98.0
-margin_right = 143.0
-margin_bottom = 20.0
-text = "<B2>"
+[node name="powerLv3" type="Button" parent="CargoUI/BuildingMenu/power"]
+margin_left = 288.0
+margin_right = 428.0
+margin_bottom = 134.0
+icon = ExtResource( 13 )
 
 [node name="GridContainer" type="GridContainer" parent="CargoUI"]
-margin_left = 589.0
-margin_right = 609.0
+margin_right = 126.0
 margin_bottom = 268.0
 
 [node name="Button" type="Button" parent="CargoUI/GridContainer"]
-margin_right = 20.0
+margin_right = 126.0
 margin_bottom = 20.0
-text = "X"
+text = "Cargo Scheduler >"
 script = ExtResource( 1 )
 
 [node name="BuildingPreview" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
+visible = false
+anchor_left = 1.0
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -31.0
-margin_top = -225.0
-margin_right = 169.0
-margin_bottom = -31.0
+margin_left = -200.0
+margin_top = -194.0
 
-[node name="Building Preview" type="HBoxContainer" parent="BuildingPreview"]
+[node name="BuildingImage" type="TextureRect" parent="BuildingPreview"]
 margin_right = 200.0
-margin_bottom = 20.0
-
-[node name="Picture" type="Button" parent="BuildingPreview/Building Preview"]
-margin_right = 169.0
-margin_bottom = 20.0
-text = "<Picture of the building>"
-
-[node name="CloseMenuButton" type="Button" parent="BuildingPreview/Building Preview"]
-margin_left = 173.0
-margin_right = 193.0
-margin_bottom = 20.0
-text = "X"
 
 [node name="Description" type="RichTextLabel" parent="BuildingPreview"]
 unique_name_in_owner = true
-margin_top = 24.0
+margin_top = 4.0
 margin_right = 200.0
-margin_bottom = 74.0
+margin_bottom = 54.0
 rect_min_size = Vector2( 200, 50 )
 text = "This is where the description for the building will go! :)"
 scroll_active = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BuildingPreview"]
-margin_top = 78.0
+margin_top = 58.0
 margin_right = 200.0
-margin_bottom = 194.0
+margin_bottom = 174.0
 rect_min_size = Vector2( 50, 50 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BuildingPreview/HBoxContainer"]
@@ -854,7 +808,9 @@ rect_min_size = Vector2( 80, 0 )
 text = "
 
 
-Requires:"
+Requires:
+
+Build on Preview Tier"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BuildingPreview/HBoxContainer"]
 margin_left = 84.0
@@ -889,17 +845,18 @@ margin_bottom = 116.0
 [node name="InventoryUI" type="HBoxContainer" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -275.0
-margin_top = -23.0
-margin_right = -39.0
-margin_bottom = 189.0
+margin_left = -427.0
+margin_top = 13.0
+margin_right = -12.0
+margin_bottom = 279.0
 alignment = 2
 
 [node name="Inventory" type="GridContainer" parent="InventoryUI"]
 unique_name_in_owner = true
-margin_right = 212.0
-margin_bottom = 212.0
-columns = 4
+visible = false
+margin_right = 266.0
+margin_bottom = 266.0
+columns = 5
 
 [node name="Slot" type="Button" parent="InventoryUI/Inventory"]
 margin_right = 50.0
@@ -925,108 +882,197 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 50, 50 )
 
 [node name="Slot5" type="Button" parent="InventoryUI/Inventory"]
-margin_top = 54.0
-margin_right = 50.0
-margin_bottom = 104.0
+margin_left = 216.0
+margin_right = 266.0
+margin_bottom = 50.0
 rect_min_size = Vector2( 50, 50 )
 
 [node name="Slot6" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 54.0
 margin_top = 54.0
-margin_right = 104.0
+margin_right = 50.0
 margin_bottom = 104.0
 rect_min_size = Vector2( 50, 50 )
 
 [node name="Slot7" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 108.0
+margin_left = 54.0
 margin_top = 54.0
-margin_right = 158.0
+margin_right = 104.0
 margin_bottom = 104.0
 rect_min_size = Vector2( 50, 50 )
 
 [node name="Slot8" type="Button" parent="InventoryUI/Inventory"]
+margin_left = 108.0
+margin_top = 54.0
+margin_right = 158.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 50, 50 )
+
+[node name="Slot9" type="Button" parent="InventoryUI/Inventory"]
 margin_left = 162.0
 margin_top = 54.0
 margin_right = 212.0
 margin_bottom = 104.0
 rect_min_size = Vector2( 50, 50 )
 
-[node name="Slot9" type="Button" parent="InventoryUI/Inventory"]
-margin_top = 108.0
-margin_right = 50.0
-margin_bottom = 158.0
-rect_min_size = Vector2( 50, 50 )
-
 [node name="Slot10" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 54.0
-margin_top = 108.0
-margin_right = 104.0
-margin_bottom = 158.0
+margin_left = 216.0
+margin_top = 54.0
+margin_right = 266.0
+margin_bottom = 104.0
 rect_min_size = Vector2( 50, 50 )
 
 [node name="Slot11" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 108.0
 margin_top = 108.0
-margin_right = 158.0
+margin_right = 50.0
 margin_bottom = 158.0
 rect_min_size = Vector2( 50, 50 )
 
 [node name="Slot12" type="Button" parent="InventoryUI/Inventory"]
+margin_left = 54.0
+margin_top = 108.0
+margin_right = 104.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 50, 50 )
+
+[node name="Slot13" type="Button" parent="InventoryUI/Inventory"]
+margin_left = 108.0
+margin_top = 108.0
+margin_right = 158.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 50, 50 )
+
+[node name="Slot14" type="Button" parent="InventoryUI/Inventory"]
 margin_left = 162.0
 margin_top = 108.0
 margin_right = 212.0
 margin_bottom = 158.0
 rect_min_size = Vector2( 50, 50 )
 
-[node name="Slot13" type="Button" parent="InventoryUI/Inventory"]
+[node name="Slot15" type="Button" parent="InventoryUI/Inventory"]
+margin_left = 216.0
+margin_top = 108.0
+margin_right = 266.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 50, 50 )
+
+[node name="Slot16" type="Button" parent="InventoryUI/Inventory"]
 margin_top = 162.0
 margin_right = 50.0
 margin_bottom = 212.0
 rect_min_size = Vector2( 50, 50 )
 
-[node name="Slot14" type="Button" parent="InventoryUI/Inventory"]
+[node name="Slot17" type="Button" parent="InventoryUI/Inventory"]
 margin_left = 54.0
 margin_top = 162.0
 margin_right = 104.0
 margin_bottom = 212.0
 rect_min_size = Vector2( 50, 50 )
 
-[node name="Slot15" type="Button" parent="InventoryUI/Inventory"]
+[node name="Slot18" type="Button" parent="InventoryUI/Inventory"]
 margin_left = 108.0
 margin_top = 162.0
 margin_right = 158.0
 margin_bottom = 212.0
 rect_min_size = Vector2( 50, 50 )
 
-[node name="Slot16" type="Button" parent="InventoryUI/Inventory"]
+[node name="Slot19" type="Button" parent="InventoryUI/Inventory"]
 margin_left = 162.0
 margin_top = 162.0
 margin_right = 212.0
 margin_bottom = 212.0
 rect_min_size = Vector2( 50, 50 )
 
-[node name="GridContainer" type="GridContainer" parent="InventoryUI"]
+[node name="Slot20" type="Button" parent="InventoryUI/Inventory"]
 margin_left = 216.0
-margin_right = 236.0
+margin_top = 162.0
+margin_right = 266.0
 margin_bottom = 212.0
+rect_min_size = Vector2( 50, 50 )
+
+[node name="Slot21" type="Button" parent="InventoryUI/Inventory"]
+margin_top = 216.0
+margin_right = 50.0
+margin_bottom = 266.0
+rect_min_size = Vector2( 50, 50 )
+
+[node name="Slot22" type="Button" parent="InventoryUI/Inventory"]
+margin_left = 54.0
+margin_top = 216.0
+margin_right = 104.0
+margin_bottom = 266.0
+rect_min_size = Vector2( 50, 50 )
+
+[node name="Slot23" type="Button" parent="InventoryUI/Inventory"]
+margin_left = 108.0
+margin_top = 216.0
+margin_right = 158.0
+margin_bottom = 266.0
+rect_min_size = Vector2( 50, 50 )
+
+[node name="Slot24" type="Button" parent="InventoryUI/Inventory"]
+margin_left = 162.0
+margin_top = 216.0
+margin_right = 212.0
+margin_bottom = 266.0
+rect_min_size = Vector2( 50, 50 )
+
+[node name="Slot25" type="Button" parent="InventoryUI/Inventory"]
+margin_left = 216.0
+margin_top = 216.0
+margin_right = 266.0
+margin_bottom = 266.0
+rect_min_size = Vector2( 50, 50 )
+
+[node name="GridContainer" type="GridContainer" parent="InventoryUI"]
+margin_left = 270.0
+margin_right = 415.0
+margin_bottom = 266.0
 columns = 4
 
 [node name="CloseMenuButton" type="Button" parent="InventoryUI/GridContainer"]
-margin_right = 20.0
+margin_right = 145.0
 margin_bottom = 20.0
-text = "X"
-script = ExtResource( 3 )
-
-[node name="Node" type="Node" parent="."]
+text = "< Received Buildings"
 script = ExtResource( 2 )
 
-[connection signal="button_down" from="CargoUI/BuildingMenu/<BuildingType>/<BuildingType1>" to="Node" method="ScheduleBuilding" binds= [ 1 ]]
-[connection signal="mouse_entered" from="CargoUI/BuildingMenu/<BuildingType>/<BuildingType1>" to="Node" method="PreviewBuilding" binds= [ 1, 1 ]]
-[connection signal="mouse_exited" from="CargoUI/BuildingMenu/<BuildingType>/<BuildingType1>" to="Node" method="ClosePreview"]
-[connection signal="button_down" from="CargoUI/BuildingMenu/<BuildingType>2/<BuildingType1>" to="Node" method="ScheduleBuilding" binds= [ 1 ]]
-[connection signal="button_down" from="CargoUI/BuildingMenu/<BuildingType>3/<BuildingType1>" to="Node" method="ScheduleBuilding" binds= [ 1 ]]
-[connection signal="button_down" from="CargoUI/BuildingMenu/<BuildingType>4/<BuildingType1>" to="Node" method="ScheduleBuilding" binds= [ 1 ]]
-[connection signal="button_down" from="CargoUI/BuildingMenu/<BuildingType>5/<BuildingType1>" to="Node" method="ScheduleBuilding" binds= [ 1 ]]
-[connection signal="button_down" from="CargoUI/BuildingMenu/<BuildingType>6/<BuildingType1>" to="Node" method="ScheduleBuilding" binds= [ 1 ]]
+[node name="Node" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[connection signal="button_down" from="CargoUI/BuildingMenu/farm/farmLv1" to="Node" method="ScheduleBuilding" binds= [ "farmLv1" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/farm/farmLv1" to="Node" method="PreviewBuilding" binds= [ "farmLv1" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/farm/farmLv1" to="Node" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/farm/farmLv2" to="Node" method="ScheduleBuilding" binds= [ "farmLv2" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/farm/farmLv2" to="Node" method="PreviewBuilding" binds= [ "farmLv2" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/farm/farmLv2" to="Node" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/farm/farmLv3" to="Node" method="ScheduleBuilding" binds= [ "farmLv3" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/farm/farmLv3" to="Node" method="PreviewBuilding" binds= [ "farmLv3" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/farm/farmLv3" to="Node" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/lab/labLv1" to="Node" method="ScheduleBuilding" binds= [ "labLv1" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/lab/labLv1" to="Node" method="PreviewBuilding" binds= [ "labLv1" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/lab/labLv1" to="Node" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/lab/labLv2" to="Node" method="ScheduleBuilding" binds= [ "labLv2" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/lab/labLv2" to="Node" method="PreviewBuilding" binds= [ "labLv2" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/lab/labLv2" to="Node" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/lab/labLv3" to="Node" method="ScheduleBuilding" binds= [ "labLv3" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/lab/labLv3" to="Node" method="PreviewBuilding" binds= [ "labLv3" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/lab/labLv3" to="Node" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv1" to="Node" method="ScheduleBuilding" binds= [ "iceMelterLv1" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv1" to="Node" method="PreviewBuilding" binds= [ "iceMelterLv1" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv1" to="Node" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv2" to="Node" method="ScheduleBuilding" binds= [ "iceMelterLv2" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv2" to="Node" method="PreviewBuilding" binds= [ "iceMelterLv2" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv2" to="Node" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv3" to="Node" method="ScheduleBuilding" binds= [ "iceMelterLv3" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv3" to="Node" method="PreviewBuilding" binds= [ "iceMelterLv3" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv3" to="Node" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/power/powerLv1" to="Node" method="ScheduleBuilding" binds= [ "powerLv1" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/power/powerLv1" to="Node" method="PreviewBuilding" binds= [ "powerLv1" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/power/powerLv1" to="Node" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/power/powerLv2" to="Node" method="ScheduleBuilding" binds= [ "powerLv2" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/power/powerLv2" to="Node" method="PreviewBuilding" binds= [ "powerLv2" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/power/powerLv2" to="Node" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/power/powerLv3" to="Node" method="ScheduleBuilding" binds= [ "powerLv3" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/power/powerLv3" to="Node" method="PreviewBuilding" binds= [ "powerLv3" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/power/powerLv3" to="Node" method="ClosePreview"]
 [connection signal="button_down" from="CargoUI/GridContainer/Button" to="CargoUI/GridContainer/Button" method="ToggleMenu"]
 [connection signal="button_down" from="InventoryUI/GridContainer/CloseMenuButton" to="InventoryUI/GridContainer/CloseMenuButton" method="ToggleMenu"]

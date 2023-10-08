@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class FirstButton : Button
+public class Icon : Sprite
 {
 	// Declare member variables here. Examples:
 	// private int a = 2;
@@ -14,8 +14,8 @@ public class FirstButton : Button
 	}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+  public override void _Process(float delta)
+  {
+	Position += Vector2.Right;      
+  }
 }

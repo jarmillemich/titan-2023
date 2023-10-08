@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Map/Tile.cs" type="Script" id=1]
 [ext_resource path="res://Graphics/Tiles/ice_plains - low.png" type="Texture" id=2]
 [ext_resource path="res://Graphics/Tiles/fow -low.png" type="Texture" id=3]
 [ext_resource path="res://Map/Building.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Graphics/Buildings/farm T1 - low.png" type="Texture" id=5]
 
 [sub_resource type="Theme" id=1]
 
@@ -25,16 +26,6 @@ uv = PoolVector2Array( 62.65, 134.492, 117.413, 102.873, 117.413, 39.6366, 62.65
 scale = Vector2( 0.800609, 0.800609 )
 texture = ExtResource( 3 )
 
-[node name="ScoutButton" type="TextureButton" parent="."]
-margin_left = -40.0
-margin_top = -40.0
-margin_right = 40.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 80, 80 )
-theme = SubResource( 1 )
-texture_hover = SubResource( 3 )
-expand = true
-
 [node name="Line2D" type="Line2D" parent="."]
 z_index = 1
 points = PoolVector2Array( 0, 50, 43.3, 25, 43.3, -25, 0, -50, -43.3, -25, -43.3, 25, 0, 50, 43.3, 25 )
@@ -46,4 +37,25 @@ scale = Vector2( 0.5, 0.5 )
 z_index = 1
 Type = "labLv3"
 
+[node name="ScoutButton" type="TextureButton" parent="."]
+margin_left = -40.0
+margin_top = -40.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 80 )
+theme = SubResource( 1 )
+texture_hover = SubResource( 3 )
+expand = true
+
+[node name="BuildButton" type="TextureButton" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_hover = ExtResource( 5 )
+
+[node name="RoverButton" type="TextureButton" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
 [connection signal="pressed" from="ScoutButton" to="." method="_on_ScoutButton_pressed"]
+[connection signal="pressed" from="BuildButton" to="." method="_on_BuildButton_pressed"]
+[connection signal="pressed" from="RoverButton" to="." method="_on_RoverButton_pressed"]
