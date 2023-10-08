@@ -4,34 +4,34 @@ using System.Collections.Generic;
 
 public class CargoUI : HBoxContainer
 {
-    private Godot.Collections.Dictionary<string, int> pendingBuilding => GetNode<BuildingData>("/root/BuildingData").pendingBuilding;
-    public Godot.Collections.Dictionary<string, BuildingSpecs> buildings => GetNode<BuildingData>("/root/BuildingData").buildings;
+	private Godot.Collections.Dictionary<string, int> pendingBuilding => GetNode<BuildingData>("/root/BuildingData").pendingBuilding;
+	public Godot.Collections.Dictionary<string, BuildingSpecs> buildings => GetNode<BuildingData>("/root/BuildingData").buildings;
 
-    public override void _Ready()
-    {
-        Button templateButton = (Button)GetNode(@"BuildingMenu/BuildingList").GetChild(0);
-        int i = 0;
-        foreach (KeyValuePair<string, int> keyValue in pendingBuilding)
-        {
-            if (i == 0)
-            {
-                templateButton.Name = "btnBuilding" + keyValue.Key.ToString();
-                i++;
-            }
-            else
-            {
-                Button dupButton = (Button)templateButton.Duplicate();
-                dupButton.Name = "btnBuilding" + keyValue.Key.ToString();
-                GetNode(@"BuildingMenu/BuildingList").AddChild(dupButton);
-            }
-        }
-        LoadBuildings();
+	public override void _Ready()
+	{
+		Button templateButton = (Button)GetNode(@"BuildingMenu/BuildingList").GetChild(0);
+		int i = 0;
+		foreach (KeyValuePair<string, int> keyValue in pendingBuilding)
+		{
+			if (i == 0)
+			{
+				templateButton.Name = "btnBuilding" + keyValue.Key.ToString();
+				i++;
+			}
+			else
+			{
+				Button dupButton = (Button)templateButton.Duplicate();
+				dupButton.Name = "btnBuilding" + keyValue.Key.ToString();
+				GetNode(@"BuildingMenu/BuildingList").AddChild(dupButton);
+			}
+		}
+		LoadBuildings();
 
-    }
-    private void LoadBuildings()
-    {
-        foreach (KeyValuePair<string, int> valuePair in pendingBuilding)
-        {
+	}
+	private void LoadBuildings()
+	{
+		foreach (KeyValuePair<string, int> valuePair in pendingBuilding)
+		{
 
             buildings.TryGetValue(valuePair.Key, out BuildingSpecs specs);
             // var infobutton = GetNode<Button>(@"BuildingMenu/BuildingList/Button");
