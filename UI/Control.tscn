@@ -156,7 +156,6 @@ script = ExtResource( 4 )
 
 [node name="CargoContainer" type="VBoxContainer" parent="CargoUI"]
 unique_name_in_owner = true
-visible = false
 margin_right = 438.0
 margin_bottom = 297.0
 
@@ -169,7 +168,7 @@ alignment = 1
 margin_left = 1.0
 margin_right = 52.0
 margin_bottom = 20.0
-text = "YXXXX"
+text = "Y3077"
 icon_align = 1
 expand_icon = true
 
@@ -177,7 +176,7 @@ expand_icon = true
 margin_left = 56.0
 margin_right = 107.0
 margin_bottom = 20.0
-text = "YXXXX"
+text = "Y3084"
 icon_align = 1
 expand_icon = true
 
@@ -185,7 +184,7 @@ expand_icon = true
 margin_left = 111.0
 margin_right = 162.0
 margin_bottom = 20.0
-text = "YXXXX"
+text = "Y3091"
 icon_align = 1
 expand_icon = true
 
@@ -193,7 +192,7 @@ expand_icon = true
 margin_left = 166.0
 margin_right = 217.0
 margin_bottom = 20.0
-text = "YXXXX"
+text = "Y3098"
 icon_align = 1
 expand_icon = true
 
@@ -201,7 +200,7 @@ expand_icon = true
 margin_left = 221.0
 margin_right = 272.0
 margin_bottom = 20.0
-text = "YXXXX"
+text = "Y3105"
 icon_align = 1
 expand_icon = true
 
@@ -209,7 +208,7 @@ expand_icon = true
 margin_left = 276.0
 margin_right = 327.0
 margin_bottom = 20.0
-text = "YXXXX"
+text = "Y3112"
 icon_align = 1
 expand_icon = true
 
@@ -217,7 +216,7 @@ expand_icon = true
 margin_left = 331.0
 margin_right = 382.0
 margin_bottom = 20.0
-text = "YXXXX"
+text = "Y3119"
 icon_align = 1
 expand_icon = true
 
@@ -225,7 +224,7 @@ expand_icon = true
 margin_left = 386.0
 margin_right = 437.0
 margin_bottom = 20.0
-text = "YXXXX"
+text = "Y3126"
 icon_align = 1
 expand_icon = true
 
@@ -981,8 +980,9 @@ icon_align = 1
 expand_icon = true
 
 [node name="GridContainer" type="GridContainer" parent="CargoUI"]
-margin_right = 126.0
-margin_bottom = 268.0
+margin_left = 442.0
+margin_right = 568.0
+margin_bottom = 297.0
 
 [node name="Button" type="Button" parent="CargoUI/GridContainer"]
 margin_right = 126.0
