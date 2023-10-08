@@ -3,7 +3,7 @@
     "displayOrder": 1,
     "level": 1,
     "type": "robot-hub",
-    "description":"",
+    "description": "",
     "placementType": "hub",
     "spritePath": "res://Graphics/Buildings/robot hub - low.png",
     "spriteScaling": 1,
@@ -28,12 +28,24 @@
         "negate": true
       }
     ],
-    "buildingProsume":[]
+    "buildingProsume": [
+      {
+        "type": "Energy",
+        "function": "produce",
+        "amount": 2
+      },
+      {
+        "type": "Rovers",
+        "function": "provideCapacity",
+        "amount": 1
+      }
+    ]
   },
   "human-hub": {
     "displayOrder": 2,
     "level": 1,
     "type": "human-hub",
+    "description": "Every city needs a community. A building consisting of Mar’s inspired “ice homes” that house the city’s denizens.",
     "placementType": "hub",
     "spritePath": "res://Graphics/Buildings/Human Hub - low.png",
     "spriteScaling": 1,
@@ -58,17 +70,23 @@
         "negate": true
       }
     ],
-    "buildingProsume": []
+    "buildingProsume": [
+    {
+      "type": "Workers",
+      "function": "provideCapacity",
+      "amount": 1
+    }]
   },
   "labLv1": {
     "displayOrder": 3,
     "level": 1,
     "type": "Lab",
+    "description": "Sharpening the minds that got us to Titan. A building consisting of high-grade lab equipment to further progress knowledge.",
     "placementType": "spoke",
     "spritePath": "res://Graphics/Buildings/Lab T1 - low.png",
     "spriteScaling": 1,
     "cargoSpace": 1,
-    "cargoHex": "#000000",
+    "cargoHex": "#5ab8e0",
     "maxLimit": 99,
     "buildingReq": [
       {
@@ -89,22 +107,28 @@
       }
     ],
     "buildingProsume": [
-        {
-          "type": "samples",
-          "function": "capacity",
-          "amount": 1
-        }
-      ]    
+      {
+        "type": "samples",
+        "function": "capacity",
+        "amount": 1
+      },
+      {
+        "type": "Energy",
+        "function": "consume",
+        "amount": 1
+      }
+    ]
   },
   "labLv2": {
     "displayOrder": 4,
     "level": 2,
     "type": "Lab",
+    "description": "Sharpening the minds that got us to Titan. A building consisting of high-grade lab equipment to further progress knowledge.",
     "placementType": "spoke",
     "spritePath": "res://Graphics/Buildings/Lab T2 - low.png",
     "spriteScaling": 1,
     "cargoSpace": 1,
-    "cargoHex": "#000000",
+    "cargoHex": "#0097d7",
     "maxLimit": 99,
     "upgradeOf": "labLv1",
     "buildingReq": [
@@ -113,22 +137,28 @@
       }
     ],
     "buildingProsume": [
-        {
-          "type": "samples",
-          "function": "capacity",
-          "amount": 2
-        }
-      ]
+      {
+        "type": "samples",
+        "function": "capacity",
+        "amount": 2
+      },
+      {
+        "type": "Energy",
+        "function": "consume",
+        "amount": 1
+      }
+    ]
   },
   "labLv3": {
     "displayOrder": 5,
     "level": 3,
     "type": "Lab",
+    "description": "Sharpening the minds that got us to Titan. A building consisting of high-grade lab equipment to further progress knowledge.",
     "placementType": "spoke",
     "spritePath": "res://Graphics/Buildings/Lab T3 - low.png",
     "spriteScaling": 1,
     "cargoSpace": 1,
-    "cargoHex": "#000000",
+    "cargoHex": "#026c99",
     "maxLimit": 99,
     "upgradeOf": "labLv2",
     "buildingReq": [
@@ -137,22 +167,28 @@
       }
     ],
     "buildingProsume": [
-        {
-          "type": "samples",
-          "function": "capacity",
-          "amount": 3
-        }
-      ]
+      {
+        "type": "samples",
+        "function": "capacity",
+        "amount": 3
+      },
+      {
+        "type": "Energy",
+        "function": "consume",
+        "amount": 2
+      }
+    ]
   },
   "farmLv1": {
     "displayOrder": 6,
     "level": 1,
     "type": "farm",
+    "description": "The heart and soul of sustainability. A building consisting of stacked hydroponic farms growing a variety of leafy greens and fruits.",
     "placementType": "spoke",
     "spritePath": "res://Graphics/Buildings/farm T1 - low.png",
     "spriteScaling": 1,
     "cargoSpace": 1,
-    "cargoHex": "#000000",
+    "cargoHex": "#fa7db4",
     "maxLimit": 99,
     "buildingReq": [
       {
@@ -172,23 +208,39 @@
         "negate": true
       }
     ],
-    "buildingProsume":[
-        {
-          "type": "Food",
-          "function": "produce",
-          "amount": 1
-        }
-      ]
+    "buildingProsume": [
+      {
+        "type": "Food",
+        "function": "produce",
+        "amount": 2
+      },
+      {
+        "type": "Food",
+        "function": "provideStorage",
+        "amount": 1
+      },
+      {
+        "type": "Water",
+        "function": "consume",
+        "amount": 1
+      },
+      {
+        "type": "Energy",
+        "function": "consume",
+        "amount": 1
+      }
+    ]
   },
   "farmLv2": {
     "displayOrder": 7,
     "level": 2,
     "type": "farm",
+    "description": "The heart and soul of sustainability. A building consisting of stacked hydroponic farms growing a variety of leafy greens and fruits.",
     "placementType": "spoke",
     "spritePath": "res://Graphics/Buildings/farm T2 - low.png",
     "spriteScaling": 1,
     "cargoSpace": 1,
-    "cargoHex": "#000000",
+    "cargoHex": "#cd6996",
     "maxLimit": 99,
     "buildingReq": [
       {
@@ -200,12 +252,7 @@
       {
         "type": "Food",
         "function": "produce",
-        "amount": 2
-      },
-      {
-        "type": "water",
-        "function": "consume",
-        "amount": 2
+        "amount": 4
       },
       {
         "type": "Food",
@@ -213,9 +260,14 @@
         "amount": 2
       },
       {
-        "type": "Food",
-        "function": "useCapacity",
+        "type": "Water",
+        "function": "consume",
         "amount": 2
+      },
+      {
+        "type": "Energy",
+        "function": "consume",
+        "amount": 1
       }
     ]
   },
@@ -223,11 +275,12 @@
     "displayOrder": 8,
     "level": 3,
     "type": "farm",
+    "description": "The heart and soul of sustainability. A building consisting of stacked hydroponic farms growing a variety of leafy greens and fruits.",
     "placementType": "spoke",
     "spritePath": "res://Graphics/Buildings/farm T3 - low.png",
     "spriteScaling": 1,
     "cargoSpace": 1,
-    "cargoHex": "#000000",
+    "cargoHex": "#914969",
     "maxLimit": 99,
     "buildingReq": [
       {
@@ -236,26 +289,245 @@
     ],
     "upgradeOf": "farmLv3",
     "buildingProsume": [
-        {
-          "type": "Food",
-          "function": "produce",
-          "amount": 2
-        },
-        {
-          "type": "water",
-          "function": "consume",
-          "amount": 2
-        },
-        {
-          "type": "Food",
-          "function": "capacity",
-          "amount": 2
-        },
-        {
-          "type": "Food",
-          "function": "useCapacity",
-          "amount": 2
-        }
-      ]
+      {
+        "type": "Food",
+        "function": "produce",
+        "amount": 6
+      },
+      {
+        "type": "Food",
+        "function": "provideStorage",
+        "amount": 3
+      },
+      {
+        "type": "Water",
+        "function": "consume",
+        "amount": 2
+      },
+      {
+        "type": "Energy",
+        "function": "consume",
+        "amount": 1
+      }
+    ]
+  },
+  "iceMelterLv1": {
+    "displayOrder": 9,
+    "level": 1,
+    "description": "The essential ingredient of life. A building consisting of a deep mining drill that both melts and pumps water into filtration.",
+    "type": "iceMelter",
+    "placementType": "spoke",
+    "spritePath": "res://Graphics/Buildings/ice melter T1 - low.png",
+    "spriteScaling": 1,
+    "cargoSpace": 1,
+    "cargoHex": "#f08d46",
+    "maxLimit": 99,
+    "buildingReq": [
+      {
+        "type": "tileWithin",
+        "targetType": "tile-plains",
+        "distance": 0
+      },
+      {
+        "type": "buildingDistance",
+        "targetType": "building-human-hub",
+        "distance": 1
+      },
+      {
+        "type": "buildingDistance",
+        "targetType": "building-robot-hub",
+        "distance": 3,
+        "negate": true
+      }
+    ],
+    "buildingProsume": [
+      {
+        "type": "Water",
+        "function": "produce",
+        "amount": 2
+      },
+      {
+        "type": "Water",
+        "function": "provideStorage",
+        "amount": 1
+      },
+      {
+        "type": "Energy",
+        "function": "consume",
+        "amount": 1
+      }
+    ]
+  },
+  "iceMelterLv2": {
+    "displayOrder": 10,
+    "level": 2,
+    "description": "The essential ingredient of life. A building consisting of a deep mining drill that both melts and pumps water into filtration.",
+    "type": "iceMelter",
+    "placementType": "spoke",
+    "spritePath": "res://Graphics/Buildings/ice melter T2 - low.png",
+    "spriteScaling": 1,
+    "cargoSpace": 2,
+    "cargoHex": "#ff7e22",
+    "maxLimit": 99,
+    "buildingReq": [
+      {
+        "type": "notBuildable"
+      }
+    ],
+    "upgradeOf": "iceMelterLv1",
+    "buildingProsume": [
+      {
+        "type": "Water",
+        "function": "produce",
+        "amount": 4
+      },
+      {
+        "type": "Water",
+        "function": "provideStorage",
+        "amount": 2
+      },
+      {
+        "type": "Energy",
+        "function": "consume",
+        "amount": 1
+      }
+    ]
+  },
+  "iceMelterLv3": {
+    "displayOrder": 11,
+    "level": 3,
+    "description": "The essential ingredient of life. A building consisting of a deep mining drill that both melts and pumps water into filtration.",
+    "type": "iceMelter",
+    "placementType": "spoke",
+    "spritePath": "res://Graphics/Buildings/ice melter T3 - low.png",
+    "spriteScaling": 1,
+    "cargoSpace": 4,
+    "cargoHex": "#ba5309",
+    "maxLimit": 99,
+    "buildingReq": [
+      {
+        "type": "notBuildable"
+      }
+    ],
+    "upgradeOf": "iceMelterLv2",
+    "buildingProsume": [
+      {
+        "type": "Water",
+        "function": "produce",
+        "amount": 6
+      },
+      {
+        "type": "Water",
+        "function": "provideStorage",
+        "amount": 3
+      },
+      {
+        "type": "Energy",
+        "function": "consume",
+        "amount": 1
+      }
+    ]
+  },
+  "powerLv1": {
+    "displayOrder": 12,
+    "level": 1,
+    "description": "A building consisting of batteries fed by the high-altitude wind turbines.",
+    "type": "power",
+    "placementType": "spoke",
+    "spritePath": "res://Graphics/Buildings/power T1 - low.png",
+    "spriteScaling": 1,
+    "cargoSpace": 1,
+    "cargoHex": "#42fc58",
+    "maxLimit": 99,
+    "buildingReq": [
+      {
+        "type": "tileWithin",
+        "targetType": "tile-plains",
+        "distance": 0
+      },
+      {
+        "type": "buildingDistance",
+        "targetType": "building-human-hub",
+        "distance": 1
+      },
+      {
+        "type": "buildingDistance",
+        "targetType": "building-robot-hub",
+        "distance": 3,
+        "negate": true
+      }
+    ],
+    "buildingProsume": [
+      {
+        "type": "Energy",
+        "function": "produce",
+        "amount": 2
+      },
+      {
+        "type": "Energy",
+        "function": "provideStorage",
+        "amount": 1
+      }
+    ]
+  },
+  "powerLv2": {
+    "displayOrder": 13,
+    "level": 2,
+    "description": "A building consisting of batteries fed by the high-altitude wind turbines.",
+    "type": "power",
+    "placementType": "spoke",
+    "spritePath": "res://Graphics/Buildings/power T2 - low.png",
+    "spriteScaling": 1,
+    "cargoSpace": 2,
+    "cargoHex": "#18d22e",
+    "maxLimit": 99,
+    "buildingReq": [
+      {
+        "type": "notBuildable"
+      }
+    ],
+    "upgradeOf": "powerLv1",
+    "buildingProsume": [
+      {
+        "type": "Energy",
+        "function": "produce",
+        "amount": 4
+      },
+      {
+        "type": "Energy",
+        "function": "provideStorage",
+        "amount": 2
+      }
+    ]
+  },
+  "powerLv3": {
+    "displayOrder": 14,
+    "level": 3,
+    "description": "A building consisting of batteries fed by the high-altitude wind turbines.",
+    "type": "power",
+    "placementType": "spoke",
+    "spritePath": "res://Graphics/Buildings/power T3 - low.png",
+    "spriteScaling": 1,
+    "cargoSpace": 4,
+    "cargoHex": "#0f851d",
+    "maxLimit": 99,
+    "buildingReq": [
+      {
+        "type": "notBuildable"
+      }
+    ],
+    "upgradeOf": "powerLv2",
+    "buildingProsume": [
+      {
+        "type": "Energy",
+        "function": "produce",
+        "amount": 6
+      },
+      {
+        "type": "Energy",
+        "function": "provideStorage",
+        "amount": 3
+      }
+    ]
   }
 }

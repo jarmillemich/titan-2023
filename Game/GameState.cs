@@ -17,6 +17,7 @@ public class GameState : Node
         get => _phase;
         set {
             _phase = value;
+            GetNode<UI_Event_Handler>("/root/Map/CanvasLayer/Control/UIEventHandler").UpdateGameStateLabel();
             EmitSignal(nameof(OnPhaseChanged));
         }
     }
