@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://UI/closeSchedulerUIButton.cs" type="Script" id=1]
 [ext_resource path="res://UI/CloseInventoryUIButton.cs" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://UI/CargoUI.cs" type="Script" id=4]
 [ext_resource path="res://UI/CloseResourceyUIButton.cs" type="Script" id=5]
 [ext_resource path="res://UI/ResourceUI.cs" type="Script" id=6]
+[ext_resource path="res://UI/UI.cs" type="Script" id=7]
 [ext_resource path="res://UI/InventoryUI.cs" type="Script" id=16]
 
 [sub_resource type="StyleBoxFlat" id=4]
@@ -43,6 +44,7 @@ border_color = Color( 0, 0, 0, 1 )
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 7 )
 
 [node name="CargoUI" type="HBoxContainer" parent="."]
 margin_left = 6.0
@@ -1195,4 +1197,5 @@ script = ExtResource( 5 )
 [connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button7" to="UIEventHandler" method="highlightDay" binds= [ 7 ]]
 [connection signal="button_down" from="CargoUI/GridContainer/Button" to="CargoUI/GridContainer/Button" method="ToggleMenu"]
 [connection signal="button_down" from="InventoryUI/GridContainer/CloseMenuButton" to="InventoryUI/GridContainer/CloseMenuButton" method="ToggleMenu"]
+[connection signal="pressed" from="EndTurnButton" to="." method="_on_EndTurnButton_pressed"]
 [connection signal="button_down" from="ResourceUI/GridContainer/Button" to="ResourceUI/GridContainer/Button" method="ToggleMenu"]

@@ -51,6 +51,9 @@ public class Map : Node2D
 		gameState.Connect(nameof(GameState.OnPhaseChanged), this, nameof(OnPhaseChanged));
 		gameState.Phase = Phase.InTurn;
 
+		// Hook into the UI
+		ui.Connect(nameof(UI.OnEndTurn), this, nameof(OnEndTurn));
+
 		// Add a rover for fun
 		var rover = ConRover.Instance<Rover>();
 		Root.AddChild(rover);
@@ -63,14 +66,16 @@ public class Map : Node2D
 		GD.Print("New phase!");
 		switch (gameState.Phase) {
 			case Phase.Income:
-				resources.CalcResource();
+				//resources.CalcResource();
 				break;
 			case Phase.CargoDrop:
 				cargoQueue.Tick();
 				break;
 			case Phase.MovingRover:
 				foreach (var rover in Root.GetChildren().OfType<Rover>()) {
+					Tiles[rover.MapPosition].HasRover = false;
 					rover.Move();
+					Tiles[rover.MapPosition].HasRover = true;
 					Reveal(rover.MapPosition);
 				}
 				break;
@@ -88,6 +93,7 @@ public class Map : Node2D
 	private Resources resources => GetNode<Resources>("/root/Resources");
 	private CargoQueue cargoQueue => GetNode<CargoQueue>("/root/CargoQueue");
 	private Timer phaseTimer => GetNode<Timer>("PhaseTimer");
+	private Control ui => GetNode<UI>("CanvasLayer/Control");
 
 	private const float sideLength = 50f;
 
