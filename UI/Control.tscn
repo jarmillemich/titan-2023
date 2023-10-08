@@ -6,16 +6,10 @@
 [ext_resource path="res://UI/CargoUI.cs" type="Script" id=4]
 [ext_resource path="res://UI/CloseResourceyUIButton.cs" type="Script" id=5]
 [ext_resource path="res://UI/ResourceUI.cs" type="Script" id=6]
+[ext_resource path="res://UI/InfoBox.cs" type="Script" id=7]
+[ext_resource path="res://UI/AboutButton.cs" type="Script" id=8]
 [ext_resource path="res://UI/UI.cs" type="Script" id=7]
 [ext_resource path="res://UI/InventoryUI.cs" type="Script" id=16]
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.54902, 0.54902, 0.121569, 1 )
-border_width_left = 1
-border_width_top = 2
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 1, 1, 1, 1 )
@@ -45,6 +39,48 @@ border_color = Color( 0, 0, 0, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 7 )
+
+[node name="InfoBox" type="HBoxContainer" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -423.0
+margin_top = -130.0
+margin_right = -29.0
+margin_bottom = 240.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource( 7 )
+
+[node name="ColorRect" type="ColorRect" parent="InfoBox"]
+margin_right = 370.0
+margin_bottom = 370.0
+rect_min_size = Vector2( 370, 370 )
+color = Color( 0.54902, 0.54902, 0.121569, 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="InfoBox/ColorRect"]
+margin_right = 360.0
+margin_bottom = 340.0
+rect_min_size = Vector2( 330, 0 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="InfoBox/ColorRect/MarginContainer"]
+margin_right = 360.0
+margin_bottom = 340.0
+rect_min_size = Vector2( 340, 0 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "This is a test"
+
+[node name="GridContainer" type="GridContainer" parent="InfoBox"]
+margin_left = 374.0
+margin_right = 394.0
+margin_bottom = 370.0
+
+[node name="Button" type="Button" parent="InfoBox/GridContainer"]
+margin_right = 20.0
+margin_bottom = 20.0
+text = "X"
 
 [node name="CargoUI" type="HBoxContainer" parent="."]
 margin_left = 6.0
@@ -900,20 +936,6 @@ rect_min_size = Vector2( 50, 50 )
 icon_align = 1
 expand_icon = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CargoUI/BuildingMenu/BuildingList/Button"]
-margin_right = 50.0
-margin_bottom = 20.0
-alignment = 2
-
-[node name="Button" type="Button" parent="CargoUI/BuildingMenu/BuildingList/Button/HBoxContainer"]
-margin_left = 33.0
-margin_right = 50.0
-margin_bottom = 20.0
-rect_min_size = Vector2( 10, 10 )
-text = "I"
-align = 2
-icon_align = 2
-
 [node name="GridContainer" type="GridContainer" parent="CargoUI"]
 margin_right = 126.0
 margin_bottom = 268.0
@@ -923,36 +945,6 @@ margin_right = 126.0
 margin_bottom = 20.0
 text = "Cargo Scheduler >"
 script = ExtResource( 1 )
-
-[node name="InfoBox" type="HBoxContainer" parent="."]
-visible = false
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -399.0
-margin_top = -100.0
-margin_right = -29.0
-margin_bottom = 240.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="InfoBox"]
-margin_right = 360.0
-margin_bottom = 340.0
-rect_min_size = Vector2( 360, 0 )
-custom_styles/normal = SubResource( 4 )
-text = "This is a test"
-
-[node name="GridContainer" type="GridContainer" parent="InfoBox"]
-margin_left = 364.0
-margin_right = 384.0
-margin_bottom = 340.0
-
-[node name="Button" type="Button" parent="InfoBox/GridContainer"]
-margin_right = 20.0
-margin_bottom = 20.0
-text = "X"
 
 [node name="BuildingPreview" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
@@ -1015,44 +1007,6 @@ Requires:
 
 Build on Preview Tier"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BuildingPreview"]
-visible = false
-margin_top = 101.0
-margin_right = 330.0
-margin_bottom = 151.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="VBoxContainer" type="VBoxContainer" parent="BuildingPreview/HBoxContainer"]
-visible = false
-margin_left = 215.0
-margin_right = 315.0
-margin_bottom = 116.0
-rect_min_size = Vector2( 100, 50 )
-
-[node name="Button" type="Button" parent="BuildingPreview/HBoxContainer/VBoxContainer"]
-margin_right = 100.0
-margin_bottom = 20.0
-
-[node name="Button2" type="Button" parent="BuildingPreview/HBoxContainer/VBoxContainer"]
-margin_top = 24.0
-margin_right = 100.0
-margin_bottom = 44.0
-
-[node name="Button3" type="Button" parent="BuildingPreview/HBoxContainer/VBoxContainer"]
-margin_top = 48.0
-margin_right = 100.0
-margin_bottom = 68.0
-
-[node name="Button4" type="Button" parent="BuildingPreview/HBoxContainer/VBoxContainer"]
-margin_top = 72.0
-margin_right = 100.0
-margin_bottom = 92.0
-
-[node name="Button5" type="Button" parent="BuildingPreview/HBoxContainer/VBoxContainer"]
-margin_top = 96.0
-margin_right = 100.0
-margin_bottom = 116.0
-
 [node name="InventoryUI" type="HBoxContainer" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
@@ -1060,6 +1014,7 @@ margin_left = -427.0
 margin_top = 13.0
 margin_right = -12.0
 margin_bottom = 279.0
+mouse_filter = 2
 alignment = 2
 script = ExtResource( 16 )
 
@@ -1097,6 +1052,7 @@ text = "1"
 margin_left = 270.0
 margin_right = 415.0
 margin_bottom = 266.0
+mouse_filter = 2
 columns = 4
 
 [node name="CloseMenuButton" type="Button" parent="InventoryUI/GridContainer"]
@@ -1108,11 +1064,19 @@ script = ExtResource( 2 )
 [node name="UIEventHandler" type="Node" parent="."]
 script = ExtResource( 3 )
 
-[node name="GameStateLabel" type="Label" parent="."]
+[node name="AboutButton" type="Button" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -14.0
-margin_right = 40.0
+margin_top = -20.0
+margin_right = 12.0
+text = "About "
+script = ExtResource( 8 )
+
+[node name="GameStateLabel" type="Label" parent="."]
+margin_left = 100.0
+margin_top = 586.0
+margin_right = 178.0
+margin_bottom = 600.0
 text = "Game State:"
 
 [node name="EndTurnButton" type="Button" parent="."]
@@ -1187,6 +1151,7 @@ margin_bottom = 20.0
 text = "Resources >"
 script = ExtResource( 5 )
 
+[connection signal="button_down" from="InfoBox/GridContainer/Button" to="InfoBox" method="_on_Button_button_down"]
 [connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button0" to="UIEventHandler" method="highlightDay" binds= [ 0 ]]
 [connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button1" to="UIEventHandler" method="highlightDay" binds= [ 1 ]]
 [connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button2" to="UIEventHandler" method="highlightDay" binds= [ 2 ]]
@@ -1197,5 +1162,6 @@ script = ExtResource( 5 )
 [connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button7" to="UIEventHandler" method="highlightDay" binds= [ 7 ]]
 [connection signal="button_down" from="CargoUI/GridContainer/Button" to="CargoUI/GridContainer/Button" method="ToggleMenu"]
 [connection signal="button_down" from="InventoryUI/GridContainer/CloseMenuButton" to="InventoryUI/GridContainer/CloseMenuButton" method="ToggleMenu"]
+[connection signal="pressed" from="AboutButton" to="AboutButton" method="_on_AboutButton_pressed"]
 [connection signal="pressed" from="EndTurnButton" to="." method="_on_EndTurnButton_pressed"]
 [connection signal="button_down" from="ResourceUI/GridContainer/Button" to="ResourceUI/GridContainer/Button" method="ToggleMenu"]

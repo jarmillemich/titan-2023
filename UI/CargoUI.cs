@@ -34,6 +34,9 @@ public class CargoUI : HBoxContainer
         {
 
             buildings.TryGetValue(valuePair.Key, out BuildingSpecs specs);
+            var infobutton = GetNode(@"BuildingMenu/BuildingList");
+            infobutton.Connect("button_down",GetNode("../InfoBox"), "PreviewBuilding", new Godot.Collections.Array { valuePair.Key });
+
             Button s = (Button)GetNode(@"BuildingMenu/BuildingList").GetChild((int)specs.displayOrder - 1);
             //disable all buttons
             //s.Disabled = true;
@@ -43,7 +46,9 @@ public class CargoUI : HBoxContainer
             s.Connect("mouse_entered", GetNode("../UIEventHandler"), "PreviewBuilding", new Godot.Collections.Array { valuePair.Key });
             s.Connect("mouse_exited", GetNode("../UIEventHandler"), "ClosePreview");
             s.Connect("button_down", GetNode("../UIEventHandler"), "ScheduleBuilding", new Godot.Collections.Array { valuePair.Key });
-        }
+
+                    }
+
     }
     
 }

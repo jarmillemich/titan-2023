@@ -47,7 +47,8 @@ public class BuildingData : Node
                     BuildingSpecs specs = new BuildingSpecs(
                         keyValues.GetInt("level"),
                         keyValues.GetString("type"),
-                        keyValues.GetString("description"),						
+                        keyValues.GetString("description"),
+                        keyValues.GetString("infodescription"),						
 						keyValues.GetInt("displayOrder"),
                         keyValues.GetString("placementType"),
                         keyValues.GetInt("cargoSpace"),
@@ -115,6 +116,7 @@ public class BuildingSpecs : Node
     public BuildingSpecs(int? _level,
                             string _type,
                             string _description,
+							string _infoDescription,
 							int? _displayOrder,
                             string _placementType,
                             int? _cargoSpace,
@@ -125,6 +127,7 @@ public class BuildingSpecs : Node
         level = _level;
         type = _type;
         description = _description;
+		infoDescription = _infoDescription;
 		displayOrder = _displayOrder;
         placementType = _placementType;
         cargoSpace = _cargoSpace;
@@ -179,6 +182,7 @@ public class BuildingSpecs : Node
                 "; upgradeOf: " + upgradeOf.ToString();
     }
     public string description { get; set; }
+	public string infoDescription { get; set; }
 	public int? displayOrder { get; set; }
     public int? level { get; set; }
     public string type { get; set; }
