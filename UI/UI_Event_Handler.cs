@@ -17,35 +17,38 @@ public class UI_Event_Handler : Node
 	List<List<String>> Schedule = new List<List<String>>();
 	//The schedule: outer list selects the day, inner list selects the cargo on that day, named the building it is related to
 	//ex: access the 4th day's 6th cargo slot: Schedule[4][6]
-
+	public override void _Ready()
+	{
+	 for(int i = 0; i < 10; i++){
+		Schedule.Add(new List<String>()); //days gotta exist
+	 }   
+	}
 	private void highlightDay(int day){
 		highlightedDay = day;
 	}
 
 	private void increaseTurn(){
 		daysPassed++;
+		Schedule.Add(new List<string>());
 	}
 
 	private bool CheckIfScheduleable(){
 		return true;
 	}
 
-	private void ScheduleBuilding(int day, string building)
+	private void ScheduleBuilding(string building)
 	{
-		if(cargoMax - Schedule[day].Count < buildings[building].cargoSpace){
+		if(cargoMax - Schedule[highlightedDay].Count < buildings[building].cargoSpace){
 			return; //if available room < required cargo... no.
 		}
 		int tilesAdded = 0;
 		for(int i = 0; i < buildings[building].cargoSpace; i++){
-			Schedule[day].Add(building);
-			GetNode("CargoContainer/HBoxContainer/VBoxContainer" + (day - daysPassed) + "/Button" + Schedule[day].Count); 
+			Button slot = GetNode<Button>("/root/Map/CanvasLayer/Control/CargoUI/CargoContainer/HBoxContainer/VBoxContainer" + highlightedDay + "/Button" + Schedule[highlightedDay].Count); 
+			Schedule[highlightedDay].Add(building);
+			slot.Icon = (Texture)GD.Load(buildings[building].buildingDesign.spritePath);
+			slot.Text = "TEST";
+			//slot.Modulate = Color(buildings[building].cargoHex);
 		}
-		//Schedule building logic...
-		//pull from json
-		//check if we have enough tiles to schedule
-
-		//if not, put to the next available schedule?
-		//	or, let them select where 
 	}
 
 	private void CancelBuilding(int day, string building){
