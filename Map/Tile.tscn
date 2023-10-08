@@ -52,5 +52,10 @@ margin_right = 40.0
 margin_bottom = 40.0
 texture_hover = ExtResource( 5 )
 
+[node name="RoverButton" type="TextureButton" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
 [connection signal="pressed" from="ScoutButton" to="." method="_on_ScoutButton_pressed"]
 [connection signal="pressed" from="BuildButton" to="." method="_on_BuildButton_pressed"]
+[connection signal="pressed" from="RoverButton" to="." method="_on_RoverButton_pressed"]
