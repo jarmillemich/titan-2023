@@ -77,6 +77,7 @@ public class UI_Event_Handler : Node
 					tilesRemoved++;
 				}
 			}
+			GetNode<InventoryUI>("../InventoryUI").AddNextTurnInventory(receivedBuildings);
 			Schedule.RemoveAt(0);
 			for(int day = 0; day < 8; day++){
 			for (int i = 0; i < 10; i++){
@@ -90,6 +91,7 @@ public class UI_Event_Handler : Node
 				slot.Icon = null;
 				slot.Text = "";
 			}
+			
 		}
 	}
 	}

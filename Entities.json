@@ -3,13 +3,13 @@
     "displayOrder": 1,
     "level": 1,
     "type": "robot-hub",
-    "description": "",
+    "description": "The industrial sector of the city. A building consisting of advanced robots aiding in construction on Titan and sustained by nuclear power.",
     "infoDescription": "Test",
     "placementType": "hub",
     "spritePath": "res://Graphics/Buildings/robot hub - low.png",
     "spriteScaling": 1,
     "cargoSpace": 2,
-    "cargoHex": "#000000",
+    "cargoHex": "#b9ccc0",
     "maxLimit": 5,
     "buildingReq": [
       {
@@ -53,7 +53,7 @@
     "spritePath": "res://Graphics/Buildings/Human Hub - low.png",
     "spriteScaling": 1,
     "cargoSpace": 2,
-    "cargoHex": "#000000",
+    "cargoHex": "#ff0055",
     "maxLimit": 5,
     "buildingReq": [
       {

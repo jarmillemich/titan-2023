@@ -64,6 +64,16 @@ public class InventoryUI : HBoxContainer
             }
         }
     }
+    public void AddNextTurnInventory(List<string> buildings)
+    {
+        
+        for (int i = 0; i < buildings.Count; i++)
+        {
+            GD.Print(buildings[i]);
+            pendingBuilding[buildings[i]] += 1;
+            LoadInventory(true);
+        }
+    }
     [Signal]
     public delegate void OnInventoryButton(string buildingName);
 
@@ -73,9 +83,9 @@ public class InventoryUI : HBoxContainer
         LoadInventory(true);
         ((Button)GetNode("GridContainer").GetChild(0)).EmitSignal("button_down");
         EmitSignal(nameof(OnInventoryButton), buildingName);
-       Visible = true;
+        Visible = true;
     }
-    
+
     //  // Called every frame. 'delta' is the elapsed time since the previous frame.
     //  public override void _Process(float delta)
     //  {
