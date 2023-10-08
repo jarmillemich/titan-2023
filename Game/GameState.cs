@@ -6,7 +6,9 @@ public enum Phase {
     
     CargoDrop,
     Income,
+
     InTurn,
+    DecidingOnBuildings,
     MovingRover,
 
 }
@@ -17,13 +19,17 @@ public class GameState : Node
         get => _phase;
         set {
             _phase = value;
+            GetNode<UI_Event_Handler>("/root/Map/CanvasLayer/Control/UIEventHandler").UpdateGameStateLabel();
             EmitSignal(nameof(OnPhaseChanged));
         }
     }
+
     [Signal]
     public delegate void OnPhaseChanged();
 
     private Phase _phase = Phase.Scouting;
+
+    public HexPoint RoverStartPoint { get; set; }
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()

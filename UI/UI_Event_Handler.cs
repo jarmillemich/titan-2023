@@ -1,14 +1,15 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 public class UI_Event_Handler : Node
 {
-			//Building Types:
-		//1:	Farm
-		//2:
-		//3:
-		//...
+	//Building Types:
+	//1:	Farm
+	//2:
+	//3:
+	//...
 	private Godot.Collections.Dictionary<string, int> pendingBuilding => GetNode<BuildingData>("/root/BuildingData").pendingBuilding;
 	private Godot.Collections.Dictionary<string, BuildingSpecs> buildings => GetNode<BuildingData>("/root/BuildingData").buildings;
 	int cargoMax = 10; //The max slots available per day
@@ -19,31 +20,58 @@ public class UI_Event_Handler : Node
 	//ex: access the 4th day's 6th cargo slot: Schedule[4][6]
 	public override void _Ready()
 	{
-	 for(int i = 0; i < 10; i++){
-		Schedule.Add(new List<String>()); //days gotta exist
-	 }   
+		for (int i = 0; i < 10; i++)
+		{
+			Schedule.Add(new List<String>()); //days gotta exist
+		}
 	}
-	private void highlightDay(int day){
+	public void UpdateGameStateLabel()
+	{
+		((Label)GetNode("../GameStateLabel")).Text = "Game State: " + GetNode<GameState>("/root/GameState").Phase.ToString();
+	}
+	private void PreviewBuilding(string buildingName)
+    {
+        buildings.TryGetValue(buildingName, out BuildingSpecs specs);
+        VBoxContainer preview = GetNode<VBoxContainer>("%BuildingPreview");
+        preview.Visible = true;
+        ((RichTextLabel)preview.GetNode("Description")).Text = specs.description;
+        RichTextLabel prosume = (RichTextLabel)preview.GetNode("HBoxContainer2/ProsumeLabel");
+        prosume.Text = specs.ProsumeToString();
+
+        RichTextLabel capacity = (RichTextLabel)preview.GetNode("HBoxContainer2/CapacityLabel");
+        capacity.Text = "Cargo Space: " + specs.cargoSpace;
+    }
+
+    private void ClosePreview()
+    {
+        GetNode<VBoxContainer>("%BuildingPreview").Visible = false;
+    }
+	private void highlightDay(int day)
+	{
 		highlightedDay = day;
 	}
 
-	private void increaseTurn(){
+	private void increaseTurn()
+	{
 		daysPassed++;
 		Schedule.Add(new List<string>());
 	}
 
-	private bool CheckIfScheduleable(){
+	private bool CheckIfScheduleable()
+	{
 		return true;
 	}
 
 	private void ScheduleBuilding(string building)
 	{
-		if(cargoMax - Schedule[highlightedDay].Count < buildings[building].cargoSpace){
+		if (cargoMax - Schedule[highlightedDay].Count < buildings[building].cargoSpace)
+		{
 			return; //if available room < required cargo... no.
 		}
 		int tilesAdded = 0;
-		for(int i = 0; i < buildings[building].cargoSpace; i++){
-			Button slot = GetNode<Button>("/root/Map/CanvasLayer/Control/CargoUI/CargoContainer/HBoxContainer/VBoxContainer" + highlightedDay + "/Button" + Schedule[highlightedDay].Count); 
+		for (int i = 0; i < buildings[building].cargoSpace; i++)
+		{
+			Button slot = GetNode<Button>("/root/Map/CanvasLayer/Control/CargoUI/CargoContainer/HBoxContainer/VBoxContainer" + highlightedDay + "/Button" + Schedule[highlightedDay].Count);
 			Schedule[highlightedDay].Add(building);
 			slot.Icon = (Texture)GD.Load(buildings[building].buildingDesign.spritePath);
 			slot.Text = "";
@@ -51,14 +79,18 @@ public class UI_Event_Handler : Node
 		}
 	}
 
-	private void CancelBuilding(int day, string building){
+	private void CancelBuilding(int day, string building)
+	{
 		int tilesRemoved = 0;
-		for(int i = Schedule[day].Count - 1; i > -1; i--){
-			if(Schedule[day][i] == building){
+		for (int i = Schedule[day].Count - 1; i > -1; i--)
+		{
+			if (Schedule[day][i] == building)
+			{
 				//change the sprites n stuff here!
 				Schedule[day].RemoveAt(i);
 				tilesRemoved++;
-				if(tilesRemoved == buildings[building].cargoSpace){
+				if (tilesRemoved == buildings[building].cargoSpace)
+				{
 					return; //if they have two of the same building, we only want to cancel one
 				}
 			}

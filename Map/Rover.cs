@@ -4,7 +4,7 @@ using System;
 [Tool]
 public class Rover : Node2D
 {
-    public HexPoint Position {
+    public HexPoint MapPosition {
         get => _position;
         set {
             _position = value;
@@ -35,6 +35,8 @@ public class Rover : Node2D
 
     private void UpdateSprite()
     {
+        Position = MapPosition.ToVector2(50f);
+
         bool moving = _destination.DistanceTo(_position) > 0;
         GetNode<Line2D>("Arrow").Visible = moving;
 

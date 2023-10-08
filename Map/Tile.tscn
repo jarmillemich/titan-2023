@@ -1,18 +1,35 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Map/Tile.cs" type="Script" id=1]
 [ext_resource path="res://Graphics/Tiles/ice_plains - low.png" type="Texture" id=2]
 [ext_resource path="res://Graphics/Tiles/fow -low.png" type="Texture" id=3]
 [ext_resource path="res://Map/Building.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Graphics/Buildings/farm T1 - low.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Misc/huygens probe.png" type="Texture" id=6]
 
 [sub_resource type="Theme" id=1]
 
 [sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0.375, 0.573718 )
+colors = PoolColorArray( 0.207843, 0.619608, 0.12549, 1, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=3]
+[sub_resource type="GradientTexture2D" id=3]
 gradient = SubResource( 2 )
 width = 80
+height = 80
+fill = 1
+fill_from = Vector2( 0.5, 0.5 )
+fill_to = Vector2( 1, 0.5 )
+
+[sub_resource type="Gradient" id=4]
+interpolation_mode = 2
+offsets = PoolRealArray( 0.169872, 0.676282 )
+colors = PoolColorArray( 0.494118, 0.0431373, 0.0431373, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture2D" id=5]
+gradient = SubResource( 4 )
+fill = 1
+fill_from = Vector2( 0.5, 0.5 )
 
 [node name="Tile" type="Node2D"]
 script = ExtResource( 1 )
@@ -35,7 +52,6 @@ default_color = Color( 0, 0, 0, 1 )
 [node name="Building" parent="." instance=ExtResource( 4 )]
 scale = Vector2( 0.5, 0.5 )
 z_index = 1
-Type = "labLv3"
 
 [node name="ScoutButton" type="TextureButton" parent="."]
 margin_left = -40.0
@@ -44,18 +60,34 @@ margin_right = 40.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 80, 80 )
 theme = SubResource( 1 )
-texture_hover = SubResource( 3 )
+texture_hover = ExtResource( 6 )
 expand = true
 
 [node name="BuildButton" type="TextureButton" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = -40.0
+margin_top = -40.0
+margin_right = 88.0
+margin_bottom = 88.0
+rect_scale = Vector2( 0.6, 0.6 )
+texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 5 )
 
-[node name="RoverButton" type="TextureButton" parent="."]
+[node name="RoverTargetButton" type="TextureButton" parent="."]
+margin_left = -40.0
+margin_top = -40.0
 margin_right = 40.0
 margin_bottom = 40.0
+texture_hover = SubResource( 3 )
+
+[node name="RoverButton" type="TextureButton" parent="."]
+margin_left = -32.0
+margin_top = -32.0
+margin_right = 32.0
+margin_bottom = 32.0
+texture_normal = SubResource( 5 )
+texture_hover = SubResource( 5 )
 
 [connection signal="pressed" from="ScoutButton" to="." method="_on_ScoutButton_pressed"]
 [connection signal="pressed" from="BuildButton" to="." method="_on_BuildButton_pressed"]
+[connection signal="pressed" from="RoverTargetButton" to="." method="_on_RoverTargetButton_pressed"]
 [connection signal="pressed" from="RoverButton" to="." method="_on_RoverButton_pressed"]

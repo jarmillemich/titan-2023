@@ -17,20 +17,20 @@ public class BuildingData : Node
 	public Godot.Collections.Dictionary<string, int> builtBuilding = new Godot.Collections.Dictionary<string, int>();
 	public Godot.Collections.Dictionary<string, int> pendingBuilding = new Godot.Collections.Dictionary<string, int>();
 
-
-    #region  LoadDictionaries
-    public void LoadBuiltPendinglist()
-    {
-        foreach (var key in buildings.Keys)
-        {
-            builtBuilding.Add(key, 0);
-            pendingBuilding.Add(key, 0);
-        }
-    }
-    public void LoadBuildingSpecs()
-    {
-        string path = "Entities.json";
-        var file = new File();
+	
+	#region LoadDictionaries
+	public void LoadBuiltPendinglist()
+	{
+		foreach (var key in buildings.Keys)
+		{
+			builtBuilding.Add(key, 0);
+			pendingBuilding.Add(key, 0);
+		}
+	}
+	public void LoadBuildingSpecs()
+	{
+		string path = "Entities.json";
+		var file = new File();
 
 		if (file.FileExists(path))
 		{
