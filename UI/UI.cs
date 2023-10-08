@@ -30,13 +30,32 @@ public class UI : Control
 	[Signal]
 	public delegate void OnBuild(string buildingId);
 
-	public void OnStartBuilding(List<string> available) {
-		// TODO Alex & Nick
-	}
+    public void OnStartBuilding(List<string> available)
+    {
+        // TODO Alex & Nick
+        Godot.Collections.Array buildinglist = GetNode("InventoryUI/Inventory").GetChildren();
+        GD.Print(available.Count);
+        if (available.Count > 0)
+        {
+            for (int j = 0; j < available.Count; j++)
+            {
+                for (int i = 0; i < buildinglist.Count; i++)
+                {
+                    GD.Print(((Button)buildinglist[i]).Name);
+                    if (((Button)buildinglist[i]).Name.Contains(available[j]))
+                    {
+                        ((Button)buildinglist[i]).Disabled = false;
+                    }
+                }
+            }
+            ((HBoxContainer)GetNode("InventoryUI")).Visible = true;
+        }
+    }
 
-	private void _on_EndTurnButton_pressed() {
-		EmitSignal(nameof(OnEndTurn));
-	}
+    private void _on_EndTurnButton_pressed()
+    {
+        EmitSignal(nameof(OnEndTurn));
+    }
 
 	public void OnPhaseChange() {
 		// TODO open/close various UI elements appropriately
@@ -108,17 +127,19 @@ public class UI : Control
 		}
 	}
 
-	public void _on_AboutButton_pressed(){
-		GetNode<Control>("InfoBox").Visible = true;
-	}
+    public void _on_AboutButton_pressed()
+    {
+        GetNode<Control>("InfoBox").Visible = true;
+    }
 
-	public void _on_InfoCloseButton_pressed(){
-		GetNode<Control>("InfoBox").Visible = false;
-	}
+    public void _on_InfoCloseButton_pressed()
+    {
+        GetNode<Control>("InfoBox").Visible = false;
+    }
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+    //  // Called every frame. 'delta' is the elapsed time since the previous frame.
+    //  public override void _Process(float delta)
+    //  {
+    //      
+    //  }
 }
