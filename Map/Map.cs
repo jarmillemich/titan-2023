@@ -49,7 +49,7 @@ public class Map : Node2D
 		GD.Print("Map ready");
 
 		gameState.Connect(nameof(GameState.OnPhaseChanged), this, nameof(OnPhaseChanged));
-		gameState.Phase = Phase.InTurn;
+		gameState.Phase = Phase.Scouting;
 
 		// Hook into the UI
 		ui.Connect(nameof(UI.OnEndTurn), this, nameof(OnEndTurn));
@@ -341,7 +341,9 @@ public class Map : Node2D
 		ui.OnStartBuilding(available);
 	}
 
-	private void _on_UI_OnBuild(string buildingId) {
+	private void _on_Control_OnBuild(string buildingId) {
+		GD.Print("Maybe building", buildingId);
+
 		var tile = gameState.SelectedTile;
 		var building = buildingData[buildingId];
 

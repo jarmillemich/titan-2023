@@ -29,6 +29,8 @@ public class GameState : Node
 
     private Phase _phase = Phase.Scouting;
 
+    public int RemainingProbes { get; set; } = 3;
+
     /// Current rover we want to move
     public HexPoint RoverStartPoint { get; set; }
 

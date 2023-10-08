@@ -39,6 +39,24 @@ public class Resources : Node
 	{
 
 	}
+
+	public MaterialResource GetResource(string name) {
+		switch (name)
+		{
+			case "Energy":
+				return Energy;
+			case "Water":
+				return Water;
+			case "Food":
+				return Food;
+			default:
+				return null;
+		}
+	}
+
+	[Signal]
+	public delegate void ResourceChanged();
+
 	public void CalcResource()
 	{
 		//Add resources
@@ -60,6 +78,8 @@ public class Resources : Node
 		{
 			Food.Amount = Food.Capacity;
 		}
+
+		EmitSignal(nameof(ResourceChanged));
 	}
 
 	#region DictionaryAccess
@@ -87,6 +107,7 @@ public class Resources : Node
 			List<BuildingProsume> prosume = buildings[buildingName].buildingProsume;
 			for (int i = 0; i < prosume.Count(); i++)
 			{
+				GD.Print("Update production ", prosume[i].type, " ", prosume[i].function, " ", prosume[i].amount);
 				switch (prosume[i].type)
 				{
 					case "Food":
@@ -147,6 +168,8 @@ public class Resources : Node
 		{
 			GD.Print(buildingName, " does not exist in list");
 		}
+
+		EmitSignal(nameof(ResourceChanged));
 	}
 	#endregion
 	public MaterialResource Energy { get; set; } = new MaterialResource();

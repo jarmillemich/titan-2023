@@ -64,7 +64,8 @@
       {
         "type": "buildingDistance",
         "targetType": "human-hub",
-        "distance": 1
+        "distance": 3,
+        "negate": true
       },
       {
         "type": "buildingDistance",

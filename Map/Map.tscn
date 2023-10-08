@@ -25,4 +25,5 @@ mouse_filter = 2
 [node name="PhaseTimer" type="Timer" parent="."]
 one_shot = true
 
+[connection signal="OnBuild" from="CanvasLayer/Control" to="." method="_on_Control_OnBuild"]
 [connection signal="timeout" from="PhaseTimer" to="." method="_on_PhaseTimer_timeout"]
