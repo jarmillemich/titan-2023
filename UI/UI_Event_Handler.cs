@@ -30,15 +30,15 @@ public class UI_Event_Handler : Node
 		return true;
 	}
 
-	private void ScheduleBuilding(int day, string building)
+	private void ScheduleBuilding(string building)
 	{
-		if(cargoMax - Schedule[day].Count < buildings[building].cargoSpace){
+		if(cargoMax - Schedule[highlightedDay].Count < buildings[building].cargoSpace){
 			return; //if available room < required cargo... no.
 		}
 		int tilesAdded = 0;
 		for(int i = 0; i < buildings[building].cargoSpace; i++){
-			Schedule[day].Add(building);
-			GetNode("CargoContainer/HBoxContainer/VBoxContainer" + (day - daysPassed) + "/Button" + Schedule[day].Count); 
+			Schedule[highlightedDay].Add(building);
+			GetNode("CargoContainer/HBoxContainer/VBoxContainer" + (highlightedDay - daysPassed) + "/Button" + Schedule[highlightedDay].Count); 
 		}
 		//Schedule building logic...
 		//pull from json
@@ -62,20 +62,6 @@ public class UI_Event_Handler : Node
 		}
 	}
 
-	private void PreviewBuilding(string building)
-{
-	VBoxContainer preview = GetNode<VBoxContainer>("%BuildingPreview");
-	preview.Visible = true;
-//	preview.GetNode<RichTextLabel>("%Description").Text = "Building Type: " + BuildingType + " Building Level: " + BuildingLevel;
-//	preview.GetNode<TextureRect>("")
 
-//	buildings
-}
-
-
-private void ClosePreview()
-{
-	GetNode<VBoxContainer>("%BuildingPreview").Visible = false;
-}
 
 }

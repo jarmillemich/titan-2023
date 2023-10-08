@@ -57,10 +57,10 @@ public class BuildingData : Node
 
 					//Requirements
 					List<BuildingRequirements> buildingRequirements = new List<BuildingRequirements>();
-					Godot.Collections.Array s = keyValues["buildingReq"] as Godot.Collections.Array;
-					for (int i = 0; i < s.Count; i++)
+					Godot.Collections.Array buildingR = keyValues["buildingReq"] as Godot.Collections.Array;
+					for (int i = 0; i < buildingR.Count; i++)
 					{
-						Godot.Collections.Dictionary brd = (Godot.Collections.Dictionary)s[i];
+						Godot.Collections.Dictionary brd = (Godot.Collections.Dictionary)buildingR[i];
 						BuildingRequirements br = new BuildingRequirements(
 							_type: brd.GetString("type"),
 							_targetType: brd.GetString("tileType"),
@@ -70,7 +70,7 @@ public class BuildingData : Node
 						buildingRequirements.Add(br);
 						brd.Dispose();
 					}
-					s.Dispose();
+					buildingR.Dispose();
 					specs.buildingRequirements = buildingRequirements;
 
 					//Design
@@ -78,10 +78,12 @@ public class BuildingData : Node
 																_spriteScaling: keyValues.GetFloat("spriteScaling"));
 					//BuildingProsume
 					List<BuildingProsume> buildingProsumes = new List<BuildingProsume>();
-					s = keyValues["buildingReq"] as Godot.Collections.Array;
-					for (int i = 0; i < s.Count; i++)
+					GD.Print("prosume Count: ",key);
+					Godot.Collections.Array buildingPro = keyValues["buildingProsume"] as Godot.Collections.Array;
+					
+					for (int i = 0; i < buildingPro.Count; i++)
 					{
-						Godot.Collections.Dictionary brd = (Godot.Collections.Dictionary)s[i];
+						Godot.Collections.Dictionary brd = (Godot.Collections.Dictionary)buildingPro[i];
 						BuildingProsume buildingProsume = new BuildingProsume(_type: brd.GetString("type"),
 							 _function: brd.GetString("function"),
 							 _amount: brd.GetInt("amount"));
@@ -89,7 +91,7 @@ public class BuildingData : Node
 						brd.Dispose();
 
 					}
-					s.Dispose();
+					buildingPro.Dispose();
 					specs.buildingProsume = buildingProsumes;
 					//keyValues.Dispose();
 
@@ -136,29 +138,32 @@ public class BuildingSpecs : Node
     {
         string output = "";
         Godot.Collections.Dictionary<string, string> prosumeTypes = new Godot.Collections.Dictionary<string, string>();
-        prosumeTypes.Add("produce", "");
-        prosumeTypes.Add("consume", "");
-        prosumeTypes.Add("provideStorage", "");
-        prosumeTypes.Add("UseCapacity", "");
-        prosumeTypes.Add("provideCapacity", "");
+        prosumeTypes.Add("Produces", "");
+        prosumeTypes.Add("Consumes", "");
+        prosumeTypes.Add("Storage", "");
+        prosumeTypes.Add("Use Capacity", "");
+        prosumeTypes.Add("Provide Capacity", "");
+		
+				
         for (int i = 0; i < buildingProsume.Count; i++)
         {
+			GD.Print(buildingProsume[i].function);
             switch (buildingProsume[i].function)
             {
                 case "produce":
-                    prosumeTypes["produce"] = (prosumeTypes["produce"] == "" ? "" : prosumeTypes["produce"] + System.Environment.NewLine) + buildingProsume[i].type + ": " + buildingProsume[i].amount;
+                    prosumeTypes["Produces"] = (prosumeTypes["Produces"] == "" ? "" : prosumeTypes["Produces"] + System.Environment.NewLine) + buildingProsume[i].type + ": " + buildingProsume[i].amount;
                     break;
                 case "consume":
-                    prosumeTypes["consume"] = (prosumeTypes["consume"] == "" ? "" : prosumeTypes["consume"] + System.Environment.NewLine) + buildingProsume[i].type + ": " + buildingProsume[i].amount;
+                    prosumeTypes["Consumes"] = (prosumeTypes["Consumes"] == "" ? "" : prosumeTypes["Consumes"] + System.Environment.NewLine) + buildingProsume[i].type + ": " + buildingProsume[i].amount;
                     break;
                 case "provideStorage":
-                    prosumeTypes["provideStorage"] = (prosumeTypes["provideStorage"] == "" ? "" : prosumeTypes["provideStorage"] + System.Environment.NewLine) + buildingProsume[i].type + ": " + buildingProsume[i].amount;
+                    prosumeTypes["Storage"] = (prosumeTypes["Storage"] == "" ? "" : prosumeTypes["Storage"] + System.Environment.NewLine) + buildingProsume[i].type + ": " + buildingProsume[i].amount;
                     break;
                 case "UseCapacity":
-                    prosumeTypes["UseCapacity"] = (prosumeTypes["UseCapacity"] == "" ? "" : prosumeTypes["UseCapacity"] + System.Environment.NewLine) + buildingProsume[i].type + ": " + buildingProsume[i].amount;
+                    prosumeTypes["Use Capacity"] = (prosumeTypes["Use Capacity"] == "" ? "" : prosumeTypes["Use Capacity"] + System.Environment.NewLine) + buildingProsume[i].type + ": " + buildingProsume[i].amount;
                     break;
                 case "provideCapacity":
-                    prosumeTypes["provideCapacity"] = (prosumeTypes["provideCapacity"] == "" ? "" : prosumeTypes["provideCapacity"] + System.Environment.NewLine) + buildingProsume[i].type + ": " + buildingProsume[i].amount;
+                    prosumeTypes["Provide Capacity"] = (prosumeTypes["Provide Capacity"] == "" ? "" : prosumeTypes["Provide Capacity"] + System.Environment.NewLine) + buildingProsume[i].type + ": " + buildingProsume[i].amount;
                     break;
             }
         }
@@ -171,8 +176,8 @@ public class BuildingSpecs : Node
     public override string ToString()
     {
         return "Level: " + level.ToString() +
-                "; type: " + level.ToString() +
-                "; placementType: " + placementType.ToString() +
+                "; Type: " + type.ToString() +
+                "; PlacementType: " + placementType.ToString() +
                 "; cargoSpace: " + cargoSpace.ToString() +
                 "; cargoHex: " + cargoHex.ToString() +
                 "; maxLimit: " + maxLimit.ToString() +
