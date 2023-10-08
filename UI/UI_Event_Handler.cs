@@ -18,6 +18,7 @@ public class UI_Event_Handler : Node
 	List<List<String>> Schedule = new List<List<String>>();
 	//The schedule: outer list selects the day, inner list selects the cargo on that day, named the building it is related to
 	//ex: access the 4th day's 6th cargo slot: Schedule[4][6]
+	List<String> receivedBuildings = new List<String>();
 	public override void _Ready()
 	{
 		for (int i = 0; i < 10; i++)
@@ -53,7 +54,7 @@ public class UI_Event_Handler : Node
 		GetNode<Button>("/root/Map/CanvasLayer/Control/CargoUI/CargoContainer/HBoxContainer3/Button" + highlightedDay).Modulate = new Color(0, 1, 0);
 	}
 
-	private void increaseTurn()
+	public void increaseTurn()
 	{
 		daysPassed++;
 		Schedule.Add(new List<string>());
@@ -63,6 +64,19 @@ public class UI_Event_Handler : Node
 			GetNode<Button>("/root/Map/CanvasLayer/Control/CargoUI/CargoContainer/HBoxContainer3/Button" + i).Text = "Y" + newyear;
 		}
 		//move each day forward by one
+			receivedBuildings = new List<string>();
+			int tilesRemoved = 0;
+			int? tilesExpected = 1;
+			while(Schedule[0].Count > 0){
+				//grab index 0, remove as many as needed, repeat
+				receivedBuildings.Add(Schedule[0][0]);
+				tilesRemoved = 0;
+				tilesExpected = buildings[Schedule[0][0]].cargoSpace;
+				for(int i = 0; i < tilesExpected; i++){
+					Schedule[0].RemoveAt(0);
+					tilesRemoved++;
+				}
+			}
 			Schedule.RemoveAt(0);
 			for(int day = 0; day < 8; day++){
 			for (int i = 0; i < 10; i++){
@@ -106,7 +120,7 @@ public class UI_Event_Handler : Node
 		if(Schedule[highlightedDay].Count <= index){
 			return;
 		}
-		
+
 		int tilesRemoved = 0;
 		string building = Schedule[highlightedDay][index];
 		for (int i = Schedule[highlightedDay].Count - 1; i > -1; i--)
