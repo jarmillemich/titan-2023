@@ -91,9 +91,9 @@ public class UI_Event_Handler : Node
 				slot.Icon = null;
 				slot.Text = "";
 			}
-			ProgressBar PercentageFilled = GetNode<ProgressBar>("/root/Map/CanvasLayer/Control/CargoUI/CargoContainer/HBoxContainer2/ProgressBar" + highlightedDay);
-			PercentageFilled.Value = Schedule[highlightedDay].Count * 10.0;
 		}
+		ProgressBar PercentageFilled = GetNode<ProgressBar>("/root/Map/CanvasLayer/Control/CargoUI/CargoContainer/HBoxContainer2/ProgressBar" + day);
+		PercentageFilled.Value = Schedule[day].Count * 10.0;
 	}
 	}
 
