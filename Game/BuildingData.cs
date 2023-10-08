@@ -64,7 +64,7 @@ public class BuildingData : Node
 						Godot.Collections.Dictionary brd = (Godot.Collections.Dictionary)s[i];
 						BuildingRequirements br = new BuildingRequirements(
 							_type: brd.GetString("type"),
-							_targetType: brd.GetString("tileType"),
+							_targetType: brd.GetString("targetType"),
 							_distance: brd.GetInt("distance"),
 							_negate: brd.GetBool("negate")
 						);
