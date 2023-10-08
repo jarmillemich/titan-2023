@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://UI/closeSchedulerUIButton.cs" type="Script" id=1]
 [ext_resource path="res://UI/CloseInventoryUIButton.cs" type="Script" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Graphics/Buildings/power T3 - low.png" type="Texture" id=13]
 [ext_resource path="res://Graphics/Buildings/Lab T1 - low.png" type="Texture" id=14]
 [ext_resource path="res://Graphics/Buildings/farm T1 - low.png" type="Texture" id=15]
+[ext_resource path="res://UI/InventoryUI.cs" type="Script" id=16]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -850,178 +851,36 @@ margin_top = 13.0
 margin_right = -12.0
 margin_bottom = 279.0
 alignment = 2
+script = ExtResource( 16 )
 
 [node name="Inventory" type="GridContainer" parent="InventoryUI"]
 unique_name_in_owner = true
-visible = false
+margin_left = 216.0
 margin_right = 266.0
 margin_bottom = 266.0
-columns = 5
+columns = 3
 
 [node name="Slot" type="Button" parent="InventoryUI/Inventory"]
 margin_right = 50.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 50, 50 )
+icon_align = 1
+expand_icon = true
 
-[node name="Slot2" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 54.0
-margin_right = 104.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 50, 50 )
+[node name="HBoxContainer" type="HBoxContainer" parent="InventoryUI/Inventory/Slot"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -50.0
+margin_bottom = 17.0
+alignment = 2
 
-[node name="Slot3" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 108.0
-margin_right = 158.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot4" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 162.0
-margin_right = 212.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot5" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 216.0
-margin_right = 266.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot6" type="Button" parent="InventoryUI/Inventory"]
-margin_top = 54.0
+[node name="Label" type="Label" parent="InventoryUI/Inventory/Slot/HBoxContainer"]
+margin_left = 42.0
+margin_top = 1.0
 margin_right = 50.0
-margin_bottom = 104.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot7" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 54.0
-margin_top = 54.0
-margin_right = 104.0
-margin_bottom = 104.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot8" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 108.0
-margin_top = 54.0
-margin_right = 158.0
-margin_bottom = 104.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot9" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 162.0
-margin_top = 54.0
-margin_right = 212.0
-margin_bottom = 104.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot10" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 216.0
-margin_top = 54.0
-margin_right = 266.0
-margin_bottom = 104.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot11" type="Button" parent="InventoryUI/Inventory"]
-margin_top = 108.0
-margin_right = 50.0
-margin_bottom = 158.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot12" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 54.0
-margin_top = 108.0
-margin_right = 104.0
-margin_bottom = 158.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot13" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 108.0
-margin_top = 108.0
-margin_right = 158.0
-margin_bottom = 158.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot14" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 162.0
-margin_top = 108.0
-margin_right = 212.0
-margin_bottom = 158.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot15" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 216.0
-margin_top = 108.0
-margin_right = 266.0
-margin_bottom = 158.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot16" type="Button" parent="InventoryUI/Inventory"]
-margin_top = 162.0
-margin_right = 50.0
-margin_bottom = 212.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot17" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 54.0
-margin_top = 162.0
-margin_right = 104.0
-margin_bottom = 212.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot18" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 108.0
-margin_top = 162.0
-margin_right = 158.0
-margin_bottom = 212.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot19" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 162.0
-margin_top = 162.0
-margin_right = 212.0
-margin_bottom = 212.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot20" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 216.0
-margin_top = 162.0
-margin_right = 266.0
-margin_bottom = 212.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot21" type="Button" parent="InventoryUI/Inventory"]
-margin_top = 216.0
-margin_right = 50.0
-margin_bottom = 266.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot22" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 54.0
-margin_top = 216.0
-margin_right = 104.0
-margin_bottom = 266.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot23" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 108.0
-margin_top = 216.0
-margin_right = 158.0
-margin_bottom = 266.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot24" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 162.0
-margin_top = 216.0
-margin_right = 212.0
-margin_bottom = 266.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot25" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 216.0
-margin_top = 216.0
-margin_right = 266.0
-margin_bottom = 266.0
-rect_min_size = Vector2( 50, 50 )
+margin_bottom = 15.0
+size_flags_horizontal = 4
+text = "1"
 
 [node name="GridContainer" type="GridContainer" parent="InventoryUI"]
 margin_left = 270.0

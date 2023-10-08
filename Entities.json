@@ -1,5 +1,6 @@
 {
   "robot-hub": {
+    "displayOrder": 1,
     "level": 1,
     "type": "robot-hub",
     "description":"",
@@ -29,6 +30,7 @@
     ]
   },
   "human-hub": {
+    "displayOrder": 2,
     "level": 1,
     "type": "human-hub",
     "placementType": "hub",
@@ -58,6 +60,7 @@
     "buildingProsume": {}
   },
   "labLv1": {
+    "displayOrder": 3,
     "level": 1,
     "type": "Lab",
     "placementType": "spoke",
@@ -95,6 +98,7 @@
     }
   },
   "labLv2": {
+    "displayOrder": 4,
     "level": 2,
     "type": "Lab",
     "placementType": "spoke",
@@ -120,6 +124,7 @@
     }
   },
   "labLv3": {
+    "displayOrder": 5,
     "level": 3,
     "type": "Lab",
     "placementType": "spoke",
@@ -145,6 +150,7 @@
     }
   },
   "farmLv1": {
+    "displayOrder": 6,
     "level": 1,
     "type": "farm",
     "placementType": "spoke",
@@ -182,6 +188,7 @@
     }
   },
   "farmLv2": {
+    "displayOrder": 7,
     "level": 2,
     "type": "farm",
     "placementType": "spoke",
@@ -220,6 +227,7 @@
     ]
   },
   "farmLv3": {
+    "displayOrder": 8,
     "level": 3,
     "type": "farm",
     "placementType": "spoke",

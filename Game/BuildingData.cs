@@ -47,7 +47,8 @@ public class BuildingData : Node
                     BuildingSpecs specs = new BuildingSpecs(
                         keyValues.GetInt("level"),
                         keyValues.GetString("type"),
-                        keyValues.GetString("description"),
+                        keyValues.GetString("description"),						
+						keyValues.GetInt("displayOrder"),
                         keyValues.GetString("placementType"),
                         keyValues.GetInt("cargoSpace"),
                         keyValues.GetString("cargoHex"),
@@ -114,6 +115,7 @@ public class BuildingSpecs : Node
     public BuildingSpecs(int? _level,
                             string _type,
                             string _description,
+							int? _displayOrder,
                             string _placementType,
                             int? _cargoSpace,
                             string _cargoHex,
@@ -123,6 +125,7 @@ public class BuildingSpecs : Node
         level = _level;
         type = _type;
         description = _description;
+		displayOrder = _displayOrder;
         placementType = _placementType;
         cargoSpace = _cargoSpace;
         cargoHex = _cargoHex;
@@ -176,6 +179,7 @@ public class BuildingSpecs : Node
                 "; upgradeOf: " + upgradeOf.ToString();
     }
     public string description { get; set; }
+	public int? displayOrder { get; set; }
     public int? level { get; set; }
     public string type { get; set; }
     public string placementType { get; set; }
