@@ -42,7 +42,7 @@ public class CargoUI : HBoxContainer
             s.ExpandIcon = true;
             s.Connect("mouse_entered", this, "PreviewBuilding", new Godot.Collections.Array { valuePair.Key });
             s.Connect("mouse_exited", this, "ClosePreview");
-            s.Connect("button_down", GetNode("../UIEventHandler"),"ScheduleBuilding",new Godot.Collections.Array { valuePair.Key });
+            s.Connect("button_down", GetNode("../UIEventHandler"), "ScheduleBuilding", new Godot.Collections.Array { valuePair.Key });
         }
     }
     private void PreviewBuilding(string buildingName)
@@ -50,10 +50,18 @@ public class CargoUI : HBoxContainer
         buildings.TryGetValue(buildingName, out BuildingSpecs specs);
         VBoxContainer preview = GetNode<VBoxContainer>("%BuildingPreview");
         preview.Visible = true;
-         ((RichTextLabel)preview.GetNode("Description")).Text = specs.description;
-         RichTextLabel prosume = ((RichTextLabel)preview.GetNode("ProsumeLabel"));
-         prosume.Text = specs.ProsumeToString();
-         prosume.RectSize = new Vector2(215f,75f);
+        ((RichTextLabel)preview.GetNode("Description")).Text = specs.description;
+        RichTextLabel prosume = (RichTextLabel)preview.GetNode("HBoxContainer2/ProsumeLabel");
+        prosume.Text = specs.ProsumeToString();
+        //prosume.RectSize = new Vector2(215f, 75f);
+        //prosume.AnchorRight = 0.25f;
+
+
+        RichTextLabel capacity = (RichTextLabel)preview.GetNode("HBoxContainer2/CapacityLabel");
+        capacity.Text = "Cargo Space: " + specs.cargoSpace;
+        //capacity.RectSize = new Vector2(215f, 75f);
+        //capacity.AnchorLeft = 0.25f;
+        //capacity.AnchorRight = 0.5f;
         //	preview.GetNode<RichTextLabel>("%Description").Text = "Building Type: " + BuildingType + " Building Level: " + BuildingLevel;
         //	preview.GetNode<TextureRect>("")
 

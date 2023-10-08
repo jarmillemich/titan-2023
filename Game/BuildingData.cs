@@ -78,7 +78,7 @@ public class BuildingData : Node
 																_spriteScaling: keyValues.GetFloat("spriteScaling"));
 					//BuildingProsume
 					List<BuildingProsume> buildingProsumes = new List<BuildingProsume>();
-					s = keyValues["buildingReq"] as Godot.Collections.Array;
+					s = keyValues["buildingProsume"] as Godot.Collections.Array;
 					for (int i = 0; i < s.Count; i++)
 					{
 						Godot.Collections.Dictionary brd = (Godot.Collections.Dictionary)s[i];
@@ -171,7 +171,7 @@ public class BuildingSpecs : Node
     public override string ToString()
     {
         return "Level: " + level.ToString() +
-                "; type: " + level.ToString() +
+                "; type: " + type.ToString() +
                 "; placementType: " + placementType.ToString() +
                 "; cargoSpace: " + cargoSpace.ToString() +
                 "; cargoHex: " + cargoHex.ToString() +
