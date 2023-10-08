@@ -21,13 +21,12 @@ fill = 1
 fill_from = Vector2( 0.5, 0.5 )
 fill_to = Vector2( 1, 0.5 )
 
-[sub_resource type="Gradient" id=4]
-interpolation_mode = 2
-offsets = PoolRealArray( 0.169872, 0.676282 )
-colors = PoolColorArray( 0.494118, 0.0431373, 0.0431373, 1, 1, 1, 1, 0 )
+[sub_resource type="Gradient" id=6]
+offsets = PoolRealArray( 0.455128, 0.727564 )
+colors = PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture2D" id=5]
-gradient = SubResource( 4 )
+[sub_resource type="GradientTexture2D" id=7]
+gradient = SubResource( 6 )
 fill = 1
 fill_from = Vector2( 0.5, 0.5 )
 
@@ -53,7 +52,10 @@ default_color = Color( 0, 0, 0, 1 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 1
 
-[node name="ScoutButton" type="TextureButton" parent="."]
+[node name="Buttons" type="Node2D" parent="."]
+z_index = 3
+
+[node name="ScoutButton" type="TextureButton" parent="Buttons"]
 margin_left = -40.0
 margin_top = -40.0
 margin_right = 40.0
@@ -63,7 +65,7 @@ theme = SubResource( 1 )
 texture_hover = ExtResource( 6 )
 expand = true
 
-[node name="BuildButton" type="TextureButton" parent="."]
+[node name="BuildButton" type="TextureButton" parent="Buttons"]
 margin_left = -40.0
 margin_top = -40.0
 margin_right = 88.0
@@ -72,22 +74,21 @@ rect_scale = Vector2( 0.6, 0.6 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 5 )
 
-[node name="RoverTargetButton" type="TextureButton" parent="."]
+[node name="RoverTargetButton" type="TextureButton" parent="Buttons"]
 margin_left = -40.0
 margin_top = -40.0
 margin_right = 40.0
 margin_bottom = 40.0
 texture_hover = SubResource( 3 )
 
-[node name="RoverButton" type="TextureButton" parent="."]
-margin_left = -32.0
+[node name="RoverButton" type="TextureButton" parent="Buttons"]
+margin_left = -31.0
 margin_top = -32.0
-margin_right = 32.0
+margin_right = 33.0
 margin_bottom = 32.0
-texture_normal = SubResource( 5 )
-texture_hover = SubResource( 5 )
+texture_hover = SubResource( 7 )
 
-[connection signal="pressed" from="ScoutButton" to="." method="_on_ScoutButton_pressed"]
-[connection signal="pressed" from="BuildButton" to="." method="_on_BuildButton_pressed"]
-[connection signal="pressed" from="RoverTargetButton" to="." method="_on_RoverTargetButton_pressed"]
-[connection signal="pressed" from="RoverButton" to="." method="_on_RoverButton_pressed"]
+[connection signal="pressed" from="Buttons/ScoutButton" to="." method="_on_ScoutButton_pressed"]
+[connection signal="pressed" from="Buttons/BuildButton" to="." method="_on_BuildButton_pressed"]
+[connection signal="pressed" from="Buttons/RoverTargetButton" to="." method="_on_RoverTargetButton_pressed"]
+[connection signal="pressed" from="Buttons/RoverButton" to="." method="_on_RoverButton_pressed"]

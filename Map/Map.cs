@@ -167,6 +167,7 @@ public class Map : Node2D
 
 		tile.Connect(nameof(Tile.OnScout), this, nameof(onScout), new Godot.Collections.Array(at));
 		tile.Connect(nameof(Tile.OnBuild), this, nameof(OnStartBuild), new Godot.Collections.Array(at));
+		tile.Connect(nameof(Tile.OnSelectRover), this, nameof(OnSelectRover), new Godot.Collections.Array(at));
 
 		return tile;
 	}
@@ -182,6 +183,14 @@ public class Map : Node2D
 			{
 				GetNode<GameState>("/root/GameState").Phase = Phase.InTurn;
 			}
+		}
+	}
+
+	private void OnSelectRover(HexPoint tile) {
+		GD.Print("Rovinng", tile);
+		if (Tiles[tile].HasRover) {
+			gameState.RoverStartPoint = tile;
+			gameState.Phase = Phase.MovingRover;
 		}
 	}
 

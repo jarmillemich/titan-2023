@@ -71,10 +71,10 @@ public class Tile : Node2D
 
 	private Polygon2D background => GetNode<Polygon2D>("Polygon2D");
 	private Sprite fog => GetNode<Sprite>("Fog");
-	private TextureButton scoutButton => GetNode<TextureButton>("ScoutButton");
-	private TextureButton buildButton => GetNode<TextureButton>("BuildButton");
-	private TextureButton roverButton => GetNode<TextureButton>("RoverButton");
-	private TextureButton roverTargetButton => GetNode<TextureButton>("RoverTargetButton");
+	private TextureButton scoutButton => GetNode<TextureButton>("Buttons/ScoutButton");
+	private TextureButton buildButton => GetNode<TextureButton>("Buttons/BuildButton");
+	private TextureButton roverButton => GetNode<TextureButton>("Buttons/RoverButton");
+	private TextureButton roverTargetButton => GetNode<TextureButton>("Buttons/RoverTargetButton");
 
 	public Building Building => GetNode<Building>("Building");
 
