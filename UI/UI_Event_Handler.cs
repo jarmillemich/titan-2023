@@ -91,7 +91,8 @@ public class UI_Event_Handler : Node
 				slot.Icon = null;
 				slot.Text = "";
 			}
-			
+			ProgressBar PercentageFilled = GetNode<ProgressBar>("/root/Map/CanvasLayer/Control/CargoUI/CargoContainer/HBoxContainer2/ProgressBar" + highlightedDay);
+			PercentageFilled.Value = Schedule[highlightedDay].Count * 10.0;
 		}
 	}
 	}
@@ -115,6 +116,9 @@ public class UI_Event_Handler : Node
 			slot.Text = "";
 			slot.Modulate = new Color(buildings[building].cargoHex);
 		}
+			ProgressBar PercentageFilled = GetNode<ProgressBar>("/root/Map/CanvasLayer/Control/CargoUI/CargoContainer/HBoxContainer2/ProgressBar" + highlightedDay);
+			PercentageFilled.Value = Schedule[highlightedDay].Count * 10.0;
+			GD.Print(Schedule[highlightedDay].Count * 10.0);
 	}
 
 	private void CancelBuilding(int index)
@@ -137,6 +141,8 @@ public class UI_Event_Handler : Node
 				}
 			}
 		}
+		ProgressBar PercentageFilled = GetNode<ProgressBar>("/root/Map/CanvasLayer/Control/CargoUI/CargoContainer/HBoxContainer2/ProgressBar" + highlightedDay);
+		PercentageFilled.Value = Schedule[highlightedDay].Count / 10.0;
 		//reset sprites
 		for (int i = 0; i < 10; i++){
 			Button slot = GetNode<Button>("/root/Map/CanvasLayer/Control/CargoUI/CargoContainer/HBoxContainer/VBoxContainer" + highlightedDay + "/Button" + i);
