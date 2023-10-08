@@ -43,16 +43,11 @@ public class UI_Event_Handler : Node
 		}
 		int tilesAdded = 0;
 		for(int i = 0; i < buildings[building].cargoSpace; i++){
-<<<<<<< HEAD
 			Button slot = GetNode<Button>("/root/Map/CanvasLayer/Control/CargoUI/CargoContainer/HBoxContainer/VBoxContainer" + highlightedDay + "/Button" + Schedule[highlightedDay].Count); 
 			Schedule[highlightedDay].Add(building);
 			slot.Icon = (Texture)GD.Load(buildings[building].buildingDesign.spritePath);
 			slot.Text = "TEST";
 			//slot.Modulate = Color(buildings[building].cargoHex);
-=======
-			Schedule[highlightedDay].Add(building);
-			GetNode("CargoContainer/HBoxContainer/VBoxContainer" + (highlightedDay - daysPassed) + "/Button" + Schedule[highlightedDay].Count); 
->>>>>>> 2db39e439848d725c28cd8d990937aeec5f3c437
 		}
 	}
 
