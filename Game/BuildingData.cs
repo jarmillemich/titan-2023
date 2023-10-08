@@ -29,9 +29,10 @@ public class BuildingData : Node
 	}
 	public void LoadBuildingSpecs()
 	{
-		string path = "Entities.json";
+		string path = "res://Entities.tres";
 		var file = new File();
 
+		GD.Print("!!! We are attempting to load data");
 		if (file.FileExists(path))
 		{
 			GD.Print("got path");
