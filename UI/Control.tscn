@@ -29,7 +29,6 @@ margin_bottom = 274.0
 
 [node name="CargoContainer" type="VBoxContainer" parent="CargoUI"]
 unique_name_in_owner = true
-visible = false
 margin_right = 438.0
 margin_bottom = 268.0
 
@@ -672,100 +671,167 @@ margin_bottom = 212.0
 
 [node name="BuildingMenu" type="VBoxContainer" parent="CargoUI"]
 unique_name_in_owner = true
-visible = false
-margin_right = 428.0
-margin_bottom = 564.0
-rect_scale = Vector2( 0.25, 0.25 )
+margin_left = 442.0
+margin_right = 600.0
+margin_bottom = 268.0
 
 [node name="farm" type="HBoxContainer" parent="CargoUI/BuildingMenu"]
-margin_right = 428.0
-margin_bottom = 134.0
+margin_right = 158.0
+margin_bottom = 50.0
 
 [node name="farmLv1" type="Button" parent="CargoUI/BuildingMenu/farm"]
-margin_right = 140.0
-margin_bottom = 134.0
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
 icon = ExtResource( 15 )
+icon_align = 1
+expand_icon = true
 
 [node name="farmLv2" type="Button" parent="CargoUI/BuildingMenu/farm"]
-margin_left = 144.0
-margin_right = 284.0
-margin_bottom = 134.0
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
 icon = ExtResource( 7 )
+icon_align = 1
+expand_icon = true
 
 [node name="farmLv3" type="Button" parent="CargoUI/BuildingMenu/farm"]
-margin_left = 288.0
-margin_right = 428.0
-margin_bottom = 134.0
+margin_left = 108.0
+margin_right = 158.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
 icon = ExtResource( 6 )
+icon_align = 1
+expand_icon = true
 
 [node name="lab" type="HBoxContainer" parent="CargoUI/BuildingMenu"]
-margin_top = 138.0
-margin_right = 428.0
-margin_bottom = 272.0
+margin_top = 54.0
+margin_right = 158.0
+margin_bottom = 104.0
 
 [node name="labLv1" type="Button" parent="CargoUI/BuildingMenu/lab"]
-margin_right = 140.0
-margin_bottom = 134.0
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
 icon = ExtResource( 14 )
+icon_align = 1
+expand_icon = true
 
 [node name="labLv2" type="Button" parent="CargoUI/BuildingMenu/lab"]
-margin_left = 144.0
-margin_right = 284.0
-margin_bottom = 134.0
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
 icon = ExtResource( 10 )
+icon_align = 1
+expand_icon = true
 
 [node name="labLv3" type="Button" parent="CargoUI/BuildingMenu/lab"]
-margin_left = 288.0
-margin_right = 428.0
-margin_bottom = 134.0
+margin_left = 108.0
+margin_right = 158.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
 icon = ExtResource( 11 )
+icon_align = 1
+expand_icon = true
 
 [node name="iceMelter" type="HBoxContainer" parent="CargoUI/BuildingMenu"]
-margin_top = 276.0
-margin_right = 428.0
-margin_bottom = 426.0
+margin_top = 108.0
+margin_right = 158.0
+margin_bottom = 158.0
 
 [node name="iceMelterLv1" type="Button" parent="CargoUI/BuildingMenu/iceMelter"]
-margin_right = 140.0
-margin_bottom = 150.0
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
 icon = ExtResource( 8 )
+icon_align = 1
+expand_icon = true
 
 [node name="iceMelterLv2" type="Button" parent="CargoUI/BuildingMenu/iceMelter"]
-margin_left = 144.0
-margin_right = 284.0
-margin_bottom = 150.0
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
 icon = ExtResource( 5 )
+icon_align = 1
+expand_icon = true
 
 [node name="iceMelterLv3" type="Button" parent="CargoUI/BuildingMenu/iceMelter"]
-margin_left = 288.0
-margin_right = 428.0
-margin_bottom = 150.0
+margin_left = 108.0
+margin_right = 158.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
 icon = ExtResource( 12 )
+icon_align = 1
+expand_icon = true
 
 [node name="power" type="HBoxContainer" parent="CargoUI/BuildingMenu"]
-margin_top = 430.0
-margin_right = 428.0
-margin_bottom = 564.0
+margin_top = 162.0
+margin_right = 158.0
+margin_bottom = 212.0
 
 [node name="powerLv1" type="Button" parent="CargoUI/BuildingMenu/power"]
-margin_right = 140.0
-margin_bottom = 134.0
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
 icon = ExtResource( 4 )
+icon_align = 1
+expand_icon = true
 
 [node name="powerLv2" type="Button" parent="CargoUI/BuildingMenu/power"]
-margin_left = 144.0
-margin_right = 284.0
-margin_bottom = 134.0
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
 icon = ExtResource( 9 )
+icon_align = 1
+expand_icon = true
 
 [node name="powerLv3" type="Button" parent="CargoUI/BuildingMenu/power"]
-margin_left = 288.0
-margin_right = 428.0
-margin_bottom = 134.0
+margin_left = 108.0
+margin_right = 158.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
 icon = ExtResource( 13 )
+icon_align = 1
+expand_icon = true
+
+[node name="power2" type="HBoxContainer" parent="CargoUI/BuildingMenu"]
+margin_top = 216.0
+margin_right = 158.0
+margin_bottom = 266.0
+
+[node name="powerLv1" type="Button" parent="CargoUI/BuildingMenu/power2"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+icon = ExtResource( 4 )
+icon_align = 1
+expand_icon = true
+
+[node name="powerLv2" type="Button" parent="CargoUI/BuildingMenu/power2"]
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+icon = ExtResource( 9 )
+icon_align = 1
+expand_icon = true
+
+[node name="powerLv3" type="Button" parent="CargoUI/BuildingMenu/power2"]
+margin_left = 108.0
+margin_right = 158.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+icon = ExtResource( 13 )
+icon_align = 1
+expand_icon = true
 
 [node name="GridContainer" type="GridContainer" parent="CargoUI"]
-margin_right = 126.0
+margin_left = 604.0
+margin_right = 730.0
 margin_bottom = 268.0
 
 [node name="Button" type="Button" parent="CargoUI/GridContainer"]
@@ -894,44 +960,53 @@ margin_bottom = 20.0
 text = "< Received Buildings"
 script = ExtResource( 2 )
 
-[node name="Node" type="Node" parent="."]
+[node name="UIEventHandler" type="Node" parent="."]
 script = ExtResource( 3 )
 
-[connection signal="button_down" from="CargoUI/BuildingMenu/farm/farmLv1" to="Node" method="ScheduleBuilding" binds= [ "farmLv1" ]]
-[connection signal="mouse_entered" from="CargoUI/BuildingMenu/farm/farmLv1" to="Node" method="PreviewBuilding" binds= [ "farmLv1" ]]
-[connection signal="mouse_exited" from="CargoUI/BuildingMenu/farm/farmLv1" to="Node" method="ClosePreview"]
-[connection signal="button_down" from="CargoUI/BuildingMenu/farm/farmLv2" to="Node" method="ScheduleBuilding" binds= [ "farmLv2" ]]
-[connection signal="mouse_entered" from="CargoUI/BuildingMenu/farm/farmLv2" to="Node" method="PreviewBuilding" binds= [ "farmLv2" ]]
-[connection signal="mouse_exited" from="CargoUI/BuildingMenu/farm/farmLv2" to="Node" method="ClosePreview"]
-[connection signal="button_down" from="CargoUI/BuildingMenu/farm/farmLv3" to="Node" method="ScheduleBuilding" binds= [ "farmLv3" ]]
-[connection signal="mouse_entered" from="CargoUI/BuildingMenu/farm/farmLv3" to="Node" method="PreviewBuilding" binds= [ "farmLv3" ]]
-[connection signal="mouse_exited" from="CargoUI/BuildingMenu/farm/farmLv3" to="Node" method="ClosePreview"]
-[connection signal="button_down" from="CargoUI/BuildingMenu/lab/labLv1" to="Node" method="ScheduleBuilding" binds= [ "labLv1" ]]
-[connection signal="mouse_entered" from="CargoUI/BuildingMenu/lab/labLv1" to="Node" method="PreviewBuilding" binds= [ "labLv1" ]]
-[connection signal="mouse_exited" from="CargoUI/BuildingMenu/lab/labLv1" to="Node" method="ClosePreview"]
-[connection signal="button_down" from="CargoUI/BuildingMenu/lab/labLv2" to="Node" method="ScheduleBuilding" binds= [ "labLv2" ]]
-[connection signal="mouse_entered" from="CargoUI/BuildingMenu/lab/labLv2" to="Node" method="PreviewBuilding" binds= [ "labLv2" ]]
-[connection signal="mouse_exited" from="CargoUI/BuildingMenu/lab/labLv2" to="Node" method="ClosePreview"]
-[connection signal="button_down" from="CargoUI/BuildingMenu/lab/labLv3" to="Node" method="ScheduleBuilding" binds= [ "labLv3" ]]
-[connection signal="mouse_entered" from="CargoUI/BuildingMenu/lab/labLv3" to="Node" method="PreviewBuilding" binds= [ "labLv3" ]]
-[connection signal="mouse_exited" from="CargoUI/BuildingMenu/lab/labLv3" to="Node" method="ClosePreview"]
-[connection signal="button_down" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv1" to="Node" method="ScheduleBuilding" binds= [ "iceMelterLv1" ]]
-[connection signal="mouse_entered" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv1" to="Node" method="PreviewBuilding" binds= [ "iceMelterLv1" ]]
-[connection signal="mouse_exited" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv1" to="Node" method="ClosePreview"]
-[connection signal="button_down" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv2" to="Node" method="ScheduleBuilding" binds= [ "iceMelterLv2" ]]
-[connection signal="mouse_entered" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv2" to="Node" method="PreviewBuilding" binds= [ "iceMelterLv2" ]]
-[connection signal="mouse_exited" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv2" to="Node" method="ClosePreview"]
-[connection signal="button_down" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv3" to="Node" method="ScheduleBuilding" binds= [ "iceMelterLv3" ]]
-[connection signal="mouse_entered" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv3" to="Node" method="PreviewBuilding" binds= [ "iceMelterLv3" ]]
-[connection signal="mouse_exited" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv3" to="Node" method="ClosePreview"]
-[connection signal="button_down" from="CargoUI/BuildingMenu/power/powerLv1" to="Node" method="ScheduleBuilding" binds= [ "powerLv1" ]]
-[connection signal="mouse_entered" from="CargoUI/BuildingMenu/power/powerLv1" to="Node" method="PreviewBuilding" binds= [ "powerLv1" ]]
-[connection signal="mouse_exited" from="CargoUI/BuildingMenu/power/powerLv1" to="Node" method="ClosePreview"]
-[connection signal="button_down" from="CargoUI/BuildingMenu/power/powerLv2" to="Node" method="ScheduleBuilding" binds= [ "powerLv2" ]]
-[connection signal="mouse_entered" from="CargoUI/BuildingMenu/power/powerLv2" to="Node" method="PreviewBuilding" binds= [ "powerLv2" ]]
-[connection signal="mouse_exited" from="CargoUI/BuildingMenu/power/powerLv2" to="Node" method="ClosePreview"]
-[connection signal="button_down" from="CargoUI/BuildingMenu/power/powerLv3" to="Node" method="ScheduleBuilding" binds= [ "powerLv3" ]]
-[connection signal="mouse_entered" from="CargoUI/BuildingMenu/power/powerLv3" to="Node" method="PreviewBuilding" binds= [ "powerLv3" ]]
-[connection signal="mouse_exited" from="CargoUI/BuildingMenu/power/powerLv3" to="Node" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/farm/farmLv1" to="UIEventHandler" method="ScheduleBuilding" binds= [ "farmLv1" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/farm/farmLv1" to="UIEventHandler" method="PreviewBuilding" binds= [ "farmLv1" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/farm/farmLv1" to="UIEventHandler" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/farm/farmLv2" to="UIEventHandler" method="ScheduleBuilding" binds= [ "farmLv2" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/farm/farmLv2" to="UIEventHandler" method="PreviewBuilding" binds= [ "farmLv2" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/farm/farmLv2" to="UIEventHandler" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/farm/farmLv3" to="UIEventHandler" method="ScheduleBuilding" binds= [ "farmLv3" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/farm/farmLv3" to="UIEventHandler" method="PreviewBuilding" binds= [ "farmLv3" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/farm/farmLv3" to="UIEventHandler" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/lab/labLv1" to="UIEventHandler" method="ScheduleBuilding" binds= [ "labLv1" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/lab/labLv1" to="UIEventHandler" method="PreviewBuilding" binds= [ "labLv1" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/lab/labLv1" to="UIEventHandler" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/lab/labLv2" to="UIEventHandler" method="ScheduleBuilding" binds= [ "labLv2" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/lab/labLv2" to="UIEventHandler" method="PreviewBuilding" binds= [ "labLv2" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/lab/labLv2" to="UIEventHandler" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/lab/labLv3" to="UIEventHandler" method="ScheduleBuilding" binds= [ "labLv3" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/lab/labLv3" to="UIEventHandler" method="PreviewBuilding" binds= [ "labLv3" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/lab/labLv3" to="UIEventHandler" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv1" to="UIEventHandler" method="ScheduleBuilding" binds= [ "iceMelterLv1" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv1" to="UIEventHandler" method="PreviewBuilding" binds= [ "iceMelterLv1" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv1" to="UIEventHandler" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv2" to="UIEventHandler" method="ScheduleBuilding" binds= [ "iceMelterLv2" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv2" to="UIEventHandler" method="PreviewBuilding" binds= [ "iceMelterLv2" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv2" to="UIEventHandler" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv3" to="UIEventHandler" method="ScheduleBuilding" binds= [ "iceMelterLv3" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv3" to="UIEventHandler" method="PreviewBuilding" binds= [ "iceMelterLv3" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv3" to="UIEventHandler" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/power/powerLv1" to="UIEventHandler" method="ScheduleBuilding" binds= [ "powerLv1" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/power/powerLv1" to="UIEventHandler" method="PreviewBuilding" binds= [ "powerLv1" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/power/powerLv1" to="UIEventHandler" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/power/powerLv2" to="UIEventHandler" method="ScheduleBuilding" binds= [ "powerLv2" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/power/powerLv2" to="UIEventHandler" method="PreviewBuilding" binds= [ "powerLv2" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/power/powerLv2" to="UIEventHandler" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/power/powerLv3" to="UIEventHandler" method="ScheduleBuilding" binds= [ "powerLv3" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/power/powerLv3" to="UIEventHandler" method="PreviewBuilding" binds= [ "powerLv3" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/power/powerLv3" to="UIEventHandler" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/power2/powerLv1" to="UIEventHandler" method="ScheduleBuilding" binds= [ "powerLv1" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/power2/powerLv1" to="UIEventHandler" method="PreviewBuilding" binds= [ "powerLv1" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/power2/powerLv1" to="UIEventHandler" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/power2/powerLv2" to="UIEventHandler" method="ScheduleBuilding" binds= [ "powerLv2" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/power2/powerLv2" to="UIEventHandler" method="PreviewBuilding" binds= [ "powerLv2" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/power2/powerLv2" to="UIEventHandler" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/BuildingMenu/power2/powerLv3" to="UIEventHandler" method="ScheduleBuilding" binds= [ "powerLv3" ]]
+[connection signal="mouse_entered" from="CargoUI/BuildingMenu/power2/powerLv3" to="UIEventHandler" method="PreviewBuilding" binds= [ "powerLv3" ]]
+[connection signal="mouse_exited" from="CargoUI/BuildingMenu/power2/powerLv3" to="UIEventHandler" method="ClosePreview"]
 [connection signal="button_down" from="CargoUI/GridContainer/Button" to="CargoUI/GridContainer/Button" method="ToggleMenu"]
 [connection signal="button_down" from="InventoryUI/GridContainer/CloseMenuButton" to="InventoryUI/GridContainer/CloseMenuButton" method="ToggleMenu"]
