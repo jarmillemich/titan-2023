@@ -34,24 +34,24 @@ public class UI : Control
     {
         // TODO Alex & Nick
         Godot.Collections.Array buildinglist = GetNode("InventoryUI/Inventory").GetChildren();
-        GD.Print(available.Count);
         if (available.Count > 0)
         {
             for (int j = 0; j < available.Count; j++)
             {
                 for (int i = 0; i < buildinglist.Count; i++)
                 {
-                    GD.Print(((Button)buildinglist[i]).Name);
                     if (((Button)buildinglist[i]).Name.Contains(available[j]))
                     {
                         ((Button)buildinglist[i]).Disabled = false;
                     }
                 }
             }
-            ((HBoxContainer)GetNode("InventoryUI")).Visible = true;
+            ((GridContainer)GetNode("InventoryUI/Inventory")).Visible = true;
         }
     }
-
+private void _on_InventoryUI_OnInventoryButton(string buildingName){
+    EmitSignal(nameof(OnBuild),buildingName);
+}
     private void _on_EndTurnButton_pressed()
     {
         EmitSignal(nameof(OnEndTurn));

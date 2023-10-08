@@ -1265,6 +1265,7 @@ script = ExtResource( 5 )
 [connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7/Button8" to="UIEventHandler" method="CancelBuilding" binds= [ 8 ]]
 [connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7/Button9" to="UIEventHandler" method="CancelBuilding" binds= [ 9 ]]
 [connection signal="button_down" from="CargoUI/GridContainer/Button" to="CargoUI/GridContainer/Button" method="ToggleMenu"]
+[connection signal="OnInventoryButton" from="InventoryUI" to="." method="_on_InventoryUI_OnInventoryButton"]
 [connection signal="button_down" from="InventoryUI/GridContainer/CloseMenuButton" to="InventoryUI/GridContainer/CloseMenuButton" method="ToggleMenu"]
 [connection signal="pressed" from="AboutButton" to="." method="_on_AboutButton_pressed"]
 [connection signal="pressed" from="EndTurnButton" to="." method="_on_EndTurnButton_pressed"]

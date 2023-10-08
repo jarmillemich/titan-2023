@@ -553,7 +553,7 @@
     "description": "This building’s purpose is to serve as a hub for advanced industrial processes on Titan.",
     "infoDescription": "",
     "placementType": "hub",
-    "spritePath": "res://Graphics/Buildings/Indstrial Victory Hub.png",
+    "spritePath": "res://Graphics/Buildings/Industrial Victory Hub.png",
     "spriteScaling": 1,
     "cargoSpace": 2,
     "cargoHex": "#000000",

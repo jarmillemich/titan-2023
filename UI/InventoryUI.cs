@@ -73,7 +73,9 @@ public class InventoryUI : HBoxContainer
         LoadInventory(true);
         ((Button)GetNode("GridContainer").GetChild(0)).EmitSignal("button_down");
         EmitSignal(nameof(OnInventoryButton), buildingName);
+       Visible = true;
     }
+    
     //  // Called every frame. 'delta' is the elapsed time since the previous frame.
     //  public override void _Process(float delta)
     //  {
