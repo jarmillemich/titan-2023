@@ -3,9 +3,8 @@ using System;
 
 public class CloseInventoryUIButton : Button
 {
-	private void ToggleMenu()
+	public void ToggleMenu()
 	{
-		GD.Print("hello");
 		GetNode<GridContainer>("../%Inventory").Visible = !GetNode<GridContainer>("../%Inventory").Visible;
 		if(this.Text == "X")
 			this.Text = "< Received Buildings";
