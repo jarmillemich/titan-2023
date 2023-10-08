@@ -23,6 +23,7 @@ public class UI : Control
 	private Button Inventory => GetNode<Button>("/root/Map/CanvasLayer/Control/InventoryUI/GridContainer/CloseMenuButton");
 	
 	private Button ResourceUI => GetNode<Button>("/root/Map/CanvasLayer/Control/ResourceUI/GridContainer/Button");
+	private Node UIEventHandler => GetNode<Node>("/root/Map/CanvasLayer/Control/UIEventHandler");
 
 	[Signal]
 	public delegate void OnEndTurn();
@@ -54,6 +55,7 @@ private void _on_InventoryUI_OnInventoryButton(string buildingName){
 }
     private void _on_EndTurnButton_pressed()
     {
+        UIEventHandler.Call("increaseTurn");
         EmitSignal(nameof(OnEndTurn));
     }
 
@@ -127,19 +129,19 @@ private void _on_InventoryUI_OnInventoryButton(string buildingName){
 		}
 	}
 
-    public void _on_AboutButton_pressed()
-    {
-        GetNode<Control>("InfoBox").Visible = true;
-    }
+	public void _on_AboutButton_pressed()
+	{
+		GetNode<Control>("InfoBox").Visible = true;
+	}
 
-    public void _on_InfoCloseButton_pressed()
-    {
-        GetNode<Control>("InfoBox").Visible = false;
-    }
+	public void _on_InfoCloseButton_pressed()
+	{
+		GetNode<Control>("InfoBox").Visible = false;
+	}
 
-    //  // Called every frame. 'delta' is the elapsed time since the previous frame.
-    //  public override void _Process(float delta)
-    //  {
-    //      
-    //  }
+	//  // Called every frame. 'delta' is the elapsed time since the previous frame.
+	//  public override void _Process(float delta)
+	//  {
+	//      
+	//  }
 }
