@@ -156,6 +156,7 @@ script = ExtResource( 4 )
 
 [node name="CargoContainer" type="VBoxContainer" parent="CargoUI"]
 unique_name_in_owner = true
+visible = false
 margin_right = 438.0
 margin_bottom = 297.0
 
@@ -964,8 +965,9 @@ expand_icon = true
 [node name="BuildingMenu" type="VBoxContainer" parent="CargoUI"]
 unique_name_in_owner = true
 visible = false
-margin_right = 50.0
-margin_bottom = 268.0
+margin_left = 442.0
+margin_right = 492.0
+margin_bottom = 297.0
 
 [node name="BuildingList" type="GridContainer" parent="CargoUI/BuildingMenu"]
 margin_right = 50.0
@@ -980,9 +982,8 @@ icon_align = 1
 expand_icon = true
 
 [node name="GridContainer" type="GridContainer" parent="CargoUI"]
-margin_left = 442.0
-margin_right = 568.0
-margin_bottom = 297.0
+margin_right = 126.0
+margin_bottom = 268.0
 
 [node name="Button" type="Button" parent="CargoUI/GridContainer"]
 margin_right = 126.0
