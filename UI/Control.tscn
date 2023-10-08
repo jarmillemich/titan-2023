@@ -1146,6 +1146,7 @@ custom_styles/normal = SubResource( 3 )
 text = "Test"
 
 [node name="AvailabilityResourcePanel" type="ColorRect" parent="ResourceUI/VBoxContainer"]
+visible = false
 margin_top = 79.0
 margin_right = 450.0
 margin_bottom = 204.0

@@ -9,8 +9,8 @@ public class ResourceUI : HBoxContainer
     // private string b = "text";
     List<string> MaterialColumns = new List<string> { "Produce", "Consume", "Storage", };
     List<string> MaterialRows = new List<string> { "Water", "Energy", "Food" };
-    List<string> AvailabilityColumns = new List<string> { "Amount", "Assigned", "Available" };
-    List<string> AvailabilityRows = new List<string> { "Workers", "Rovers", "Mountain Samples", "Lake Samples", "Volcano Samples", "Crater Samples" };
+    // List<string> AvailabilityColumns = new List<string> { "Amount", "Assigned", "Available" };
+    // List<string> AvailabilityRows = new List<string> { "Workers", "Rovers", "Mountain Samples", "Lake Samples", "Volcano Samples", "Crater Samples" };
 
     // Called when the node enters the scene tree for the first time.
     private void LoadGrid(string templatePath, string containerPath, List<string> resourceRow, List<string> resourceColumn)
@@ -53,7 +53,7 @@ public class ResourceUI : HBoxContainer
     public override void _Ready()
     {
 LoadGrid("VBoxContainer/MaterialResourcePanel/MaterialResourceContainer","VBoxContainer/MaterialResourcePanel/MaterialResourceContainer",MaterialRows,MaterialColumns);
-LoadGrid("VBoxContainer/AvailabilityResourcePanel/AvailabilityResourceContainer","VBoxContainer/AvailabilityResourcePanel/AvailabilityResourceContainer",AvailabilityRows,AvailabilityColumns);
+// LoadGrid("VBoxContainer/AvailabilityResourcePanel/AvailabilityResourceContainer","VBoxContainer/AvailabilityResourcePanel/AvailabilityResourceContainer",AvailabilityRows,AvailabilityColumns);
 
     }
 
