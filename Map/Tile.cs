@@ -127,7 +127,7 @@ public class Tile : Node2D
 		// Can move a rover here in the "move rover" pseudo-phase
 		// And we are 1 tile from the source rover
 		if (gameState.Phase == Phase.TargettingRover) {
-			roverTargetButton.Visible = gameState.RoverStartPoint.DistanceTo(MapPosition) == 1;
+			roverTargetButton.Visible = gameState.RoverStartPoint.DistanceTo(MapPosition) == 1 && !HasRover;
 		} else {
 			roverTargetButton.Visible = false;
 		}

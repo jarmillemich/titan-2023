@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public class UI : Control
 {
@@ -19,6 +20,13 @@ public class UI : Control
 
     [Signal]
     public delegate void OnEndTurn();
+
+    [Signal]
+    public delegate void OnBuild(string buildingId);
+
+    public void OnStartBuilding(List<string> available) {
+        // TODO Alex & Nick
+    }
 
     private void _on_EndTurnButton_pressed() {
         EmitSignal(nameof(OnEndTurn));

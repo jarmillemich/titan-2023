@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public enum Phase {
     Scouting,
@@ -30,17 +29,15 @@ public class GameState : Node
 
     private Phase _phase = Phase.Scouting;
 
+    /// Current rover we want to move
     public HexPoint RoverStartPoint { get; set; }
+
+    /// Tile we have selected for building
+    public HexPoint SelectedTile { get; set; }
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         
     }
-
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
 }

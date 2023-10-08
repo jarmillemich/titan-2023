@@ -93,7 +93,7 @@ public class Map : Node2D
 	private Resources resources => GetNode<Resources>("/root/Resources");
 	private CargoQueue cargoQueue => GetNode<CargoQueue>("/root/CargoQueue");
 	private Timer phaseTimer => GetNode<Timer>("PhaseTimer");
-	private Control ui => GetNode<UI>("CanvasLayer/Control");
+	private UI ui => GetNode<UI>("CanvasLayer/Control");
 
 	private const float sideLength = 50f;
 
@@ -334,10 +334,23 @@ public class Map : Node2D
 
 	private void OnStartBuild(HexPoint tile) {
 		var available = GetBuildingsAvailableForTile(tile);
+		gameState.SelectedTile = tile;
 		
-		// TODO Call the UI
-		
+		ui.OnStartBuilding(available);
 	}
+
+	private void _on_UI_OnBuild(string buildingId) {
+		var tile = gameState.SelectedTile;
+		var building = buildingData[buildingId];
+
+		if (CanBuild(tile, building)) {
+			GD.Print("Building", buildingId, "on", tile);
+			Tiles[tile].Building.Type = buildingId;
+		} else {
+			GD.Print("Can't build", buildingId, "on", tile);
+		}
+	}
+
 	private bool CanBuild(HexPoint tile, BuildingSpecs spec)
 	{
 		return spec.buildingRequirements.All(req => IsRequirementSatisfied(tile, req));
