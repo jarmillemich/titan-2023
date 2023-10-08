@@ -1,20 +1,20 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://closeSchedulerUIButton.cs" type="Script" id=1]
-[ext_resource path="res://UI_Event_Handler.cs" type="Script" id=2]
-[ext_resource path="res://CloseInventoryUIButton.cs" type="Script" id=3]
-[ext_resource path="res://Graphics/Buildings/farm T3 - low.png" type="Texture" id=4]
-[ext_resource path="res://Graphics/Buildings/farm T2 - low.png" type="Texture" id=5]
-[ext_resource path="res://Graphics/Buildings/farm T1 - low.png" type="Texture" id=6]
-[ext_resource path="res://Graphics/Buildings/power T1 - low.png" type="Texture" id=7]
-[ext_resource path="res://Graphics/Buildings/ice melter T2 - low.png" type="Texture" id=8]
-[ext_resource path="res://Graphics/Buildings/ice melter T1 - low.png" type="Texture" id=9]
-[ext_resource path="res://Graphics/Buildings/power T2 - low.png" type="Texture" id=10]
-[ext_resource path="res://Graphics/Buildings/Lab T2 - low.png" type="Texture" id=11]
-[ext_resource path="res://Graphics/Buildings/Lab T3 - low.png" type="Texture" id=12]
-[ext_resource path="res://Graphics/Buildings/ice melter T3 - low.png" type="Texture" id=13]
-[ext_resource path="res://Graphics/Buildings/power T3 - low.png" type="Texture" id=14]
-[ext_resource path="res://Graphics/Buildings/Lab T1 - low.png" type="Texture" id=15]
+[ext_resource path="res://UI/closeSchedulerUIButton.cs" type="Script" id=1]
+[ext_resource path="res://UI/CloseInventoryUIButton.cs" type="Script" id=2]
+[ext_resource path="res://UI/UI_Event_Handler.cs" type="Script" id=3]
+[ext_resource path="res://Graphics/Buildings/power T1 - low.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Buildings/ice melter T2 - low.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Buildings/farm T3 - low.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/Buildings/farm T2 - low.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Buildings/ice melter T1 - low.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Buildings/power T2 - low.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/Buildings/Lab T2 - low.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/Buildings/Lab T3 - low.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/Buildings/ice melter T3 - low.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/Buildings/power T3 - low.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/Buildings/Lab T1 - low.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/Buildings/farm T1 - low.png" type="Texture" id=15]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -674,6 +674,7 @@ unique_name_in_owner = true
 visible = false
 margin_right = 428.0
 margin_bottom = 564.0
+rect_scale = Vector2( 0.25, 0.25 )
 
 [node name="farm" type="HBoxContainer" parent="CargoUI/BuildingMenu"]
 margin_right = 428.0
@@ -682,19 +683,19 @@ margin_bottom = 134.0
 [node name="farmLv1" type="Button" parent="CargoUI/BuildingMenu/farm"]
 margin_right = 140.0
 margin_bottom = 134.0
-icon = ExtResource( 6 )
+icon = ExtResource( 15 )
 
 [node name="farmLv2" type="Button" parent="CargoUI/BuildingMenu/farm"]
 margin_left = 144.0
 margin_right = 284.0
 margin_bottom = 134.0
-icon = ExtResource( 5 )
+icon = ExtResource( 7 )
 
 [node name="farmLv3" type="Button" parent="CargoUI/BuildingMenu/farm"]
 margin_left = 288.0
 margin_right = 428.0
 margin_bottom = 134.0
-icon = ExtResource( 4 )
+icon = ExtResource( 6 )
 
 [node name="lab" type="HBoxContainer" parent="CargoUI/BuildingMenu"]
 margin_top = 138.0
@@ -704,19 +705,19 @@ margin_bottom = 272.0
 [node name="labLv1" type="Button" parent="CargoUI/BuildingMenu/lab"]
 margin_right = 140.0
 margin_bottom = 134.0
-icon = ExtResource( 15 )
+icon = ExtResource( 14 )
 
 [node name="labLv2" type="Button" parent="CargoUI/BuildingMenu/lab"]
 margin_left = 144.0
 margin_right = 284.0
 margin_bottom = 134.0
-icon = ExtResource( 11 )
+icon = ExtResource( 10 )
 
 [node name="labLv3" type="Button" parent="CargoUI/BuildingMenu/lab"]
 margin_left = 288.0
 margin_right = 428.0
 margin_bottom = 134.0
-icon = ExtResource( 12 )
+icon = ExtResource( 11 )
 
 [node name="iceMelter" type="HBoxContainer" parent="CargoUI/BuildingMenu"]
 margin_top = 276.0
@@ -726,19 +727,19 @@ margin_bottom = 426.0
 [node name="iceMelterLv1" type="Button" parent="CargoUI/BuildingMenu/iceMelter"]
 margin_right = 140.0
 margin_bottom = 150.0
-icon = ExtResource( 9 )
+icon = ExtResource( 8 )
 
 [node name="iceMelterLv2" type="Button" parent="CargoUI/BuildingMenu/iceMelter"]
 margin_left = 144.0
 margin_right = 284.0
 margin_bottom = 150.0
-icon = ExtResource( 8 )
+icon = ExtResource( 5 )
 
 [node name="iceMelterLv3" type="Button" parent="CargoUI/BuildingMenu/iceMelter"]
 margin_left = 288.0
 margin_right = 428.0
 margin_bottom = 150.0
-icon = ExtResource( 13 )
+icon = ExtResource( 12 )
 
 [node name="power" type="HBoxContainer" parent="CargoUI/BuildingMenu"]
 margin_top = 430.0
@@ -748,19 +749,19 @@ margin_bottom = 564.0
 [node name="powerLv1" type="Button" parent="CargoUI/BuildingMenu/power"]
 margin_right = 140.0
 margin_bottom = 134.0
-icon = ExtResource( 7 )
+icon = ExtResource( 4 )
 
 [node name="powerLv2" type="Button" parent="CargoUI/BuildingMenu/power"]
 margin_left = 144.0
 margin_right = 284.0
 margin_bottom = 134.0
-icon = ExtResource( 10 )
+icon = ExtResource( 9 )
 
 [node name="powerLv3" type="Button" parent="CargoUI/BuildingMenu/power"]
 margin_left = 288.0
 margin_right = 428.0
 margin_bottom = 134.0
-icon = ExtResource( 14 )
+icon = ExtResource( 13 )
 
 [node name="GridContainer" type="GridContainer" parent="CargoUI"]
 margin_right = 126.0
@@ -1032,10 +1033,10 @@ columns = 4
 margin_right = 145.0
 margin_bottom = 20.0
 text = "< Received Buildings"
-script = ExtResource( 3 )
+script = ExtResource( 2 )
 
 [node name="Node" type="Node" parent="."]
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [connection signal="button_down" from="CargoUI/BuildingMenu/farm/farmLv1" to="Node" method="ScheduleBuilding" binds= [ "farmLv1" ]]
 [connection signal="mouse_entered" from="CargoUI/BuildingMenu/farm/farmLv1" to="Node" method="PreviewBuilding" binds= [ "farmLv1" ]]
