@@ -49,9 +49,13 @@ public class Map : Node2D
 		GD.Print("Map ready");
 
 		gameState.Connect(nameof(GameState.OnPhaseChanged), this, nameof(OnPhaseChanged));
-		gameState.Phase = Phase.Income;
+		gameState.Phase = Phase.InTurn;
 
-		var thing = GetNode<BuildingData>("/root/BuildingData");
+		// Add a rover for fun
+		var rover = ConRover.Instance<Rover>();
+		Root.AddChild(rover);
+		rover.MapPosition = new HexPoint(0, 0, 0);
+		Tiles[rover.MapPosition].HasRover = true;
 	}
 
 	private void OnPhaseChanged()
@@ -60,6 +64,7 @@ public class Map : Node2D
 	}
 
 	private static readonly PackedScene ConTile = ResourceLoader.Load("res://Map/Tile.tscn") as PackedScene ?? throw new ArgumentNullException("No Tile Scene");
+	private static readonly PackedScene ConRover = ResourceLoader.Load("res://Map/Rover.tscn") as PackedScene ?? throw new ArgumentNullException("No Rover Scene");
 
 	private Node2D Root => GetNode<Node2D>("MapRoot");
 	private Camera2D Camera => GetNode<Camera2D>("Camera2D");
@@ -158,6 +163,7 @@ public class Map : Node2D
 
 		if (Tiles.ContainsKey(at)) throw new InvalidOperationException($"Tile already exists at {at}");
 		Tiles.Add(at, tile);
+		tile.MapPosition = at;
 
 		tile.Connect(nameof(Tile.OnScout), this, nameof(onScout), new Godot.Collections.Array(at));
 		tile.Connect(nameof(Tile.OnBuild), this, nameof(OnStartBuild), new Godot.Collections.Array(at));
