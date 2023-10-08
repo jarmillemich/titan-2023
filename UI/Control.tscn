@@ -1044,5 +1044,13 @@ script = ExtResource( 2 )
 [node name="UIEventHandler" type="Node" parent="."]
 script = ExtResource( 3 )
 
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button0" to="UIEventHandler" method="highlightDay" binds= [ 0 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button1" to="UIEventHandler" method="highlightDay" binds= [ 1 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button2" to="UIEventHandler" method="highlightDay" binds= [ 2 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button3" to="UIEventHandler" method="highlightDay" binds= [ 3 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button4" to="UIEventHandler" method="highlightDay" binds= [ 4 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button5" to="UIEventHandler" method="highlightDay" binds= [ 5 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button6" to="UIEventHandler" method="highlightDay" binds= [ 6 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button7" to="UIEventHandler" method="highlightDay" binds= [ 7 ]]
 [connection signal="button_down" from="CargoUI/GridContainer/Button" to="CargoUI/GridContainer/Button" method="ToggleMenu"]
 [connection signal="button_down" from="InventoryUI/GridContainer/CloseMenuButton" to="InventoryUI/GridContainer/CloseMenuButton" method="ToggleMenu"]

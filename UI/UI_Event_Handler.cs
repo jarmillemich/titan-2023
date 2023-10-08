@@ -46,7 +46,7 @@ public class UI_Event_Handler : Node
 			Button slot = GetNode<Button>("/root/Map/CanvasLayer/Control/CargoUI/CargoContainer/HBoxContainer/VBoxContainer" + highlightedDay + "/Button" + Schedule[highlightedDay].Count); 
 			Schedule[highlightedDay].Add(building);
 			slot.Icon = (Texture)GD.Load(buildings[building].buildingDesign.spritePath);
-			slot.Text = "TEST";
+			slot.Text = "";
 			//slot.Modulate = Color(buildings[building].cargoHex);
 		}
 	}
