@@ -39,7 +39,6 @@ public class InventoryUI : HBoxContainer
             }            
         }
         LoadInventory(false);
-        EnableButtons(new Godot.Collections.Array{"robot-hub"});
     }
     private void LoadInventory(bool Reload)
     {

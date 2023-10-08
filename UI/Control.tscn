@@ -1,22 +1,18 @@
+<<<<<<< HEAD
 [gd_scene load_steps=18 format=2]
+=======
+[gd_scene load_steps=7 format=2]
+>>>>>>> 2db39e439848d725c28cd8d990937aeec5f3c437
 
 [ext_resource path="res://UI/closeSchedulerUIButton.cs" type="Script" id=1]
 [ext_resource path="res://UI/CloseInventoryUIButton.cs" type="Script" id=2]
 [ext_resource path="res://UI/UI_Event_Handler.cs" type="Script" id=3]
-[ext_resource path="res://Graphics/Buildings/power T1 - low.png" type="Texture" id=4]
-[ext_resource path="res://Graphics/Buildings/ice melter T2 - low.png" type="Texture" id=5]
-[ext_resource path="res://Graphics/Buildings/farm T3 - low.png" type="Texture" id=6]
-[ext_resource path="res://Graphics/Buildings/farm T2 - low.png" type="Texture" id=7]
-[ext_resource path="res://Graphics/Buildings/ice melter T1 - low.png" type="Texture" id=8]
-[ext_resource path="res://Graphics/Buildings/power T2 - low.png" type="Texture" id=9]
-[ext_resource path="res://Graphics/Buildings/Lab T2 - low.png" type="Texture" id=10]
-[ext_resource path="res://Graphics/Buildings/Lab T3 - low.png" type="Texture" id=11]
-[ext_resource path="res://Graphics/Buildings/ice melter T3 - low.png" type="Texture" id=12]
-[ext_resource path="res://Graphics/Buildings/power T3 - low.png" type="Texture" id=13]
-[ext_resource path="res://Graphics/Buildings/Lab T1 - low.png" type="Texture" id=14]
-[ext_resource path="res://Graphics/Buildings/farm T1 - low.png" type="Texture" id=15]
+[ext_resource path="res://UI/CargoUI.cs" type="Script" id=4]
 [ext_resource path="res://UI/InventoryUI.cs" type="Script" id=16]
 [ext_resource path="res://UI/deleteme.cs" type="Script" id=17]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -27,9 +23,11 @@ margin_left = 6.0
 margin_top = 6.0
 margin_right = 615.0
 margin_bottom = 274.0
+script = ExtResource( 4 )
 
 [node name="CargoContainer" type="VBoxContainer" parent="CargoUI"]
 unique_name_in_owner = true
+visible = false
 margin_right = 438.0
 margin_bottom = 297.0
 
@@ -858,18 +856,26 @@ expand_icon = true
 
 [node name="BuildingMenu" type="VBoxContainer" parent="CargoUI"]
 unique_name_in_owner = true
+visible = false
 margin_left = 442.0
+<<<<<<< HEAD
 margin_right = 600.0
 margin_bottom = 297.0
+=======
+margin_right = 492.0
+margin_bottom = 292.0
+>>>>>>> 2db39e439848d725c28cd8d990937aeec5f3c437
 
-[node name="farm" type="HBoxContainer" parent="CargoUI/BuildingMenu"]
-margin_right = 158.0
+[node name="BuildingList" type="GridContainer" parent="CargoUI/BuildingMenu"]
+margin_right = 50.0
 margin_bottom = 50.0
+columns = 3
 
-[node name="farmLv1" type="Button" parent="CargoUI/BuildingMenu/farm"]
+[node name="Button" type="Button" parent="CargoUI/BuildingMenu/BuildingList"]
 margin_right = 50.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 50, 50 )
+<<<<<<< HEAD
 icon = ExtResource( 15 )
 icon_align = 1
 expand_icon = true
@@ -1014,13 +1020,20 @@ margin_right = 158.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 50, 50 )
 icon = ExtResource( 13 )
+=======
+>>>>>>> 2db39e439848d725c28cd8d990937aeec5f3c437
 icon_align = 1
 expand_icon = true
 
 [node name="GridContainer" type="GridContainer" parent="CargoUI"]
+<<<<<<< HEAD
 margin_left = 604.0
 margin_right = 730.0
 margin_bottom = 297.0
+=======
+margin_right = 126.0
+margin_bottom = 268.0
+>>>>>>> 2db39e439848d725c28cd8d990937aeec5f3c437
 
 [node name="Button" type="Button" parent="CargoUI/GridContainer"]
 margin_right = 126.0
@@ -1030,36 +1043,33 @@ script = ExtResource( 1 )
 
 [node name="BuildingPreview" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
-visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -200.0
+margin_left = -330.0
 margin_top = -194.0
-
-[node name="BuildingImage" type="TextureRect" parent="BuildingPreview"]
-margin_right = 200.0
+alignment = 1
 
 [node name="Description" type="RichTextLabel" parent="BuildingPreview"]
 unique_name_in_owner = true
-margin_top = 4.0
-margin_right = 200.0
-margin_bottom = 54.0
+modulate = Color( 0, 0, 0, 1 )
+margin_top = 30.0
+margin_right = 330.0
+margin_bottom = 80.0
 rect_min_size = Vector2( 200, 50 )
 text = "This is where the description for the building will go! :)"
 scroll_active = false
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BuildingPreview"]
-margin_top = 58.0
-margin_right = 200.0
-margin_bottom = 174.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="RichTextLabel" type="RichTextLabel" parent="BuildingPreview/HBoxContainer"]
-margin_right = 80.0
-margin_bottom = 116.0
-rect_min_size = Vector2( 80, 0 )
+[node name="ProsumeLabel" type="RichTextLabel" parent="BuildingPreview"]
+use_parent_material = true
+margin_top = 84.0
+margin_right = 330.0
+margin_bottom = 164.0
+grow_horizontal = 0
+rect_min_size = Vector2( 80, 80 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_styles/normal = SubResource( 1 )
 text = "
 
 
@@ -1067,9 +1077,17 @@ Requires:
 
 Build on Preview Tier"
 
+[node name="HBoxContainer" type="HBoxContainer" parent="BuildingPreview"]
+visible = false
+margin_top = 101.0
+margin_right = 330.0
+margin_bottom = 151.0
+rect_min_size = Vector2( 50, 50 )
+
 [node name="VBoxContainer" type="VBoxContainer" parent="BuildingPreview/HBoxContainer"]
-margin_left = 84.0
-margin_right = 184.0
+visible = false
+margin_left = 215.0
+margin_right = 315.0
 margin_bottom = 116.0
 rect_min_size = Vector2( 100, 50 )
 
@@ -1109,6 +1127,7 @@ script = ExtResource( 16 )
 
 [node name="Inventory" type="GridContainer" parent="InventoryUI"]
 unique_name_in_owner = true
+visible = false
 margin_left = 216.0
 margin_right = 266.0
 margin_bottom = 266.0
@@ -1151,6 +1170,7 @@ script = ExtResource( 2 )
 [node name="UIEventHandler" type="Node" parent="."]
 script = ExtResource( 3 )
 
+<<<<<<< HEAD
 [connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button0" to="UIEventHandler" method="highlightDay" binds= [ 0 ]]
 [connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button1" to="UIEventHandler" method="highlightDay" binds= [ 1 ]]
 [connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button2" to="UIEventHandler" method="highlightDay" binds= [ 2 ]]
@@ -1204,5 +1224,7 @@ script = ExtResource( 3 )
 [connection signal="button_down" from="CargoUI/BuildingMenu/power2/powerLv3" to="UIEventHandler" method="ScheduleBuilding" binds= [ "powerLv3" ]]
 [connection signal="mouse_entered" from="CargoUI/BuildingMenu/power2/powerLv3" to="UIEventHandler" method="PreviewBuilding" binds= [ "powerLv3" ]]
 [connection signal="mouse_exited" from="CargoUI/BuildingMenu/power2/powerLv3" to="UIEventHandler" method="ClosePreview"]
+=======
+>>>>>>> 2db39e439848d725c28cd8d990937aeec5f3c437
 [connection signal="button_down" from="CargoUI/GridContainer/Button" to="CargoUI/GridContainer/Button" method="ToggleMenu"]
 [connection signal="button_down" from="InventoryUI/GridContainer/CloseMenuButton" to="InventoryUI/GridContainer/CloseMenuButton" method="ToggleMenu"]
