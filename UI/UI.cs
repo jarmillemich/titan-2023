@@ -4,25 +4,25 @@ using System.Collections.Generic;
 
 public class UI : Control
 {
-    // Declare member variables here. Examples:
-    // private int a = 2;
-    // private string b = "text";
+	// Declare member variables here. Examples:
+	// private int a = 2;
+	// private string b = "text";
 
-    // Called when the node enters the scene tree for the first time.
-    public override void _Ready()
-    {
-        gameState.Connect(nameof(GameState.OnPhaseChanged), this, nameof(OnPhaseChange));
-    }
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+		gameState.Connect(nameof(GameState.OnPhaseChanged), this, nameof(OnPhaseChange));
+	}
 
-    private GameState gameState => GetNode<GameState>("/root/GameState");
+	private GameState gameState => GetNode<GameState>("/root/GameState");
 
-    private Button endTurnButton => GetNode<Button>("EndTurnButton");
+	private Button endTurnButton => GetNode<Button>("EndTurnButton");
 
-    [Signal]
-    public delegate void OnEndTurn();
+	[Signal]
+	public delegate void OnEndTurn();
 
-    [Signal]
-    public delegate void OnBuild(string buildingId);
+	[Signal]
+	public delegate void OnBuild(string buildingId);
 
     public void OnStartBuilding(List<string> available)
     {
@@ -51,8 +51,7 @@ public class UI : Control
         EmitSignal(nameof(OnEndTurn));
     }
 
-    public void OnPhaseChange()
-    {
+    public void OnPhaseChange() {
         // TODO open/close various UI elements appropriately
         endTurnButton.Visible = gameState.Phase == Phase.InTurn;
     }

@@ -30,31 +30,54 @@ public class UI_Event_Handler : Node
 		((Label)GetNode("../GameStateLabel")).Text = "Game State: " + GetNode<GameState>("/root/GameState").Phase.ToString();
 	}
 	private void PreviewBuilding(string buildingName)
-    {
-        buildings.TryGetValue(buildingName, out BuildingSpecs specs);
-        VBoxContainer preview = GetNode<VBoxContainer>("%BuildingPreview");
-        preview.Visible = true;
-        ((RichTextLabel)preview.GetNode("Description")).Text = specs.description;
-        RichTextLabel prosume = (RichTextLabel)preview.GetNode("HBoxContainer2/ProsumeLabel");
-        prosume.Text = specs.ProsumeToString();
-
-        RichTextLabel capacity = (RichTextLabel)preview.GetNode("HBoxContainer2/CapacityLabel");
-        capacity.Text = "Cargo Space: " + specs.cargoSpace;
-    }
-
-    private void ClosePreview()
-    {
-        GetNode<VBoxContainer>("%BuildingPreview").Visible = false;
-    }
-	private void highlightDay(int day)
 	{
+		buildings.TryGetValue(buildingName, out BuildingSpecs specs);
+		VBoxContainer preview = GetNode<VBoxContainer>("%BuildingPreview");
+		preview.Visible = true;
+		((RichTextLabel)preview.GetNode("Description")).Text = specs.description;
+		RichTextLabel prosume = (RichTextLabel)preview.GetNode("HBoxContainer2/ProsumeLabel");
+		prosume.Text = specs.ProsumeToString();
+
+		RichTextLabel capacity = (RichTextLabel)preview.GetNode("HBoxContainer2/CapacityLabel");
+		capacity.Text = "Cargo Space: " + specs.cargoSpace;
+	}
+
+	private void ClosePreview()
+	{
+		GetNode<VBoxContainer>("%BuildingPreview").Visible = false;
+	}
+	private void highlightDay(int day) //this is NOT current day; it is always 0 - 7
+	{
+		GetNode<Button>("/root/Map/CanvasLayer/Control/CargoUI/CargoContainer/HBoxContainer3/Button" + highlightedDay).Modulate = new Color(1, 1, 1);
 		highlightedDay = day;
+		GetNode<Button>("/root/Map/CanvasLayer/Control/CargoUI/CargoContainer/HBoxContainer3/Button" + highlightedDay).Modulate = new Color(0, 1, 0);
 	}
 
 	private void increaseTurn()
 	{
 		daysPassed++;
 		Schedule.Add(new List<string>());
+		for(int i = 0; i < 8; i ++){
+			//update each day to be 3077 + (daysPassed * i * 7);
+			int newyear = 3070 + (daysPassed * (i + 1) * 7);
+			GetNode<Button>("/root/Map/CanvasLayer/Control/CargoUI/CargoContainer/HBoxContainer3/Button" + i).Text = "Y" + newyear;
+		}
+		//move each day forward by one
+			Schedule.RemoveAt(0);
+			for(int day = 0; day < 8; day++){
+			for (int i = 0; i < 10; i++){
+			Button slot = GetNode<Button>("/root/Map/CanvasLayer/Control/CargoUI/CargoContainer/HBoxContainer/VBoxContainer" + day + "/Button" + i);
+			if (Schedule[day].Count > i){
+				slot.Icon = (Texture)GD.Load(buildings[Schedule[day][i]].buildingDesign.spritePath);
+				slot.Modulate = new Color(buildings[Schedule[day][i]].cargoHex);
+				slot.Text = "";
+			} else {
+				slot.Modulate = new Color(1, 1, 1);
+				slot.Icon = null;
+				slot.Text = "";
+			}
+		}
+	}
 	}
 
 	private bool CheckIfScheduleable()
@@ -68,35 +91,48 @@ public class UI_Event_Handler : Node
 		{
 			return; //if available room < required cargo... no.
 		}
-		int tilesAdded = 0;
 		for (int i = 0; i < buildings[building].cargoSpace; i++)
 		{
 			Button slot = GetNode<Button>("/root/Map/CanvasLayer/Control/CargoUI/CargoContainer/HBoxContainer/VBoxContainer" + highlightedDay + "/Button" + Schedule[highlightedDay].Count);
 			Schedule[highlightedDay].Add(building);
 			slot.Icon = (Texture)GD.Load(buildings[building].buildingDesign.spritePath);
 			slot.Text = "";
-			//slot.Modulate = Color(buildings[building].cargoHex);
+			slot.Modulate = new Color(buildings[building].cargoHex);
 		}
 	}
 
-	private void CancelBuilding(int day, string building)
+	private void CancelBuilding(int index)
 	{
+		if(Schedule[highlightedDay].Count <= index){
+			return;
+		}
+		
 		int tilesRemoved = 0;
-		for (int i = Schedule[day].Count - 1; i > -1; i--)
+		string building = Schedule[highlightedDay][index];
+		for (int i = Schedule[highlightedDay].Count - 1; i > -1; i--)
 		{
-			if (Schedule[day][i] == building)
+			if (Schedule[highlightedDay][i] == building)
 			{
-				//change the sprites n stuff here!
-				Schedule[day].RemoveAt(i);
+				Schedule[highlightedDay].RemoveAt(i);
 				tilesRemoved++;
 				if (tilesRemoved == buildings[building].cargoSpace)
 				{
-					return; //if they have two of the same building, we only want to cancel one
+					i = -2; //if they have two of the same building, we only want to cancel one
 				}
 			}
 		}
+		//reset sprites
+		for (int i = 0; i < 10; i++){
+			Button slot = GetNode<Button>("/root/Map/CanvasLayer/Control/CargoUI/CargoContainer/HBoxContainer/VBoxContainer" + highlightedDay + "/Button" + i);
+			if (Schedule[highlightedDay].Count > i){
+				slot.Icon = (Texture)GD.Load(buildings[Schedule[highlightedDay][i]].buildingDesign.spritePath);
+				slot.Modulate = new Color(buildings[Schedule[highlightedDay][i]].cargoHex);
+				slot.Text = "";
+			} else {
+				slot.Modulate = new Color(1, 1, 1);
+				slot.Icon = null;
+				slot.Text = "";
+			}
+		}
 	}
-
-
-
 }

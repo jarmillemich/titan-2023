@@ -14,18 +14,19 @@
     "buildingReq": [
       {
         "type": "tileWithin",
-        "targetType": "tile-plains",
+        "targetType": "Plains",
         "distance": 0
       },
       {
         "type": "buildingDistance",
-        "targetType": "building-human-hub",
-        "distance": 3
+        "targetType": "human-hub",
+        "distance": 3,
+        "negate": true
       },
       {
         "type": "buildingDistance",
-        "targetType": "building-robot-hub",
-        "distance": 1,
+        "targetType": "robot-hub",
+        "distance": 3,
         "negate": true
       }
     ],
@@ -57,17 +58,17 @@
     "buildingReq": [
       {
         "type": "tileWithin",
-        "targetType": "tile-plains",
+        "targetType": "Plains",
         "distance": 0
       },
       {
         "type": "buildingDistance",
-        "targetType": "building-human-hub",
+        "targetType": "human-hub",
         "distance": 1
       },
       {
         "type": "buildingDistance",
-        "targetType": "building-robot-hub",
+        "targetType": "robot-hub",
         "distance": 3,
         "negate": true
       }
@@ -95,17 +96,17 @@
     "buildingReq": [
       {
         "type": "tileWithin",
-        "targetType": "tile-plains",
+        "targetType": "Plains",
         "distance": 0
       },
       {
         "type": "buildingDistance",
-        "targetType": "building-human-hub",
+        "targetType": "human-hub",
         "distance": 1
       },
       {
         "type": "buildingDistance",
-        "targetType": "building-robot-hub",
+        "targetType": "robot-hub",
         "distance": 3,
         "negate": true
       }
@@ -200,17 +201,17 @@
     "buildingReq": [
       {
         "type": "tileWithin",
-        "targetType": "tile-plains",
+        "targetType": "Plains",
         "distance": 0
       },
       {
         "type": "buildingDistance",
-        "targetType": "building-human-hub",
+        "targetType": "human-hub",
         "distance": 1
       },
       {
         "type": "buildingDistance",
-        "targetType": "building-robot-hub",
+        "targetType": "robot-hub",
         "distance": 3,
         "negate": true
       }
@@ -335,17 +336,17 @@
     "buildingReq": [
       {
         "type": "tileWithin",
-        "targetType": "tile-plains",
+        "targetType": "Plains",
         "distance": 0
       },
       {
         "type": "buildingDistance",
-        "targetType": "building-human-hub",
+        "targetType": "human-hub",
         "distance": 1
       },
       {
         "type": "buildingDistance",
-        "targetType": "building-robot-hub",
+        "targetType": "robot-hub",
         "distance": 3,
         "negate": true
       }
@@ -455,17 +456,17 @@
     "buildingReq": [
       {
         "type": "tileWithin",
-        "targetType": "tile-plains",
+        "targetType": "Plains",
         "distance": 0
       },
       {
         "type": "buildingDistance",
-        "targetType": "building-human-hub",
+        "targetType": "human-hub",
         "distance": 1
       },
       {
         "type": "buildingDistance",
-        "targetType": "building-robot-hub",
+        "targetType": "robot-hub",
         "distance": 3,
         "negate": true
       }

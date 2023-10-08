@@ -135,7 +135,6 @@ script = ExtResource( 4 )
 
 [node name="CargoContainer" type="VBoxContainer" parent="CargoUI"]
 unique_name_in_owner = true
-visible = false
 margin_right = 438.0
 margin_bottom = 297.0
 
@@ -148,7 +147,7 @@ alignment = 1
 margin_left = 1.0
 margin_right = 52.0
 margin_bottom = 20.0
-text = "YXXXX"
+text = "Y3077"
 icon_align = 1
 expand_icon = true
 
@@ -156,7 +155,7 @@ expand_icon = true
 margin_left = 56.0
 margin_right = 107.0
 margin_bottom = 20.0
-text = "YXXXX"
+text = "Y3084"
 icon_align = 1
 expand_icon = true
 
@@ -164,7 +163,7 @@ expand_icon = true
 margin_left = 111.0
 margin_right = 162.0
 margin_bottom = 20.0
-text = "YXXXX"
+text = "Y3091"
 icon_align = 1
 expand_icon = true
 
@@ -172,7 +171,7 @@ expand_icon = true
 margin_left = 166.0
 margin_right = 217.0
 margin_bottom = 20.0
-text = "YXXXX"
+text = "Y3098"
 icon_align = 1
 expand_icon = true
 
@@ -180,7 +179,7 @@ expand_icon = true
 margin_left = 221.0
 margin_right = 272.0
 margin_bottom = 20.0
-text = "YXXXX"
+text = "Y3105"
 icon_align = 1
 expand_icon = true
 
@@ -188,7 +187,7 @@ expand_icon = true
 margin_left = 276.0
 margin_right = 327.0
 margin_bottom = 20.0
-text = "YXXXX"
+text = "Y3112"
 icon_align = 1
 expand_icon = true
 
@@ -196,7 +195,7 @@ expand_icon = true
 margin_left = 331.0
 margin_right = 382.0
 margin_bottom = 20.0
-text = "YXXXX"
+text = "Y3119"
 icon_align = 1
 expand_icon = true
 
@@ -204,7 +203,7 @@ expand_icon = true
 margin_left = 386.0
 margin_right = 437.0
 margin_bottom = 20.0
-text = "YXXXX"
+text = "Y3126"
 icon_align = 1
 expand_icon = true
 
@@ -341,21 +340,94 @@ margin_bottom = 297.0
 rect_min_size = Vector2( 0, 200 )
 alignment = 1
 
-[node name="VBoxContainer1" type="VBoxContainer" parent="CargoUI/CargoContainer/HBoxContainer"]
+[node name="VBoxContainer0" type="VBoxContainer" parent="CargoUI/CargoContainer/HBoxContainer"]
 margin_left = 5.0
 margin_right = 55.0
 margin_bottom = 236.0
 rect_min_size = Vector2( 50, 0 )
 
+[node name="Button0" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer0"]
+margin_right = 50.0
+margin_bottom = 20.0
+icon_align = 1
+expand_icon = true
+
+[node name="Button1" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer0"]
+margin_top = 24.0
+margin_right = 50.0
+margin_bottom = 44.0
+icon_align = 1
+expand_icon = true
+
+[node name="Button2" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer0"]
+margin_top = 48.0
+margin_right = 50.0
+margin_bottom = 68.0
+icon_align = 1
+expand_icon = true
+
+[node name="Button3" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer0"]
+margin_top = 72.0
+margin_right = 50.0
+margin_bottom = 92.0
+icon_align = 1
+expand_icon = true
+
+[node name="Button4" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer0"]
+margin_top = 96.0
+margin_right = 50.0
+margin_bottom = 116.0
+icon_align = 1
+expand_icon = true
+
+[node name="Button5" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer0"]
+margin_top = 120.0
+margin_right = 50.0
+margin_bottom = 140.0
+icon_align = 1
+expand_icon = true
+
+[node name="Button6" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer0"]
+margin_top = 144.0
+margin_right = 50.0
+margin_bottom = 164.0
+icon_align = 1
+expand_icon = true
+
+[node name="Button7" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer0"]
+margin_top = 168.0
+margin_right = 50.0
+margin_bottom = 188.0
+icon_align = 1
+expand_icon = true
+
+[node name="Button8" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer0"]
+margin_top = 192.0
+margin_right = 50.0
+margin_bottom = 212.0
+icon_align = 1
+expand_icon = true
+
+[node name="Button9" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer0"]
+margin_top = 216.0
+margin_right = 50.0
+margin_bottom = 236.0
+icon_align = 1
+expand_icon = true
+
+[node name="VBoxContainer1" type="VBoxContainer" parent="CargoUI/CargoContainer/HBoxContainer"]
+margin_left = 59.0
+margin_right = 109.0
+margin_bottom = 236.0
+rect_min_size = Vector2( 50, 0 )
+
 [node name="Button0" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
-modulate = Color( 0.313726, 1, 0, 1 )
 margin_right = 50.0
 margin_bottom = 20.0
 icon_align = 1
 expand_icon = true
 
 [node name="Button1" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
-modulate = Color( 0.313726, 1, 0, 1 )
 margin_top = 24.0
 margin_right = 50.0
 margin_bottom = 44.0
@@ -363,7 +435,6 @@ icon_align = 1
 expand_icon = true
 
 [node name="Button2" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
-modulate = Color( 0.313726, 1, 0, 1 )
 margin_top = 48.0
 margin_right = 50.0
 margin_bottom = 68.0
@@ -371,7 +442,6 @@ icon_align = 1
 expand_icon = true
 
 [node name="Button3" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
-modulate = Color( 0.313726, 1, 0, 1 )
 margin_top = 72.0
 margin_right = 50.0
 margin_bottom = 92.0
@@ -379,7 +449,6 @@ icon_align = 1
 expand_icon = true
 
 [node name="Button4" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
-modulate = Color( 0.313726, 1, 0, 1 )
 margin_top = 96.0
 margin_right = 50.0
 margin_bottom = 116.0
@@ -387,7 +456,6 @@ icon_align = 1
 expand_icon = true
 
 [node name="Button5" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
-modulate = Color( 0.313726, 1, 0, 1 )
 margin_top = 120.0
 margin_right = 50.0
 margin_bottom = 140.0
@@ -395,7 +463,6 @@ icon_align = 1
 expand_icon = true
 
 [node name="Button6" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
-modulate = Color( 0.313726, 1, 0, 1 )
 margin_top = 144.0
 margin_right = 50.0
 margin_bottom = 164.0
@@ -403,7 +470,6 @@ icon_align = 1
 expand_icon = true
 
 [node name="Button7" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
-modulate = Color( 0.313726, 1, 0, 1 )
 margin_top = 168.0
 margin_right = 50.0
 margin_bottom = 188.0
@@ -411,7 +477,6 @@ icon_align = 1
 expand_icon = true
 
 [node name="Button8" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
-modulate = Color( 0.313726, 1, 0, 1 )
 margin_top = 192.0
 margin_right = 50.0
 margin_bottom = 212.0
@@ -419,7 +484,6 @@ icon_align = 1
 expand_icon = true
 
 [node name="Button9" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
-modulate = Color( 0.313726, 1, 0, 1 )
 margin_top = 216.0
 margin_right = 50.0
 margin_bottom = 236.0
@@ -427,20 +491,18 @@ icon_align = 1
 expand_icon = true
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CargoUI/CargoContainer/HBoxContainer"]
-margin_left = 59.0
-margin_right = 109.0
+margin_left = 113.0
+margin_right = 163.0
 margin_bottom = 236.0
 rect_min_size = Vector2( 50, 0 )
 
 [node name="Button0" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
-modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
 margin_right = 50.0
 margin_bottom = 20.0
 icon_align = 1
 expand_icon = true
 
 [node name="Button1" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
-modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
 margin_top = 24.0
 margin_right = 50.0
 margin_bottom = 44.0
@@ -448,7 +510,6 @@ icon_align = 1
 expand_icon = true
 
 [node name="Button2" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
-modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
 margin_top = 48.0
 margin_right = 50.0
 margin_bottom = 68.0
@@ -456,7 +517,6 @@ icon_align = 1
 expand_icon = true
 
 [node name="Button3" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
-modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
 margin_top = 72.0
 margin_right = 50.0
 margin_bottom = 92.0
@@ -464,7 +524,6 @@ icon_align = 1
 expand_icon = true
 
 [node name="Button4" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
-modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
 margin_top = 96.0
 margin_right = 50.0
 margin_bottom = 116.0
@@ -472,7 +531,6 @@ icon_align = 1
 expand_icon = true
 
 [node name="Button5" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
-modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
 margin_top = 120.0
 margin_right = 50.0
 margin_bottom = 140.0
@@ -480,7 +538,6 @@ icon_align = 1
 expand_icon = true
 
 [node name="Button6" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
-modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
 margin_top = 144.0
 margin_right = 50.0
 margin_bottom = 164.0
@@ -488,7 +545,6 @@ icon_align = 1
 expand_icon = true
 
 [node name="Button7" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
-modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
 margin_top = 168.0
 margin_right = 50.0
 margin_bottom = 188.0
@@ -496,7 +552,6 @@ icon_align = 1
 expand_icon = true
 
 [node name="Button8" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
-modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
 margin_top = 192.0
 margin_right = 50.0
 margin_bottom = 212.0
@@ -504,7 +559,6 @@ icon_align = 1
 expand_icon = true
 
 [node name="Button9" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
-modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
 margin_top = 216.0
 margin_right = 50.0
 margin_bottom = 236.0
@@ -512,8 +566,8 @@ icon_align = 1
 expand_icon = true
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="CargoUI/CargoContainer/HBoxContainer"]
-margin_left = 113.0
-margin_right = 163.0
+margin_left = 167.0
+margin_right = 217.0
 margin_bottom = 236.0
 rect_min_size = Vector2( 50, 0 )
 
@@ -587,8 +641,8 @@ icon_align = 1
 expand_icon = true
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="CargoUI/CargoContainer/HBoxContainer"]
-margin_left = 167.0
-margin_right = 217.0
+margin_left = 221.0
+margin_right = 271.0
 margin_bottom = 236.0
 rect_min_size = Vector2( 50, 0 )
 
@@ -662,8 +716,8 @@ icon_align = 1
 expand_icon = true
 
 [node name="VBoxContainer5" type="VBoxContainer" parent="CargoUI/CargoContainer/HBoxContainer"]
-margin_left = 221.0
-margin_right = 271.0
+margin_left = 275.0
+margin_right = 325.0
 margin_bottom = 236.0
 rect_min_size = Vector2( 50, 0 )
 
@@ -737,8 +791,8 @@ icon_align = 1
 expand_icon = true
 
 [node name="VBoxContainer6" type="VBoxContainer" parent="CargoUI/CargoContainer/HBoxContainer"]
-margin_left = 275.0
-margin_right = 325.0
+margin_left = 329.0
+margin_right = 379.0
 margin_bottom = 236.0
 rect_min_size = Vector2( 50, 0 )
 
@@ -812,8 +866,8 @@ icon_align = 1
 expand_icon = true
 
 [node name="VBoxContainer7" type="VBoxContainer" parent="CargoUI/CargoContainer/HBoxContainer"]
-margin_left = 329.0
-margin_right = 379.0
+margin_left = 383.0
+margin_right = 433.0
 margin_bottom = 236.0
 rect_min_size = Vector2( 50, 0 )
 
@@ -886,82 +940,6 @@ margin_bottom = 236.0
 icon_align = 1
 expand_icon = true
 
-[node name="VBoxContainer8" type="VBoxContainer" parent="CargoUI/CargoContainer/HBoxContainer"]
-margin_left = 383.0
-margin_right = 433.0
-margin_bottom = 236.0
-rect_min_size = Vector2( 50, 0 )
-rect_pivot_offset = Vector2( -415, 5 )
-
-[node name="Button0" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
-margin_right = 50.0
-margin_bottom = 20.0
-icon_align = 1
-expand_icon = true
-
-[node name="Button1" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
-margin_top = 24.0
-margin_right = 50.0
-margin_bottom = 44.0
-icon_align = 1
-expand_icon = true
-
-[node name="Button2" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
-margin_top = 48.0
-margin_right = 50.0
-margin_bottom = 68.0
-icon_align = 1
-expand_icon = true
-
-[node name="Button3" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
-margin_top = 72.0
-margin_right = 50.0
-margin_bottom = 92.0
-icon_align = 1
-expand_icon = true
-
-[node name="Button4" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
-margin_top = 96.0
-margin_right = 50.0
-margin_bottom = 116.0
-icon_align = 1
-expand_icon = true
-
-[node name="Button5" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
-margin_top = 120.0
-margin_right = 50.0
-margin_bottom = 140.0
-icon_align = 1
-expand_icon = true
-
-[node name="Button6" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
-margin_top = 144.0
-margin_right = 50.0
-margin_bottom = 164.0
-icon_align = 1
-expand_icon = true
-
-[node name="Button7" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
-margin_top = 168.0
-margin_right = 50.0
-margin_bottom = 188.0
-icon_align = 1
-expand_icon = true
-
-[node name="Button8" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
-margin_top = 192.0
-margin_right = 50.0
-margin_bottom = 212.0
-icon_align = 1
-expand_icon = true
-
-[node name="Button9" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
-margin_top = 216.0
-margin_right = 50.0
-margin_bottom = 236.0
-icon_align = 1
-expand_icon = true
-
 [node name="BuildingMenu" type="VBoxContainer" parent="CargoUI"]
 unique_name_in_owner = true
 visible = false
@@ -981,8 +959,9 @@ icon_align = 1
 expand_icon = true
 
 [node name="GridContainer" type="GridContainer" parent="CargoUI"]
-margin_right = 126.0
-margin_bottom = 268.0
+margin_left = 442.0
+margin_right = 568.0
+margin_bottom = 297.0
 
 [node name="Button" type="Button" parent="CargoUI/GridContainer"]
 margin_right = 126.0
@@ -1204,6 +1183,86 @@ script = ExtResource( 5 )
 [connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button5" to="UIEventHandler" method="highlightDay" binds= [ 5 ]]
 [connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button6" to="UIEventHandler" method="highlightDay" binds= [ 6 ]]
 [connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button7" to="UIEventHandler" method="highlightDay" binds= [ 7 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer0/Button0" to="UIEventHandler" method="CancelBuilding" binds= [ 0 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer0/Button1" to="UIEventHandler" method="CancelBuilding" binds= [ 1 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer0/Button2" to="UIEventHandler" method="CancelBuilding" binds= [ 2 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer0/Button3" to="UIEventHandler" method="CancelBuilding" binds= [ 3 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer0/Button4" to="UIEventHandler" method="CancelBuilding" binds= [ 4 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer0/Button5" to="UIEventHandler" method="CancelBuilding" binds= [ 5 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer0/Button6" to="UIEventHandler" method="CancelBuilding" binds= [ 6 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer0/Button7" to="UIEventHandler" method="CancelBuilding" binds= [ 7 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer0/Button8" to="UIEventHandler" method="CancelBuilding" binds= [ 8 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer0/Button9" to="UIEventHandler" method="CancelBuilding" binds= [ 9 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1/Button0" to="UIEventHandler" method="CancelBuilding" binds= [ 0 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1/Button1" to="UIEventHandler" method="CancelBuilding" binds= [ 1 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1/Button2" to="UIEventHandler" method="CancelBuilding" binds= [ 2 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1/Button3" to="UIEventHandler" method="CancelBuilding" binds= [ 3 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1/Button4" to="UIEventHandler" method="CancelBuilding" binds= [ 4 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1/Button5" to="UIEventHandler" method="CancelBuilding" binds= [ 5 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1/Button6" to="UIEventHandler" method="CancelBuilding" binds= [ 6 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1/Button7" to="UIEventHandler" method="CancelBuilding" binds= [ 7 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1/Button8" to="UIEventHandler" method="CancelBuilding" binds= [ 8 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1/Button9" to="UIEventHandler" method="CancelBuilding" binds= [ 9 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2/Button0" to="UIEventHandler" method="CancelBuilding" binds= [ 0 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2/Button1" to="UIEventHandler" method="CancelBuilding" binds= [ 1 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2/Button2" to="UIEventHandler" method="CancelBuilding" binds= [ 2 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2/Button3" to="UIEventHandler" method="CancelBuilding" binds= [ 3 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2/Button4" to="UIEventHandler" method="CancelBuilding" binds= [ 4 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2/Button5" to="UIEventHandler" method="CancelBuilding" binds= [ 5 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2/Button6" to="UIEventHandler" method="CancelBuilding" binds= [ 6 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2/Button7" to="UIEventHandler" method="CancelBuilding" binds= [ 7 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2/Button8" to="UIEventHandler" method="CancelBuilding" binds= [ 8 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2/Button9" to="UIEventHandler" method="CancelBuilding" binds= [ 9 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3/Button0" to="UIEventHandler" method="CancelBuilding" binds= [ 0 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3/Button1" to="UIEventHandler" method="CancelBuilding" binds= [ 1 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3/Button2" to="UIEventHandler" method="CancelBuilding" binds= [ 2 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3/Button3" to="UIEventHandler" method="CancelBuilding" binds= [ 3 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3/Button4" to="UIEventHandler" method="CancelBuilding" binds= [ 4 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3/Button5" to="UIEventHandler" method="CancelBuilding" binds= [ 5 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3/Button6" to="UIEventHandler" method="CancelBuilding" binds= [ 6 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3/Button7" to="UIEventHandler" method="CancelBuilding" binds= [ 7 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3/Button8" to="UIEventHandler" method="CancelBuilding" binds= [ 8 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3/Button9" to="UIEventHandler" method="CancelBuilding" binds= [ 9 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4/Button0" to="UIEventHandler" method="CancelBuilding" binds= [ 0 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4/Button1" to="UIEventHandler" method="CancelBuilding" binds= [ 1 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4/Button2" to="UIEventHandler" method="CancelBuilding" binds= [ 2 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4/Button3" to="UIEventHandler" method="CancelBuilding" binds= [ 3 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4/Button4" to="UIEventHandler" method="CancelBuilding" binds= [ 4 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4/Button5" to="UIEventHandler" method="CancelBuilding" binds= [ 5 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4/Button6" to="UIEventHandler" method="CancelBuilding" binds= [ 6 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4/Button7" to="UIEventHandler" method="CancelBuilding" binds= [ 7 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4/Button8" to="UIEventHandler" method="CancelBuilding" binds= [ 8 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4/Button9" to="UIEventHandler" method="CancelBuilding" binds= [ 9 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5/Button0" to="UIEventHandler" method="CancelBuilding" binds= [ 0 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5/Button1" to="UIEventHandler" method="CancelBuilding" binds= [ 1 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5/Button2" to="UIEventHandler" method="CancelBuilding" binds= [ 2 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5/Button3" to="UIEventHandler" method="CancelBuilding" binds= [ 3 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5/Button4" to="UIEventHandler" method="CancelBuilding" binds= [ 4 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5/Button5" to="UIEventHandler" method="CancelBuilding" binds= [ 5 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5/Button6" to="UIEventHandler" method="CancelBuilding" binds= [ 6 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5/Button7" to="UIEventHandler" method="CancelBuilding" binds= [ 7 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5/Button8" to="UIEventHandler" method="CancelBuilding" binds= [ 8 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5/Button9" to="UIEventHandler" method="CancelBuilding" binds= [ 9 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6/Button0" to="UIEventHandler" method="CancelBuilding" binds= [ 0 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6/Button1" to="UIEventHandler" method="CancelBuilding" binds= [ 1 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6/Button2" to="UIEventHandler" method="CancelBuilding" binds= [ 2 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6/Button3" to="UIEventHandler" method="CancelBuilding" binds= [ 3 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6/Button4" to="UIEventHandler" method="CancelBuilding" binds= [ 4 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6/Button5" to="UIEventHandler" method="CancelBuilding" binds= [ 5 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6/Button6" to="UIEventHandler" method="CancelBuilding" binds= [ 6 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6/Button7" to="UIEventHandler" method="CancelBuilding" binds= [ 7 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6/Button8" to="UIEventHandler" method="CancelBuilding" binds= [ 8 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6/Button9" to="UIEventHandler" method="CancelBuilding" binds= [ 9 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7/Button0" to="UIEventHandler" method="CancelBuilding" binds= [ 0 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7/Button1" to="UIEventHandler" method="CancelBuilding" binds= [ 1 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7/Button2" to="UIEventHandler" method="CancelBuilding" binds= [ 2 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7/Button3" to="UIEventHandler" method="CancelBuilding" binds= [ 3 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7/Button4" to="UIEventHandler" method="CancelBuilding" binds= [ 4 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7/Button5" to="UIEventHandler" method="CancelBuilding" binds= [ 5 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7/Button6" to="UIEventHandler" method="CancelBuilding" binds= [ 6 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7/Button7" to="UIEventHandler" method="CancelBuilding" binds= [ 7 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7/Button8" to="UIEventHandler" method="CancelBuilding" binds= [ 8 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7/Button9" to="UIEventHandler" method="CancelBuilding" binds= [ 9 ]]
 [connection signal="button_down" from="CargoUI/GridContainer/Button" to="CargoUI/GridContainer/Button" method="ToggleMenu"]
 [connection signal="button_down" from="InventoryUI/GridContainer/CloseMenuButton" to="InventoryUI/GridContainer/CloseMenuButton" method="ToggleMenu"]
 [connection signal="pressed" from="AboutButton" to="." method="_on_AboutButton_pressed"]

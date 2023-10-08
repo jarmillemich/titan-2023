@@ -4,25 +4,25 @@ using System;
 [Tool]
 public class Rover : Node2D
 {
-    public HexPoint MapPosition {
-        get => _position;
-        set {
-            _position = value;
-            if (_isReady) UpdateSprite();
-        }
-    }
+	public HexPoint MapPosition {
+		get => _position;
+		set {
+			_position = value;
+			if (_isReady) UpdateSprite();
+		}
+	}
 
-    private HexPoint _position = new HexPoint(0, 0, 0);
+	private HexPoint _position = new HexPoint(0, 0, 0);
 
-    public HexPoint Destination {
-        get => _destination;
-        set {
-            _destination = value;
-            if (_isReady) UpdateSprite();
-        }
-    }
+	public HexPoint Destination {
+		get => _destination;
+		set {
+			_destination = value;
+			if (_isReady) UpdateSprite();
+		}
+	}
 
-    private HexPoint _destination = new HexPoint(0, 0, 0);
+	private HexPoint _destination = new HexPoint(0, 0, 0);
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -37,11 +37,11 @@ public class Rover : Node2D
         UpdateSprite();
     }
 
-    private bool _isReady = false;
+	private bool _isReady = false;
 
-    private void UpdateSprite()
-    {
-        Position = MapPosition.ToVector2(50f);
+	private void UpdateSprite()
+	{
+		Position = MapPosition.ToVector2(50f);
 
         bool moving = _destination.DistanceTo(_position) > 0;
         GetNode<Sprite>("Arrow").Visible = moving;
@@ -51,6 +51,6 @@ public class Rover : Node2D
             GD.Print("Moving rover", _position, _destination, Rotation);
         }
 
-    }
+	}
 
 }

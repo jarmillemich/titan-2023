@@ -66,7 +66,7 @@ public class Map : Node2D
 		GD.Print("New phase!");
 		switch (gameState.Phase) {
 			case Phase.Income:
-				//resources.CalcResource();
+				resources.CalcResource();
 				break;
 			case Phase.CargoDrop:
 				cargoQueue.Tick();
@@ -335,6 +335,8 @@ public class Map : Node2D
 	private void OnStartBuild(HexPoint tile) {
 		var available = GetBuildingsAvailableForTile(tile);
 		gameState.SelectedTile = tile;
+
+		GD.Print("Available", string.Join(", ", available));
 		
 		ui.OnStartBuilding(available);
 	}
@@ -345,7 +347,14 @@ public class Map : Node2D
 
 		if (CanBuild(tile, building)) {
 			GD.Print("Building", buildingId, "on", tile);
+
+			if (Tiles[tile].Building.Type != "None") {
+				GD.Print("  Replacing", Tiles[tile].Building.Type);
+				resources.BuildingBuilt(Tiles[tile].Building.Type, -1);
+			}
+
 			Tiles[tile].Building.Type = buildingId;
+			resources.BuildingBuilt(buildingId);
 		} else {
 			GD.Print("Can't build", buildingId, "on", tile);
 		}
@@ -353,6 +362,7 @@ public class Map : Node2D
 
 	private bool CanBuild(HexPoint tile, BuildingSpecs spec)
 	{
+		// GD.Print("Considering", spec, "on", Tiles[tile].Type);
 		return spec.buildingRequirements.All(req => IsRequirementSatisfied(tile, req));
 	}
 
@@ -366,9 +376,11 @@ public class Map : Node2D
 				{
 					if (Tiles.ContainsKey(coord) && Tiles[coord].Type.ToString() == req.targetType)
 					{
+						// GD.Print("Matched tileWithin", coord, req.targetType, req.negate);
 						return !req.negate;
 					}
 				}
+				// GD.Print("  Failed tileWithin-", req.targetType, "-", Tiles[tile].Type.ToString());
 				return req.negate;
 			case "buildingDistance":
 				// Must have the specified building within the specified distance (or not)
@@ -376,11 +388,14 @@ public class Map : Node2D
 				{
 					if (Tiles.ContainsKey(coord) && Tiles[coord].Building != null && Tiles[coord].Building.Type == req.targetType)
 					{
+						// GD.Print("  Matched buildingDistance", coord, req.targetType, req.negate);
 						return !req.negate;
 					}
 				}
+				// GD.Print("  Failed buildingDistance", req.targetType, req.negate);
 				return req.negate;
 			case "notBuildable":
+				// GD.Print("Cannot build");
 				return false;
 			default:
 				throw new Exception($"Unknown requirement type {req.type}");

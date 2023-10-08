@@ -50,11 +50,11 @@ public class BuildingData : Node
                         keyValues.GetString("description"),
                         keyValues.GetString("infodescription"),						
 						keyValues.GetInt("displayOrder"),
-                        keyValues.GetString("placementType"),
-                        keyValues.GetInt("cargoSpace"),
-                        keyValues.GetString("cargoHex"),
-                        keyValues.GetInt("maxLimit")
-                    );
+						keyValues.GetString("placementType"),
+						keyValues.GetInt("cargoSpace"),
+						keyValues.GetString("cargoHex"),
+						keyValues.GetInt("maxLimit")
+					);
 
 					//Requirements
 					List<BuildingRequirements> buildingRequirements = new List<BuildingRequirements>();
@@ -64,7 +64,7 @@ public class BuildingData : Node
 						Godot.Collections.Dictionary brd = (Godot.Collections.Dictionary)s[i];
 						BuildingRequirements br = new BuildingRequirements(
 							_type: brd.GetString("type"),
-							_targetType: brd.GetString("tileType"),
+							_targetType: brd.GetString("targetType"),
 							_distance: brd.GetInt("distance"),
 							_negate: brd.GetBool("negate")
 						);
@@ -184,16 +184,16 @@ public class BuildingSpecs : Node
     public string description { get; set; }
 	public string infoDescription { get; set; }
 	public int? displayOrder { get; set; }
-    public int? level { get; set; }
-    public string type { get; set; }
-    public string placementType { get; set; }
-    public int? cargoSpace { get; set; }
-    public string cargoHex { get; set; }
-    public int? maxLimit { get; set; }
-    public string upgradeOf { get; set; }
-    public BuildingDesign buildingDesign { get; set; }
-    public List<BuildingRequirements> buildingRequirements { get; set; }
-    public List<BuildingProsume> buildingProsume { get; set; }
+	public int? level { get; set; }
+	public string type { get; set; }
+	public string placementType { get; set; }
+	public int? cargoSpace { get; set; }
+	public string cargoHex { get; set; }
+	public int? maxLimit { get; set; }
+	public string upgradeOf { get; set; }
+	public BuildingDesign buildingDesign { get; set; }
+	public List<BuildingRequirements> buildingRequirements { get; set; }
+	public List<BuildingProsume> buildingProsume { get; set; }
 }
 public class BuildingDesign : Node
 {
