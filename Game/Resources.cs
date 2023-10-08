@@ -45,48 +45,8 @@ public class Resources : Node
 		Energy.Amount += Energy.Income;
 		Water.Amount += Water.Income;
 		Food.Amount += Food.Income;
-		//Subtract resources
-		Godot.Collections.Dictionary<string, BuildingSpecs> buildings2 =
-	 (Godot.Collections.Dictionary<string, BuildingSpecs>)from built in builtBuilding
-														  join builds in buildings on built.Key.ToString() equals buildings.Keys.ToString()
-														  where built.Value > 0
-														  select builds;
 
-		foreach (BuildingSpecs builds in buildings2.Values)
-		{
-			List<BuildingProsume> prosume = builds.buildingProsume;
-			for (int i = 0; i < prosume.Count(); i++)
-			{
-				switch (prosume[i].type)
-				{
-					case "Food":
-						if (prosume[i].function == "consume")
-							Food.Amount -= prosume[i].amount;
-						break;
-					case "Water":
-						if (prosume[i].function == "consume")
-							Water.Amount -= prosume[i].amount;
-						break;
-					case "Energy":
-						if (prosume[i].function == "consume")
-							Energy.Amount -= prosume[i].amount;
-						break;
-				}
-			}
-		}
-		//If resources are negative then set to 0
-		if (Energy.Amount < 0)
-		{
-			Energy.Amount = 0;
-		}
-		if (Water.Amount < 0)
-		{
-			Water.Amount = 0;
-		}
-		if (Food.Amount < 0)
-		{
-			Food.Amount = 0;
-		}
+		
 		//If resources are above capacity, set to capacity
 		if (Energy.Amount > Energy.Capacity)
 		{
@@ -101,6 +61,7 @@ public class Resources : Node
 			Food.Amount = Food.Capacity;
 		}
 	}
+
 	#region DictionaryAccess
 	public void AddPendingBuild(string buildingName)
 	{
@@ -113,7 +74,7 @@ public class Resources : Node
 			GD.Print(buildingName, " does not exist in list");
 		}
 	}
-	public void BuildingBuilt(string buildingName)
+	public void BuildingBuilt(string buildingName, int amount = 1)
 	{
 		if (builtBuilding.ContainsKey(buildingName))
 		{
@@ -130,10 +91,10 @@ public class Resources : Node
 						switch (prosume[i].function)
 						{
 							case "produce":
-								Food.Income += prosume[i].amount;
+								Food.Income += amount * prosume[i].amount;
 								break;
 							case "provideStorage":
-								Food.Capacity += prosume[i].amount;
+								Food.Capacity += amount * prosume[i].amount;
 								break;
 						}
 						break;
@@ -141,10 +102,10 @@ public class Resources : Node
 						switch (prosume[i].function)
 						{
 							case "produce":
-								Water.Income += prosume[i].amount;
+								Water.Income += amount * prosume[i].amount;
 								break;
 							case "provideStorage":
-								Water.Capacity += prosume[i].amount;
+								Water.Capacity += amount * prosume[i].amount;
 								break;
 						}
 						break;
@@ -152,10 +113,10 @@ public class Resources : Node
 						switch (prosume[i].function)
 						{
 							case "produce":
-								Energy.Income += prosume[i].amount;
+								Energy.Income += amount * prosume[i].amount;
 								break;
 							case "provideStorage":
-								Energy.Capacity += prosume[i].amount;
+								Energy.Capacity += amount * prosume[i].amount;
 								break;
 						}
 						break;
@@ -164,7 +125,7 @@ public class Resources : Node
 						switch (prosume[i].function)
 						{
 							case "provideCapacity":
-								Workers.Amount += prosume[i].amount;
+								Workers.Amount += amount * prosume[i].amount;
 								break;
 						}
 						break;
@@ -173,7 +134,7 @@ public class Resources : Node
 						switch (prosume[i].function)
 						{
 							case "provideCapacity":
-								Rovers.Amount += prosume[i].amount;
+								Rovers.Amount += amount * prosume[i].amount;
 								break;
 						}
 						break;

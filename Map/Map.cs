@@ -66,7 +66,7 @@ public class Map : Node2D
 		GD.Print("New phase!");
 		switch (gameState.Phase) {
 			case Phase.Income:
-				//resources.CalcResource();
+				resources.CalcResource();
 				break;
 			case Phase.CargoDrop:
 				cargoQueue.Tick();
@@ -345,7 +345,14 @@ public class Map : Node2D
 
 		if (CanBuild(tile, building)) {
 			GD.Print("Building", buildingId, "on", tile);
+
+			if (Tiles[tile].Building.Type != "None") {
+				GD.Print("  Replacing", Tiles[tile].Building.Type);
+				resources.BuildingBuilt(Tiles[tile].Building.Type, -1);
+			}
+
 			Tiles[tile].Building.Type = buildingId;
+			resources.BuildingBuilt(buildingId);
 		} else {
 			GD.Print("Can't build", buildingId, "on", tile);
 		}
