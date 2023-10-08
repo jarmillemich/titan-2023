@@ -78,8 +78,10 @@ public class Resources : Node
 	{
 		if (builtBuilding.ContainsKey(buildingName))
 		{
-			builtBuilding[buildingName] = builtBuilding[buildingName] + 1;
-			pendingBuilding[buildingName] = pendingBuilding[buildingName] - 1;
+			builtBuilding[buildingName] = builtBuilding[buildingName] += amount;
+			if (amount > 0) {
+				pendingBuilding[buildingName] = pendingBuilding[buildingName] - 1;
+			}
 
 			//Adjust capacity, storage, produce
 			List<BuildingProsume> prosume = buildings[buildingName].buildingProsume;
@@ -121,23 +123,23 @@ public class Resources : Node
 						}
 						break;
 
-					case "Workers":
-						switch (prosume[i].function)
-						{
-							case "provideCapacity":
-								Workers.Amount += amount * prosume[i].amount;
-								break;
-						}
-						break;
+					// case "Workers":
+					// 	switch (prosume[i].function)
+					// 	{
+					// 		case "provideCapacity":
+					// 			Workers.Amount += amount * prosume[i].amount;
+					// 			break;
+					// 	}
+					// 	break;
 
-					case "Rovers":
-						switch (prosume[i].function)
-						{
-							case "provideCapacity":
-								Rovers.Amount += amount * prosume[i].amount;
-								break;
-						}
-						break;
+					// case "Rovers":
+					// 	switch (prosume[i].function)
+					// 	{
+					// 		case "provideCapacity":
+					// 			Rovers.Amount += amount * prosume[i].amount;
+					// 			break;
+					// 	}
+					// 	break;
 				}
 			}
 		}
@@ -151,11 +153,11 @@ public class Resources : Node
 	public MaterialResource Water { get; set; } = new MaterialResource();
 	public MaterialResource Food { get; set; } = new MaterialResource();
 
-	public AvailabilityResource Workers { get; set; } = new AvailabilityResource();
-	public AvailabilityResource Rovers { get; set; } = new AvailabilityResource();
-	public AvailabilityResource MountainSamples { get; set; } = new AvailabilityResource();
-	public AvailabilityResource LakeSamples { get; set; } = new AvailabilityResource();
-	public AvailabilityResource VolcanoSamples { get; set; } = new AvailabilityResource();
-	public AvailabilityResource CraterSamples { get; set; } = new AvailabilityResource();
+	// public AvailabilityResource Workers { get; set; } = new AvailabilityResource();
+	// public AvailabilityResource Rovers { get; set; } = new AvailabilityResource();
+	// public AvailabilityResource MountainSamples { get; set; } = new AvailabilityResource();
+	// public AvailabilityResource LakeSamples { get; set; } = new AvailabilityResource();
+	// public AvailabilityResource VolcanoSamples { get; set; } = new AvailabilityResource();
+	// public AvailabilityResource CraterSamples { get; set; } = new AvailabilityResource();
 
 }
