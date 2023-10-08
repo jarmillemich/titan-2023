@@ -1,20 +1,26 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://UI/closeSchedulerUIButton.cs" type="Script" id=1]
 [ext_resource path="res://UI/CloseInventoryUIButton.cs" type="Script" id=2]
 [ext_resource path="res://UI/UI_Event_Handler.cs" type="Script" id=3]
-[ext_resource path="res://Graphics/Buildings/power T1 - low.png" type="Texture" id=4]
-[ext_resource path="res://Graphics/Buildings/ice melter T2 - low.png" type="Texture" id=5]
-[ext_resource path="res://Graphics/Buildings/farm T3 - low.png" type="Texture" id=6]
-[ext_resource path="res://Graphics/Buildings/farm T2 - low.png" type="Texture" id=7]
-[ext_resource path="res://Graphics/Buildings/ice melter T1 - low.png" type="Texture" id=8]
-[ext_resource path="res://Graphics/Buildings/power T2 - low.png" type="Texture" id=9]
-[ext_resource path="res://Graphics/Buildings/Lab T2 - low.png" type="Texture" id=10]
-[ext_resource path="res://Graphics/Buildings/Lab T3 - low.png" type="Texture" id=11]
-[ext_resource path="res://Graphics/Buildings/ice melter T3 - low.png" type="Texture" id=12]
-[ext_resource path="res://Graphics/Buildings/power T3 - low.png" type="Texture" id=13]
-[ext_resource path="res://Graphics/Buildings/Lab T1 - low.png" type="Texture" id=14]
-[ext_resource path="res://Graphics/Buildings/farm T1 - low.png" type="Texture" id=15]
+[ext_resource path="res://UI/CargoUI.cs" type="Script" id=4]
+[ext_resource path="res://UI/InventoryUI.cs" type="Script" id=16]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -25,94 +31,87 @@ margin_left = 6.0
 margin_top = 6.0
 margin_right = 615.0
 margin_bottom = 274.0
+script = ExtResource( 4 )
 
 [node name="CargoContainer" type="VBoxContainer" parent="CargoUI"]
 unique_name_in_owner = true
 visible = false
 margin_right = 438.0
-margin_bottom = 268.0
+margin_bottom = 297.0
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CargoUI/CargoContainer"]
 margin_right = 438.0
-margin_bottom = 15.0
+margin_bottom = 20.0
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CargoUI/CargoContainer/HBoxContainer3"]
-margin_left = 5.0
-margin_right = 55.0
-margin_bottom = 15.0
-rect_min_size = Vector2( 50, 10 )
-text = "DAY XX"
-fit_content_height = true
-scroll_active = false
+[node name="Button0" type="Button" parent="CargoUI/CargoContainer/HBoxContainer3"]
+margin_left = 1.0
+margin_right = 52.0
+margin_bottom = 20.0
+text = "YXXXX"
+icon_align = 1
+expand_icon = true
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="CargoUI/CargoContainer/HBoxContainer3"]
-margin_left = 59.0
-margin_right = 109.0
-margin_bottom = 15.0
-rect_min_size = Vector2( 50, 10 )
-text = "DAY XX"
-fit_content_height = true
-scroll_active = false
+[node name="Button1" type="Button" parent="CargoUI/CargoContainer/HBoxContainer3"]
+margin_left = 56.0
+margin_right = 107.0
+margin_bottom = 20.0
+text = "YXXXX"
+icon_align = 1
+expand_icon = true
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="CargoUI/CargoContainer/HBoxContainer3"]
-margin_left = 113.0
-margin_right = 163.0
-margin_bottom = 15.0
-rect_min_size = Vector2( 50, 10 )
-text = "DAY XX"
-fit_content_height = true
-scroll_active = false
+[node name="Button2" type="Button" parent="CargoUI/CargoContainer/HBoxContainer3"]
+margin_left = 111.0
+margin_right = 162.0
+margin_bottom = 20.0
+text = "YXXXX"
+icon_align = 1
+expand_icon = true
 
-[node name="RichTextLabel4" type="RichTextLabel" parent="CargoUI/CargoContainer/HBoxContainer3"]
-margin_left = 167.0
+[node name="Button3" type="Button" parent="CargoUI/CargoContainer/HBoxContainer3"]
+margin_left = 166.0
 margin_right = 217.0
-margin_bottom = 15.0
-rect_min_size = Vector2( 50, 10 )
-text = "DAY XX"
-fit_content_height = true
-scroll_active = false
+margin_bottom = 20.0
+text = "YXXXX"
+icon_align = 1
+expand_icon = true
 
-[node name="RichTextLabel5" type="RichTextLabel" parent="CargoUI/CargoContainer/HBoxContainer3"]
+[node name="Button4" type="Button" parent="CargoUI/CargoContainer/HBoxContainer3"]
 margin_left = 221.0
-margin_right = 271.0
-margin_bottom = 15.0
-rect_min_size = Vector2( 50, 10 )
-text = "DAY XX"
-fit_content_height = true
-scroll_active = false
+margin_right = 272.0
+margin_bottom = 20.0
+text = "YXXXX"
+icon_align = 1
+expand_icon = true
 
-[node name="RichTextLabel6" type="RichTextLabel" parent="CargoUI/CargoContainer/HBoxContainer3"]
-margin_left = 275.0
-margin_right = 325.0
-margin_bottom = 15.0
-rect_min_size = Vector2( 50, 10 )
-text = "DAY XX"
-fit_content_height = true
-scroll_active = false
+[node name="Button5" type="Button" parent="CargoUI/CargoContainer/HBoxContainer3"]
+margin_left = 276.0
+margin_right = 327.0
+margin_bottom = 20.0
+text = "YXXXX"
+icon_align = 1
+expand_icon = true
 
-[node name="RichTextLabel7" type="RichTextLabel" parent="CargoUI/CargoContainer/HBoxContainer3"]
-margin_left = 329.0
-margin_right = 379.0
-margin_bottom = 15.0
-rect_min_size = Vector2( 50, 10 )
-text = "DAY XX"
-fit_content_height = true
-scroll_active = false
+[node name="Button6" type="Button" parent="CargoUI/CargoContainer/HBoxContainer3"]
+margin_left = 331.0
+margin_right = 382.0
+margin_bottom = 20.0
+text = "YXXXX"
+icon_align = 1
+expand_icon = true
 
-[node name="RichTextLabel8" type="RichTextLabel" parent="CargoUI/CargoContainer/HBoxContainer3"]
-margin_left = 383.0
-margin_right = 433.0
-margin_bottom = 15.0
-rect_min_size = Vector2( 50, 10 )
-text = "DAY XX"
-fit_content_height = true
-scroll_active = false
+[node name="Button7" type="Button" parent="CargoUI/CargoContainer/HBoxContainer3"]
+margin_left = 386.0
+margin_right = 437.0
+margin_bottom = 20.0
+text = "YXXXX"
+icon_align = 1
+expand_icon = true
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="CargoUI/CargoContainer"]
-margin_top = 19.0
+margin_top = 24.0
 margin_right = 438.0
-margin_bottom = 34.0
+margin_bottom = 39.0
 alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CargoUI/CargoContainer/HBoxContainer4"]
@@ -124,20 +123,20 @@ text = "RECEIVED"
 scroll_active = false
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="CargoUI/CargoContainer/HBoxContainer4"]
+modulate = Color( 1, 0.129412, 0, 1 )
 margin_left = 64.0
 margin_right = 114.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 50, 10 )
+text = " SENT"
 fit_content_height = true
 scroll_active = false
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="CargoUI/CargoContainer/HBoxContainer4"]
-modulate = Color( 1, 0.129412, 0, 1 )
 margin_left = 118.0
 margin_right = 168.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 50, 10 )
-text = " SENT"
 fit_content_height = true
 scroll_active = false
 
@@ -182,9 +181,9 @@ fit_content_height = true
 scroll_active = false
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CargoUI/CargoContainer"]
-margin_top = 38.0
+margin_top = 43.0
 margin_right = 438.0
-margin_bottom = 52.0
+margin_bottom = 57.0
 alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="CargoUI/CargoContainer/HBoxContainer2"]
@@ -236,532 +235,651 @@ margin_bottom = 14.0
 rect_min_size = Vector2( 50, 0 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CargoUI/CargoContainer"]
-margin_top = 56.0
+margin_top = 61.0
 margin_right = 438.0
-margin_bottom = 268.0
+margin_bottom = 297.0
 rect_min_size = Vector2( 0, 200 )
 alignment = 1
 
 [node name="VBoxContainer1" type="VBoxContainer" parent="CargoUI/CargoContainer/HBoxContainer"]
 margin_left = 5.0
 margin_right = 55.0
-margin_bottom = 212.0
+margin_bottom = 236.0
 rect_min_size = Vector2( 50, 0 )
 
-[node name="Button" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
+[node name="Button0" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
 modulate = Color( 0.313726, 1, 0, 1 )
 margin_right = 50.0
 margin_bottom = 20.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button2" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
+[node name="Button1" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
 modulate = Color( 0.313726, 1, 0, 1 )
 margin_top = 24.0
 margin_right = 50.0
 margin_bottom = 44.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button3" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
+[node name="Button2" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
 modulate = Color( 0.313726, 1, 0, 1 )
 margin_top = 48.0
 margin_right = 50.0
 margin_bottom = 68.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button4" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
+[node name="Button3" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
 modulate = Color( 0.313726, 1, 0, 1 )
 margin_top = 72.0
 margin_right = 50.0
 margin_bottom = 92.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button5" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
+[node name="Button4" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
 modulate = Color( 0.313726, 1, 0, 1 )
 margin_top = 96.0
 margin_right = 50.0
 margin_bottom = 116.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button6" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
+[node name="Button5" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
 modulate = Color( 0.313726, 1, 0, 1 )
 margin_top = 120.0
 margin_right = 50.0
 margin_bottom = 140.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button7" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
+[node name="Button6" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
 modulate = Color( 0.313726, 1, 0, 1 )
 margin_top = 144.0
 margin_right = 50.0
 margin_bottom = 164.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button8" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
+[node name="Button7" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
 modulate = Color( 0.313726, 1, 0, 1 )
 margin_top = 168.0
 margin_right = 50.0
 margin_bottom = 188.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button9" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
+[node name="Button8" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
 modulate = Color( 0.313726, 1, 0, 1 )
 margin_top = 192.0
 margin_right = 50.0
 margin_bottom = 212.0
+icon_align = 1
+expand_icon = true
+
+[node name="Button9" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer1"]
+modulate = Color( 0.313726, 1, 0, 1 )
+margin_top = 216.0
+margin_right = 50.0
+margin_bottom = 236.0
+icon_align = 1
+expand_icon = true
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CargoUI/CargoContainer/HBoxContainer"]
 margin_left = 59.0
 margin_right = 109.0
-margin_bottom = 212.0
+margin_bottom = 236.0
 rect_min_size = Vector2( 50, 0 )
 
-[node name="Button" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
+[node name="Button0" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
 modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
 margin_right = 50.0
 margin_bottom = 20.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button2" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
+[node name="Button1" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
 modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
 margin_top = 24.0
 margin_right = 50.0
 margin_bottom = 44.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button3" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
+[node name="Button2" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
 modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
 margin_top = 48.0
 margin_right = 50.0
 margin_bottom = 68.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button4" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
+[node name="Button3" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
 modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
 margin_top = 72.0
 margin_right = 50.0
 margin_bottom = 92.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button5" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
+[node name="Button4" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
 modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
 margin_top = 96.0
 margin_right = 50.0
 margin_bottom = 116.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button6" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
+[node name="Button5" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
 modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
 margin_top = 120.0
 margin_right = 50.0
 margin_bottom = 140.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button7" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
+[node name="Button6" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
 modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
 margin_top = 144.0
 margin_right = 50.0
 margin_bottom = 164.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button8" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
+[node name="Button7" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
 modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
 margin_top = 168.0
 margin_right = 50.0
 margin_bottom = 188.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button9" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
+[node name="Button8" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
 modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
 margin_top = 192.0
 margin_right = 50.0
 margin_bottom = 212.0
+icon_align = 1
+expand_icon = true
+
+[node name="Button9" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer2"]
+modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
+margin_top = 216.0
+margin_right = 50.0
+margin_bottom = 236.0
+icon_align = 1
+expand_icon = true
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="CargoUI/CargoContainer/HBoxContainer"]
 margin_left = 113.0
 margin_right = 163.0
-margin_bottom = 212.0
+margin_bottom = 236.0
 rect_min_size = Vector2( 50, 0 )
 
-[node name="Button" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3"]
-modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
+[node name="Button0" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3"]
 margin_right = 50.0
 margin_bottom = 20.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button2" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3"]
-modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
+[node name="Button1" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3"]
 margin_top = 24.0
 margin_right = 50.0
 margin_bottom = 44.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button3" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3"]
-modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
+[node name="Button2" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3"]
 margin_top = 48.0
 margin_right = 50.0
 margin_bottom = 68.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button4" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3"]
-modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
+[node name="Button3" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3"]
 margin_top = 72.0
 margin_right = 50.0
 margin_bottom = 92.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button5" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3"]
-modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
+[node name="Button4" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3"]
 margin_top = 96.0
 margin_right = 50.0
 margin_bottom = 116.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button6" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3"]
-modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
+[node name="Button5" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3"]
 margin_top = 120.0
 margin_right = 50.0
 margin_bottom = 140.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button7" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3"]
-modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
+[node name="Button6" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3"]
 margin_top = 144.0
 margin_right = 50.0
 margin_bottom = 164.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button8" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3"]
-modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
+[node name="Button7" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3"]
 margin_top = 168.0
 margin_right = 50.0
 margin_bottom = 188.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button9" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3"]
-modulate = Color( 0.847059, 0.0117647, 0.0117647, 1 )
+[node name="Button8" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3"]
 margin_top = 192.0
 margin_right = 50.0
 margin_bottom = 212.0
+icon_align = 1
+expand_icon = true
+
+[node name="Button9" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer3"]
+margin_top = 216.0
+margin_right = 50.0
+margin_bottom = 236.0
+icon_align = 1
+expand_icon = true
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="CargoUI/CargoContainer/HBoxContainer"]
 margin_left = 167.0
 margin_right = 217.0
-margin_bottom = 212.0
+margin_bottom = 236.0
 rect_min_size = Vector2( 50, 0 )
 
-[node name="Button" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4"]
+[node name="Button0" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4"]
 margin_right = 50.0
 margin_bottom = 20.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button2" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4"]
+[node name="Button1" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4"]
 margin_top = 24.0
 margin_right = 50.0
 margin_bottom = 44.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button3" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4"]
+[node name="Button2" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4"]
 margin_top = 48.0
 margin_right = 50.0
 margin_bottom = 68.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button4" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4"]
+[node name="Button3" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4"]
 margin_top = 72.0
 margin_right = 50.0
 margin_bottom = 92.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button5" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4"]
+[node name="Button4" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4"]
 margin_top = 96.0
 margin_right = 50.0
 margin_bottom = 116.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button6" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4"]
+[node name="Button5" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4"]
 margin_top = 120.0
 margin_right = 50.0
 margin_bottom = 140.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button7" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4"]
+[node name="Button6" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4"]
 margin_top = 144.0
 margin_right = 50.0
 margin_bottom = 164.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button8" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4"]
+[node name="Button7" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4"]
 margin_top = 168.0
 margin_right = 50.0
 margin_bottom = 188.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button9" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4"]
+[node name="Button8" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4"]
 margin_top = 192.0
 margin_right = 50.0
 margin_bottom = 212.0
+icon_align = 1
+expand_icon = true
+
+[node name="Button9" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer4"]
+margin_top = 216.0
+margin_right = 50.0
+margin_bottom = 236.0
+icon_align = 1
+expand_icon = true
 
 [node name="VBoxContainer5" type="VBoxContainer" parent="CargoUI/CargoContainer/HBoxContainer"]
 margin_left = 221.0
 margin_right = 271.0
-margin_bottom = 212.0
+margin_bottom = 236.0
 rect_min_size = Vector2( 50, 0 )
 
-[node name="Button" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5"]
+[node name="Button0" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5"]
 margin_right = 50.0
 margin_bottom = 20.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button2" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5"]
+[node name="Button1" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5"]
 margin_top = 24.0
 margin_right = 50.0
 margin_bottom = 44.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button3" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5"]
+[node name="Button2" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5"]
 margin_top = 48.0
 margin_right = 50.0
 margin_bottom = 68.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button4" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5"]
+[node name="Button3" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5"]
 margin_top = 72.0
 margin_right = 50.0
 margin_bottom = 92.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button5" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5"]
+[node name="Button4" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5"]
 margin_top = 96.0
 margin_right = 50.0
 margin_bottom = 116.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button6" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5"]
+[node name="Button5" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5"]
 margin_top = 120.0
 margin_right = 50.0
 margin_bottom = 140.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button7" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5"]
+[node name="Button6" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5"]
 margin_top = 144.0
 margin_right = 50.0
 margin_bottom = 164.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button8" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5"]
+[node name="Button7" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5"]
 margin_top = 168.0
 margin_right = 50.0
 margin_bottom = 188.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button9" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5"]
+[node name="Button8" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5"]
 margin_top = 192.0
 margin_right = 50.0
 margin_bottom = 212.0
+icon_align = 1
+expand_icon = true
+
+[node name="Button9" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer5"]
+margin_top = 216.0
+margin_right = 50.0
+margin_bottom = 236.0
+icon_align = 1
+expand_icon = true
 
 [node name="VBoxContainer6" type="VBoxContainer" parent="CargoUI/CargoContainer/HBoxContainer"]
 margin_left = 275.0
 margin_right = 325.0
-margin_bottom = 212.0
+margin_bottom = 236.0
 rect_min_size = Vector2( 50, 0 )
 
-[node name="Button" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6"]
+[node name="Button0" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6"]
 margin_right = 50.0
 margin_bottom = 20.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button2" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6"]
+[node name="Button1" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6"]
 margin_top = 24.0
 margin_right = 50.0
 margin_bottom = 44.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button3" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6"]
+[node name="Button2" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6"]
 margin_top = 48.0
 margin_right = 50.0
 margin_bottom = 68.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button4" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6"]
+[node name="Button3" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6"]
 margin_top = 72.0
 margin_right = 50.0
 margin_bottom = 92.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button5" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6"]
+[node name="Button4" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6"]
 margin_top = 96.0
 margin_right = 50.0
 margin_bottom = 116.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button6" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6"]
+[node name="Button5" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6"]
 margin_top = 120.0
 margin_right = 50.0
 margin_bottom = 140.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button7" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6"]
+[node name="Button6" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6"]
 margin_top = 144.0
 margin_right = 50.0
 margin_bottom = 164.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button8" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6"]
+[node name="Button7" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6"]
 margin_top = 168.0
 margin_right = 50.0
 margin_bottom = 188.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button9" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6"]
+[node name="Button8" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6"]
 margin_top = 192.0
 margin_right = 50.0
 margin_bottom = 212.0
+icon_align = 1
+expand_icon = true
+
+[node name="Button9" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer6"]
+margin_top = 216.0
+margin_right = 50.0
+margin_bottom = 236.0
+icon_align = 1
+expand_icon = true
 
 [node name="VBoxContainer7" type="VBoxContainer" parent="CargoUI/CargoContainer/HBoxContainer"]
 margin_left = 329.0
 margin_right = 379.0
-margin_bottom = 212.0
+margin_bottom = 236.0
 rect_min_size = Vector2( 50, 0 )
 
-[node name="Button" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7"]
+[node name="Button0" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7"]
 margin_right = 50.0
 margin_bottom = 20.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button2" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7"]
+[node name="Button1" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7"]
 margin_top = 24.0
 margin_right = 50.0
 margin_bottom = 44.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button3" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7"]
+[node name="Button2" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7"]
 margin_top = 48.0
 margin_right = 50.0
 margin_bottom = 68.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button4" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7"]
+[node name="Button3" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7"]
 margin_top = 72.0
 margin_right = 50.0
 margin_bottom = 92.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button5" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7"]
+[node name="Button4" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7"]
 margin_top = 96.0
 margin_right = 50.0
 margin_bottom = 116.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button6" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7"]
+[node name="Button5" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7"]
 margin_top = 120.0
 margin_right = 50.0
 margin_bottom = 140.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button7" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7"]
+[node name="Button6" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7"]
 margin_top = 144.0
 margin_right = 50.0
 margin_bottom = 164.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button8" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7"]
+[node name="Button7" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7"]
 margin_top = 168.0
 margin_right = 50.0
 margin_bottom = 188.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button9" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7"]
+[node name="Button8" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7"]
 margin_top = 192.0
 margin_right = 50.0
 margin_bottom = 212.0
+icon_align = 1
+expand_icon = true
+
+[node name="Button9" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer7"]
+margin_top = 216.0
+margin_right = 50.0
+margin_bottom = 236.0
+icon_align = 1
+expand_icon = true
 
 [node name="VBoxContainer8" type="VBoxContainer" parent="CargoUI/CargoContainer/HBoxContainer"]
 margin_left = 383.0
 margin_right = 433.0
-margin_bottom = 212.0
+margin_bottom = 236.0
 rect_min_size = Vector2( 50, 0 )
+rect_pivot_offset = Vector2( -415, 5 )
 
-[node name="Button" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
+[node name="Button0" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
 margin_right = 50.0
 margin_bottom = 20.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button2" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
+[node name="Button1" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
 margin_top = 24.0
 margin_right = 50.0
 margin_bottom = 44.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button3" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
+[node name="Button2" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
 margin_top = 48.0
 margin_right = 50.0
 margin_bottom = 68.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button4" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
+[node name="Button3" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
 margin_top = 72.0
 margin_right = 50.0
 margin_bottom = 92.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button5" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
+[node name="Button4" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
 margin_top = 96.0
 margin_right = 50.0
 margin_bottom = 116.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button6" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
+[node name="Button5" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
 margin_top = 120.0
 margin_right = 50.0
 margin_bottom = 140.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button7" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
+[node name="Button6" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
 margin_top = 144.0
 margin_right = 50.0
 margin_bottom = 164.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button8" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
+[node name="Button7" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
 margin_top = 168.0
 margin_right = 50.0
 margin_bottom = 188.0
+icon_align = 1
+expand_icon = true
 
-[node name="Button9" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
+[node name="Button8" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
 margin_top = 192.0
 margin_right = 50.0
 margin_bottom = 212.0
+icon_align = 1
+expand_icon = true
+
+[node name="Button9" type="Button" parent="CargoUI/CargoContainer/HBoxContainer/VBoxContainer8"]
+margin_top = 216.0
+margin_right = 50.0
+margin_bottom = 236.0
+icon_align = 1
+expand_icon = true
 
 [node name="BuildingMenu" type="VBoxContainer" parent="CargoUI"]
 unique_name_in_owner = true
 visible = false
-margin_right = 428.0
-margin_bottom = 564.0
-rect_scale = Vector2( 0.25, 0.25 )
+margin_left = 442.0
+margin_right = 492.0
+margin_bottom = 292.0
 
-[node name="farm" type="HBoxContainer" parent="CargoUI/BuildingMenu"]
-margin_right = 428.0
-margin_bottom = 134.0
+[node name="BuildingList" type="GridContainer" parent="CargoUI/BuildingMenu"]
+margin_right = 50.0
+margin_bottom = 50.0
+columns = 3
 
-[node name="farmLv1" type="Button" parent="CargoUI/BuildingMenu/farm"]
-margin_right = 140.0
-margin_bottom = 134.0
-icon = ExtResource( 15 )
-
-[node name="farmLv2" type="Button" parent="CargoUI/BuildingMenu/farm"]
-margin_left = 144.0
-margin_right = 284.0
-margin_bottom = 134.0
-icon = ExtResource( 7 )
-
-[node name="farmLv3" type="Button" parent="CargoUI/BuildingMenu/farm"]
-margin_left = 288.0
-margin_right = 428.0
-margin_bottom = 134.0
-icon = ExtResource( 6 )
-
-[node name="lab" type="HBoxContainer" parent="CargoUI/BuildingMenu"]
-margin_top = 138.0
-margin_right = 428.0
-margin_bottom = 272.0
-
-[node name="labLv1" type="Button" parent="CargoUI/BuildingMenu/lab"]
-margin_right = 140.0
-margin_bottom = 134.0
-icon = ExtResource( 14 )
-
-[node name="labLv2" type="Button" parent="CargoUI/BuildingMenu/lab"]
-margin_left = 144.0
-margin_right = 284.0
-margin_bottom = 134.0
-icon = ExtResource( 10 )
-
-[node name="labLv3" type="Button" parent="CargoUI/BuildingMenu/lab"]
-margin_left = 288.0
-margin_right = 428.0
-margin_bottom = 134.0
-icon = ExtResource( 11 )
-
-[node name="iceMelter" type="HBoxContainer" parent="CargoUI/BuildingMenu"]
-margin_top = 276.0
-margin_right = 428.0
-margin_bottom = 426.0
-
-[node name="iceMelterLv1" type="Button" parent="CargoUI/BuildingMenu/iceMelter"]
-margin_right = 140.0
-margin_bottom = 150.0
-icon = ExtResource( 8 )
-
-[node name="iceMelterLv2" type="Button" parent="CargoUI/BuildingMenu/iceMelter"]
-margin_left = 144.0
-margin_right = 284.0
-margin_bottom = 150.0
-icon = ExtResource( 5 )
-
-[node name="iceMelterLv3" type="Button" parent="CargoUI/BuildingMenu/iceMelter"]
-margin_left = 288.0
-margin_right = 428.0
-margin_bottom = 150.0
-icon = ExtResource( 12 )
-
-[node name="power" type="HBoxContainer" parent="CargoUI/BuildingMenu"]
-margin_top = 430.0
-margin_right = 428.0
-margin_bottom = 564.0
-
-[node name="powerLv1" type="Button" parent="CargoUI/BuildingMenu/power"]
-margin_right = 140.0
-margin_bottom = 134.0
-icon = ExtResource( 4 )
-
-[node name="powerLv2" type="Button" parent="CargoUI/BuildingMenu/power"]
-margin_left = 144.0
-margin_right = 284.0
-margin_bottom = 134.0
-icon = ExtResource( 9 )
-
-[node name="powerLv3" type="Button" parent="CargoUI/BuildingMenu/power"]
-margin_left = 288.0
-margin_right = 428.0
-margin_bottom = 134.0
-icon = ExtResource( 13 )
+[node name="Button" type="Button" parent="CargoUI/BuildingMenu/BuildingList"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+icon_align = 1
+expand_icon = true
 
 [node name="GridContainer" type="GridContainer" parent="CargoUI"]
 margin_right = 126.0
@@ -775,36 +893,40 @@ script = ExtResource( 1 )
 
 [node name="BuildingPreview" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
-visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -200.0
+margin_left = -330.0
 margin_top = -194.0
-
-[node name="BuildingImage" type="TextureRect" parent="BuildingPreview"]
-margin_right = 200.0
+margin_right = -15.0
+alignment = 1
 
 [node name="Description" type="RichTextLabel" parent="BuildingPreview"]
 unique_name_in_owner = true
-margin_top = 4.0
-margin_right = 200.0
-margin_bottom = 54.0
-rect_min_size = Vector2( 200, 50 )
+margin_top = 30.0
+margin_right = 319.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 315, 50 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_styles/normal = SubResource( 2 )
 text = "This is where the description for the building will go! :)"
 scroll_active = false
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BuildingPreview"]
-margin_top = 58.0
-margin_right = 200.0
-margin_bottom = 174.0
-rect_min_size = Vector2( 50, 50 )
+[node name="HBoxContainer2" type="HBoxContainer" parent="BuildingPreview"]
+margin_top = 84.0
+margin_right = 319.0
+margin_bottom = 164.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="BuildingPreview/HBoxContainer"]
-margin_right = 80.0
-margin_bottom = 116.0
-rect_min_size = Vector2( 80, 0 )
+[node name="ProsumeLabel" type="RichTextLabel" parent="BuildingPreview/HBoxContainer2"]
+use_parent_material = true
+margin_right = 150.0
+margin_bottom = 80.0
+grow_horizontal = 0
+rect_min_size = Vector2( 150, 75 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_styles/normal = SubResource( 1 )
+tab_size = 2
 text = "
 
 
@@ -812,9 +934,34 @@ Requires:
 
 Build on Preview Tier"
 
+[node name="CapacityLabel" type="RichTextLabel" parent="BuildingPreview/HBoxContainer2"]
+use_parent_material = true
+margin_left = 154.0
+margin_right = 319.0
+margin_bottom = 80.0
+grow_horizontal = 0
+rect_min_size = Vector2( 165, 80 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_styles/normal = SubResource( 1 )
+tab_size = 2
+text = "
+
+
+Requires:
+
+Build on Preview Tier"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BuildingPreview"]
+visible = false
+margin_top = 101.0
+margin_right = 330.0
+margin_bottom = 151.0
+rect_min_size = Vector2( 50, 50 )
+
 [node name="VBoxContainer" type="VBoxContainer" parent="BuildingPreview/HBoxContainer"]
-margin_left = 84.0
-margin_right = 184.0
+visible = false
+margin_left = 215.0
+margin_right = 315.0
 margin_bottom = 116.0
 rect_min_size = Vector2( 100, 50 )
 
@@ -850,178 +997,37 @@ margin_top = 13.0
 margin_right = -12.0
 margin_bottom = 279.0
 alignment = 2
+script = ExtResource( 16 )
 
 [node name="Inventory" type="GridContainer" parent="InventoryUI"]
 unique_name_in_owner = true
 visible = false
+margin_left = 216.0
 margin_right = 266.0
 margin_bottom = 266.0
-columns = 5
+columns = 3
 
 [node name="Slot" type="Button" parent="InventoryUI/Inventory"]
 margin_right = 50.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 50, 50 )
+icon_align = 1
+expand_icon = true
 
-[node name="Slot2" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 54.0
-margin_right = 104.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 50, 50 )
+[node name="HBoxContainer" type="HBoxContainer" parent="InventoryUI/Inventory/Slot"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -50.0
+margin_bottom = 17.0
+alignment = 2
 
-[node name="Slot3" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 108.0
-margin_right = 158.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot4" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 162.0
-margin_right = 212.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot5" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 216.0
-margin_right = 266.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot6" type="Button" parent="InventoryUI/Inventory"]
-margin_top = 54.0
+[node name="Label" type="Label" parent="InventoryUI/Inventory/Slot/HBoxContainer"]
+margin_left = 42.0
+margin_top = 1.0
 margin_right = 50.0
-margin_bottom = 104.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot7" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 54.0
-margin_top = 54.0
-margin_right = 104.0
-margin_bottom = 104.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot8" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 108.0
-margin_top = 54.0
-margin_right = 158.0
-margin_bottom = 104.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot9" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 162.0
-margin_top = 54.0
-margin_right = 212.0
-margin_bottom = 104.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot10" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 216.0
-margin_top = 54.0
-margin_right = 266.0
-margin_bottom = 104.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot11" type="Button" parent="InventoryUI/Inventory"]
-margin_top = 108.0
-margin_right = 50.0
-margin_bottom = 158.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot12" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 54.0
-margin_top = 108.0
-margin_right = 104.0
-margin_bottom = 158.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot13" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 108.0
-margin_top = 108.0
-margin_right = 158.0
-margin_bottom = 158.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot14" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 162.0
-margin_top = 108.0
-margin_right = 212.0
-margin_bottom = 158.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot15" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 216.0
-margin_top = 108.0
-margin_right = 266.0
-margin_bottom = 158.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot16" type="Button" parent="InventoryUI/Inventory"]
-margin_top = 162.0
-margin_right = 50.0
-margin_bottom = 212.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot17" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 54.0
-margin_top = 162.0
-margin_right = 104.0
-margin_bottom = 212.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot18" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 108.0
-margin_top = 162.0
-margin_right = 158.0
-margin_bottom = 212.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot19" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 162.0
-margin_top = 162.0
-margin_right = 212.0
-margin_bottom = 212.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot20" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 216.0
-margin_top = 162.0
-margin_right = 266.0
-margin_bottom = 212.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot21" type="Button" parent="InventoryUI/Inventory"]
-margin_top = 216.0
-margin_right = 50.0
-margin_bottom = 266.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot22" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 54.0
-margin_top = 216.0
-margin_right = 104.0
-margin_bottom = 266.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot23" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 108.0
-margin_top = 216.0
-margin_right = 158.0
-margin_bottom = 266.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot24" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 162.0
-margin_top = 216.0
-margin_right = 212.0
-margin_bottom = 266.0
-rect_min_size = Vector2( 50, 50 )
-
-[node name="Slot25" type="Button" parent="InventoryUI/Inventory"]
-margin_left = 216.0
-margin_top = 216.0
-margin_right = 266.0
-margin_bottom = 266.0
-rect_min_size = Vector2( 50, 50 )
+margin_bottom = 15.0
+size_flags_horizontal = 4
+text = "1"
 
 [node name="GridContainer" type="GridContainer" parent="InventoryUI"]
 margin_left = 270.0
@@ -1035,44 +1041,16 @@ margin_bottom = 20.0
 text = "< Received Buildings"
 script = ExtResource( 2 )
 
-[node name="Node" type="Node" parent="."]
+[node name="UIEventHandler" type="Node" parent="."]
 script = ExtResource( 3 )
 
-[connection signal="button_down" from="CargoUI/BuildingMenu/farm/farmLv1" to="Node" method="ScheduleBuilding" binds= [ "farmLv1" ]]
-[connection signal="mouse_entered" from="CargoUI/BuildingMenu/farm/farmLv1" to="Node" method="PreviewBuilding" binds= [ "farmLv1" ]]
-[connection signal="mouse_exited" from="CargoUI/BuildingMenu/farm/farmLv1" to="Node" method="ClosePreview"]
-[connection signal="button_down" from="CargoUI/BuildingMenu/farm/farmLv2" to="Node" method="ScheduleBuilding" binds= [ "farmLv2" ]]
-[connection signal="mouse_entered" from="CargoUI/BuildingMenu/farm/farmLv2" to="Node" method="PreviewBuilding" binds= [ "farmLv2" ]]
-[connection signal="mouse_exited" from="CargoUI/BuildingMenu/farm/farmLv2" to="Node" method="ClosePreview"]
-[connection signal="button_down" from="CargoUI/BuildingMenu/farm/farmLv3" to="Node" method="ScheduleBuilding" binds= [ "farmLv3" ]]
-[connection signal="mouse_entered" from="CargoUI/BuildingMenu/farm/farmLv3" to="Node" method="PreviewBuilding" binds= [ "farmLv3" ]]
-[connection signal="mouse_exited" from="CargoUI/BuildingMenu/farm/farmLv3" to="Node" method="ClosePreview"]
-[connection signal="button_down" from="CargoUI/BuildingMenu/lab/labLv1" to="Node" method="ScheduleBuilding" binds= [ "labLv1" ]]
-[connection signal="mouse_entered" from="CargoUI/BuildingMenu/lab/labLv1" to="Node" method="PreviewBuilding" binds= [ "labLv1" ]]
-[connection signal="mouse_exited" from="CargoUI/BuildingMenu/lab/labLv1" to="Node" method="ClosePreview"]
-[connection signal="button_down" from="CargoUI/BuildingMenu/lab/labLv2" to="Node" method="ScheduleBuilding" binds= [ "labLv2" ]]
-[connection signal="mouse_entered" from="CargoUI/BuildingMenu/lab/labLv2" to="Node" method="PreviewBuilding" binds= [ "labLv2" ]]
-[connection signal="mouse_exited" from="CargoUI/BuildingMenu/lab/labLv2" to="Node" method="ClosePreview"]
-[connection signal="button_down" from="CargoUI/BuildingMenu/lab/labLv3" to="Node" method="ScheduleBuilding" binds= [ "labLv3" ]]
-[connection signal="mouse_entered" from="CargoUI/BuildingMenu/lab/labLv3" to="Node" method="PreviewBuilding" binds= [ "labLv3" ]]
-[connection signal="mouse_exited" from="CargoUI/BuildingMenu/lab/labLv3" to="Node" method="ClosePreview"]
-[connection signal="button_down" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv1" to="Node" method="ScheduleBuilding" binds= [ "iceMelterLv1" ]]
-[connection signal="mouse_entered" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv1" to="Node" method="PreviewBuilding" binds= [ "iceMelterLv1" ]]
-[connection signal="mouse_exited" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv1" to="Node" method="ClosePreview"]
-[connection signal="button_down" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv2" to="Node" method="ScheduleBuilding" binds= [ "iceMelterLv2" ]]
-[connection signal="mouse_entered" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv2" to="Node" method="PreviewBuilding" binds= [ "iceMelterLv2" ]]
-[connection signal="mouse_exited" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv2" to="Node" method="ClosePreview"]
-[connection signal="button_down" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv3" to="Node" method="ScheduleBuilding" binds= [ "iceMelterLv3" ]]
-[connection signal="mouse_entered" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv3" to="Node" method="PreviewBuilding" binds= [ "iceMelterLv3" ]]
-[connection signal="mouse_exited" from="CargoUI/BuildingMenu/iceMelter/iceMelterLv3" to="Node" method="ClosePreview"]
-[connection signal="button_down" from="CargoUI/BuildingMenu/power/powerLv1" to="Node" method="ScheduleBuilding" binds= [ "powerLv1" ]]
-[connection signal="mouse_entered" from="CargoUI/BuildingMenu/power/powerLv1" to="Node" method="PreviewBuilding" binds= [ "powerLv1" ]]
-[connection signal="mouse_exited" from="CargoUI/BuildingMenu/power/powerLv1" to="Node" method="ClosePreview"]
-[connection signal="button_down" from="CargoUI/BuildingMenu/power/powerLv2" to="Node" method="ScheduleBuilding" binds= [ "powerLv2" ]]
-[connection signal="mouse_entered" from="CargoUI/BuildingMenu/power/powerLv2" to="Node" method="PreviewBuilding" binds= [ "powerLv2" ]]
-[connection signal="mouse_exited" from="CargoUI/BuildingMenu/power/powerLv2" to="Node" method="ClosePreview"]
-[connection signal="button_down" from="CargoUI/BuildingMenu/power/powerLv3" to="Node" method="ScheduleBuilding" binds= [ "powerLv3" ]]
-[connection signal="mouse_entered" from="CargoUI/BuildingMenu/power/powerLv3" to="Node" method="PreviewBuilding" binds= [ "powerLv3" ]]
-[connection signal="mouse_exited" from="CargoUI/BuildingMenu/power/powerLv3" to="Node" method="ClosePreview"]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button0" to="UIEventHandler" method="highlightDay" binds= [ 0 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button1" to="UIEventHandler" method="highlightDay" binds= [ 1 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button2" to="UIEventHandler" method="highlightDay" binds= [ 2 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button3" to="UIEventHandler" method="highlightDay" binds= [ 3 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button4" to="UIEventHandler" method="highlightDay" binds= [ 4 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button5" to="UIEventHandler" method="highlightDay" binds= [ 5 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button6" to="UIEventHandler" method="highlightDay" binds= [ 6 ]]
+[connection signal="button_down" from="CargoUI/CargoContainer/HBoxContainer3/Button7" to="UIEventHandler" method="highlightDay" binds= [ 7 ]]
 [connection signal="button_down" from="CargoUI/GridContainer/Button" to="CargoUI/GridContainer/Button" method="ToggleMenu"]
 [connection signal="button_down" from="InventoryUI/GridContainer/CloseMenuButton" to="InventoryUI/GridContainer/CloseMenuButton" method="ToggleMenu"]

@@ -1,5 +1,6 @@
 {
   "robot-hub": {
+    "displayOrder": 1,
     "level": 1,
     "type": "robot-hub",
     "description":"",
@@ -26,9 +27,11 @@
         "distance": 1,
         "negate": true
       }
-    ]
+    ],
+    "buildingProsume":[]
   },
   "human-hub": {
+    "displayOrder": 2,
     "level": 1,
     "type": "human-hub",
     "placementType": "hub",
@@ -55,9 +58,10 @@
         "negate": true
       }
     ],
-    "buildingProsume": {}
+    "buildingProsume": []
   },
   "labLv1": {
+    "displayOrder": 3,
     "level": 1,
     "type": "Lab",
     "placementType": "spoke",
@@ -84,17 +88,16 @@
         "negate": true
       }
     ],
-    "buildingProsume": {
-      "resources": [
+    "buildingProsume": [
         {
           "type": "samples",
           "function": "capacity",
           "amount": 1
         }
-      ]
-    }
+      ]    
   },
   "labLv2": {
+    "displayOrder": 4,
     "level": 2,
     "type": "Lab",
     "placementType": "spoke",
@@ -109,17 +112,16 @@
         "type": "notBuildable"
       }
     ],
-    "buildingProsume": {
-      "resources": [
+    "buildingProsume": [
         {
           "type": "samples",
           "function": "capacity",
           "amount": 2
         }
       ]
-    }
   },
   "labLv3": {
+    "displayOrder": 5,
     "level": 3,
     "type": "Lab",
     "placementType": "spoke",
@@ -134,17 +136,16 @@
         "type": "notBuildable"
       }
     ],
-    "buildingProsume": {
-      "resources": [
+    "buildingProsume": [
         {
           "type": "samples",
           "function": "capacity",
           "amount": 3
         }
       ]
-    }
   },
   "farmLv1": {
+    "displayOrder": 6,
     "level": 1,
     "type": "farm",
     "placementType": "spoke",
@@ -171,17 +172,16 @@
         "negate": true
       }
     ],
-    "buildingProsume": {
-      "resources": [
+    "buildingProsume":[
         {
           "type": "Food",
           "function": "produce",
           "amount": 1
         }
       ]
-    }
   },
   "farmLv2": {
+    "displayOrder": 7,
     "level": 2,
     "type": "farm",
     "placementType": "spoke",
@@ -220,6 +220,7 @@
     ]
   },
   "farmLv3": {
+    "displayOrder": 8,
     "level": 3,
     "type": "farm",
     "placementType": "spoke",
@@ -234,8 +235,7 @@
       }
     ],
     "upgradeOf": "farmLv3",
-    "buildingProduce": {
-      "resources": [
+    "buildingProsume": [
         {
           "type": "Food",
           "function": "produce",
@@ -257,6 +257,5 @@
           "amount": 2
         }
       ]
-    }
   }
 }

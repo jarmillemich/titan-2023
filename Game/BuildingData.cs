@@ -47,7 +47,8 @@ public class BuildingData : Node
                     BuildingSpecs specs = new BuildingSpecs(
                         keyValues.GetInt("level"),
                         keyValues.GetString("type"),
-                        keyValues.GetString("description"),
+                        keyValues.GetString("description"),						
+						keyValues.GetInt("displayOrder"),
                         keyValues.GetString("placementType"),
                         keyValues.GetInt("cargoSpace"),
                         keyValues.GetString("cargoHex"),
@@ -77,7 +78,7 @@ public class BuildingData : Node
 																_spriteScaling: keyValues.GetFloat("spriteScaling"));
 					//BuildingProsume
 					List<BuildingProsume> buildingProsumes = new List<BuildingProsume>();
-					s = keyValues["buildingReq"] as Godot.Collections.Array;
+					s = keyValues["buildingProsume"] as Godot.Collections.Array;
 					for (int i = 0; i < s.Count; i++)
 					{
 						Godot.Collections.Dictionary brd = (Godot.Collections.Dictionary)s[i];
@@ -114,6 +115,7 @@ public class BuildingSpecs : Node
     public BuildingSpecs(int? _level,
                             string _type,
                             string _description,
+							int? _displayOrder,
                             string _placementType,
                             int? _cargoSpace,
                             string _cargoHex,
@@ -123,6 +125,7 @@ public class BuildingSpecs : Node
         level = _level;
         type = _type;
         description = _description;
+		displayOrder = _displayOrder;
         placementType = _placementType;
         cargoSpace = _cargoSpace;
         cargoHex = _cargoHex;
@@ -168,7 +171,7 @@ public class BuildingSpecs : Node
     public override string ToString()
     {
         return "Level: " + level.ToString() +
-                "; type: " + level.ToString() +
+                "; type: " + type.ToString() +
                 "; placementType: " + placementType.ToString() +
                 "; cargoSpace: " + cargoSpace.ToString() +
                 "; cargoHex: " + cargoHex.ToString() +
@@ -176,6 +179,7 @@ public class BuildingSpecs : Node
                 "; upgradeOf: " + upgradeOf.ToString();
     }
     public string description { get; set; }
+	public int? displayOrder { get; set; }
     public int? level { get; set; }
     public string type { get; set; }
     public string placementType { get; set; }
