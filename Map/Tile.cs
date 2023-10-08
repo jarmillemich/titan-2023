@@ -121,7 +121,7 @@ public class Tile : Node2D
 		scoutButton.Visible = gameState.Phase == Phase.Scouting;
 		
 		// Can build in the "turn" phase, or move a rover if we have one
-		buildButton.Visible = gameState.Phase == Phase.InTurn && !HasRover;
+		buildButton.Visible = gameState.Phase == Phase.InTurn && !HasRover && !Foggy;
 		roverButton.Visible = gameState.Phase == Phase.InTurn && HasRover;
 
 		// Can move a rover here in the "move rover" pseudo-phase

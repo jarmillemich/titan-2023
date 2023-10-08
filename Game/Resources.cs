@@ -78,8 +78,10 @@ public class Resources : Node
 	{
 		if (builtBuilding.ContainsKey(buildingName))
 		{
-			builtBuilding[buildingName] = builtBuilding[buildingName] + 1;
-			pendingBuilding[buildingName] = pendingBuilding[buildingName] - 1;
+			builtBuilding[buildingName] = builtBuilding[buildingName] += amount;
+			if (amount > 0) {
+				pendingBuilding[buildingName] = pendingBuilding[buildingName] - 1;
+			}
 
 			//Adjust capacity, storage, produce
 			List<BuildingProsume> prosume = buildings[buildingName].buildingProsume;
