@@ -47,6 +47,9 @@ public class Tile : Node2D
 	[Signal]
 	public delegate void OnSelectRover();
 
+	[Signal]
+	public delegate void OnTargetRover();
+
 	public void _on_ScoutButton_pressed() {
 		EmitSignal(nameof(OnScout));
 	}
@@ -61,8 +64,8 @@ public class Tile : Node2D
 	}
 
 	public void _on_RoverTargetButton_pressed() {
-		gameState.RoverStartPoint = MapPosition;
-		gameState.Phase = Phase.MovingRover;
+		EmitSignal(nameof(OnTargetRover));
+		gameState.Phase = Phase.InTurn;
 	}
 
 	private bool _foggy = true;
@@ -115,18 +118,18 @@ public class Tile : Node2D
 	private GameState gameState => GetNode<GameState>("/root/GameState");
 
 	private void OnPhaseChanged() {
-		scoutButton.Disabled = gameState.Phase != Phase.Scouting;
+		scoutButton.Visible = gameState.Phase == Phase.Scouting;
 		
 		// Can build in the "turn" phase, or move a rover if we have one
-		buildButton.Disabled = gameState.Phase != Phase.InTurn || HasRover;
-		roverButton.Disabled = gameState.Phase != Phase.InTurn || !HasRover;
+		buildButton.Visible = gameState.Phase == Phase.InTurn && !HasRover;
+		roverButton.Visible = gameState.Phase == Phase.InTurn && HasRover;
 
 		// Can move a rover here in the "move rover" pseudo-phase
 		// And we are 1 tile from the source rover
-		if (gameState.Phase == Phase.MovingRover) {
-			roverTargetButton.Disabled = gameState.RoverStartPoint.DistanceTo(MapPosition) != 1;
+		if (gameState.Phase == Phase.TargettingRover) {
+			roverTargetButton.Visible = gameState.RoverStartPoint.DistanceTo(MapPosition) == 1;
 		} else {
-			roverTargetButton.Disabled = true;
+			roverTargetButton.Visible = false;
 		}
 	}
 }

@@ -6,10 +6,11 @@ public enum Phase {
     
     CargoDrop,
     Income,
+    MovingRover,
 
     InTurn,
     DecidingOnBuildings,
-    MovingRover,
+    TargettingRover,
 
 }
 

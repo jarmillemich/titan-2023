@@ -21,3 +21,8 @@ script = ExtResource( 2 )
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource( 3 )]
 mouse_filter = 2
+
+[node name="PhaseTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="PhaseTimer" to="." method="_on_PhaseTimer_timeout"]

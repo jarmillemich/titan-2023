@@ -31,6 +31,12 @@ public class Rover : Node2D
         UpdateSprite();
     }
 
+    public void Move() {
+        GD.Print("Moving rover", _position, _destination);
+        MapPosition = _destination;
+        UpdateSprite();
+    }
+
     private bool _isReady = false;
 
     private void UpdateSprite()
@@ -38,10 +44,11 @@ public class Rover : Node2D
         Position = MapPosition.ToVector2(50f);
 
         bool moving = _destination.DistanceTo(_position) > 0;
-        GetNode<Line2D>("Arrow").Visible = moving;
+        GetNode<Sprite>("Arrow").Visible = moving;
 
         if (moving) {
-            Rotation = _position.ToVector2(50f).AngleTo(_destination.ToVector2(50f));
+            Rotation = Vector2.Right.AngleTo((_destination - _position).ToVector2(50f));
+            GD.Print("Moving rover", _position, _destination, Rotation);
         }
 
     }

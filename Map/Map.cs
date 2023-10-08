@@ -61,6 +61,20 @@ public class Map : Node2D
 	private void OnPhaseChanged()
 	{
 		GD.Print("New phase!");
+		switch (gameState.Phase) {
+			case Phase.Income:
+				resources.CalcResource();
+				break;
+			case Phase.CargoDrop:
+				cargoQueue.Tick();
+				break;
+			case Phase.MovingRover:
+				foreach (var rover in Root.GetChildren().OfType<Rover>()) {
+					rover.Move();
+					Reveal(rover.MapPosition);
+				}
+				break;
+		}
 	}
 
 	private static readonly PackedScene ConTile = ResourceLoader.Load("res://Map/Tile.tscn") as PackedScene ?? throw new ArgumentNullException("No Tile Scene");
@@ -72,6 +86,8 @@ public class Map : Node2D
 	private GameState gameState => GetNode<GameState>("/root/GameState");
 	private Godot.Collections.Dictionary<string, BuildingSpecs> buildingData => GetNode<BuildingData>("/root/BuildingData").buildings;
 	private Resources resources => GetNode<Resources>("/root/Resources");
+	private CargoQueue cargoQueue => GetNode<CargoQueue>("/root/CargoQueue");
+	private Timer phaseTimer => GetNode<Timer>("PhaseTimer");
 
 	private const float sideLength = 50f;
 
@@ -168,6 +184,7 @@ public class Map : Node2D
 		tile.Connect(nameof(Tile.OnScout), this, nameof(onScout), new Godot.Collections.Array(at));
 		tile.Connect(nameof(Tile.OnBuild), this, nameof(OnStartBuild), new Godot.Collections.Array(at));
 		tile.Connect(nameof(Tile.OnSelectRover), this, nameof(OnSelectRover), new Godot.Collections.Array(at));
+		tile.Connect(nameof(Tile.OnTargetRover), this, nameof(OnTargetRover), new Godot.Collections.Array(at));
 
 		return tile;
 	}
@@ -186,11 +203,53 @@ public class Map : Node2D
 		}
 	}
 
+	private void OnEndTurn() {
+		if (gameState.Phase != Phase.InTurn) {
+			GD.Print("Probably not the right time to end the turn");
+		}
+
+		// 1. Do cargo drop phase
+		// 2. Do Income phase
+		// 3. Move the rover
+		// But it'll all be distributed, just kick off the timer
+		gameState.Phase = Phase.CargoDrop;
+		phaseTimer.Start();
+
+	}
+
+	private void _on_PhaseTimer_timeout() {
+		switch (gameState.Phase) {
+			case Phase.CargoDrop:
+				gameState.Phase = Phase.Income;
+				phaseTimer.Start();
+				break;
+			case Phase.Income:
+				gameState.Phase = Phase.MovingRover;
+				phaseTimer.Start();
+				break;
+			case Phase.MovingRover:
+				gameState.Phase = Phase.InTurn;
+				break;
+		}
+	}
+
 	private void OnSelectRover(HexPoint tile) {
-		GD.Print("Rovinng", tile);
+		
 		if (Tiles[tile].HasRover) {
+			GD.Print("Rovinng", tile);
 			gameState.RoverStartPoint = tile;
-			gameState.Phase = Phase.MovingRover;
+			gameState.Phase = Phase.TargettingRover;
+		}
+	}
+
+	private void OnTargetRover(HexPoint tile) {
+		
+		if (gameState.Phase == Phase.TargettingRover) {
+			GD.Print("Targeting", tile);
+			gameState.Phase = Phase.InTurn;
+			GD.Print(Root.GetChildren().OfType<Rover>().ToList()[0].MapPosition, gameState.RoverStartPoint);
+			var rover = Root.GetChildren().OfType<Rover>().First(r => r.MapPosition == gameState.RoverStartPoint);
+			rover.Destination = tile;
 		}
 	}
 
@@ -200,7 +259,6 @@ public class Map : Node2D
 		var candidates = Tiles.Keys.Where(t => Tiles[t].Type == TileType.Plains).ToList();
 
 		// Shuffle a bit (fisher yates)
-		// TODO vet this
 		for (int i = candidates.Count - 1; i > 0; i--)
 		{
 			int j = rand.Next(i + 1);
@@ -215,6 +273,7 @@ public class Map : Node2D
 			var applicable = new List<HexPoint>() {
 				(HexPoint)candidate
 			};
+
 			for (int neighborIdx = 0; neighborIdx < 6; neighborIdx++)
 			{
 				var neighbor = (HexPoint)candidate + HexPoint.Directions[neighborIdx];
@@ -222,7 +281,6 @@ public class Map : Node2D
 
 				applicable.Add(neighbor);
 			}
-
 
 			if (applicable.Count >= size)
 			{
