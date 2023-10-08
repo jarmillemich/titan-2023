@@ -12,9 +12,9 @@ public class AboutButton : Button
     {
         
     }
-public void _on_AboutButton_pressed(){
-    GD.Print("About");
-}
+    public void _on_AboutButton_pressed(){
+        GD.Print("About");
+    }
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
 //  public override void _Process(float delta)
 //  {

@@ -34,8 +34,8 @@ public class CargoUI : HBoxContainer
         {
 
             buildings.TryGetValue(valuePair.Key, out BuildingSpecs specs);
-            var infobutton = GetNode(@"BuildingMenu/BuildingList");
-            infobutton.Connect("button_down",GetNode("../InfoBox"), "PreviewBuilding", new Godot.Collections.Array { valuePair.Key });
+            // var infobutton = GetNode<Button>(@"BuildingMenu/BuildingList/Button");
+            // infobutton.Connect("button_down",GetNode("../InfoBox"), "PreviewBuilding", new Godot.Collections.Array { valuePair.Key });
 
             Button s = (Button)GetNode(@"BuildingMenu/BuildingList").GetChild((int)specs.displayOrder - 1);
             //disable all buttons

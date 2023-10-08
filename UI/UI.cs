@@ -37,6 +37,14 @@ public class UI : Control
         endTurnButton.Visible = gameState.Phase == Phase.InTurn;
     }
 
+    public void _on_AboutButton_pressed(){
+        GetNode<Control>("InfoBox").Visible = true;
+    }
+
+    public void _on_InfoCloseButton_pressed(){
+        GetNode<Control>("InfoBox").Visible = false;
+    }
+
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
 //  public override void _Process(float delta)
 //  {
