@@ -24,7 +24,7 @@ public class BuildingData : Node
 		foreach (var key in buildings.Keys)
 		{
 			builtBuilding.Add(key, 0);
-			pendingBuilding.Add(key, 0);
+			pendingBuilding.Add(key, 1);
 		}
 	}
 	public void LoadBuildingSpecs()

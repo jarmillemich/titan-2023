@@ -544,5 +544,32 @@
         "amount": 3
       }
     ]
+  },
+  "industrial-victory-hub": {
+    "displayOrder": 15,
+    "level": 1,
+    "type": "industrial-victory-hub",
+    "description": "This building’s purpose is to serve as a hub for advanced industrial processes on Titan.",
+    "infoDescription": "",
+    "placementType": "hub",
+    "spritePath": "res://Graphics/Buildings/Indstrial Victory Hub.png",
+    "spriteScaling": 1,
+    "cargoSpace": 2,
+    "cargoHex": "#000000",
+    "maxLimit": 1,
+    "buildingReq": [
+      {
+        "type": "tileWithin",
+        "targetType": "tile-plains",
+        "distance": 0
+      }
+    ],
+    "buildingProsume": [
+      {
+        "type": "Energy",
+        "function": "consume",
+        "amount": 10
+      }
+    ]
   }
 }
